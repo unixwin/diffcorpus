@@ -1,0 +1,125 @@
+{
+ "gnu": "/home/hatch/workspace/rubash-audit/gnu-bash-5.3.20/bin/bash",
+ "rubash": "/home/hatch/workspace/rubash-150/integration/rubash/target/debug/rubash",
+ "total": 6,
+ "pass": 6,
+ "fail": 0,
+ "known_stable_failures": [],
+ "new_failures": [],
+ "results": [
+  {
+   "id": "gnu-appendop",
+   "category": "gnu",
+   "script": "#   This program is free software: you can redistribute it and/or modify\n#   it under the terms of the GNU General Public License as published by\n#   the Free Software Foundation, either version 3 of the License, or\n#   (at your option) any later version.\n#\n#   This program is distributed in the hope that it will be useful,\n#   but WITHOUT ANY WARRANTY; without even the implied warranty of\n#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n#   GNU General Public License for more details.\n#\n#   You should have received a copy of the GNU General Public License\n#   along with this program.  If not, see <http://www.gnu.org/licenses/>.\n#\n# basic cases\na=1\na+=4\necho $a\n\nx=(1 2 3)\nx+=(4 5 6)\n\necho ${x[@]}\n\nx[4]+=1\necho ${x[@]}\n\n# trickier cases\n# post-bash-4.2: bash understands += in environment assignments preceding\n# command names\na+=5 printenv a\necho $a\n\n# if the integer flag is set, ksh93 appears to do arithmetic += and evaluate\n# old value as an arithmetic expression\na=\ntypeset -i a\na+=7\necho $a\n\nb=4+1\ntypeset -i b\nb+=37\n\necho $b\n\nunset x\nx=(1 2 3 4 5)\n\ntypeset -i x\n\nx[4]+=7\n\necho ${x[@]}\n\nunset x\ntypeset -i x\n\nx=([0]=7+11)\necho ${x[@]}\n\nunset x\nx=(1 2 3 4 5)\n\ntypeset -i x\n\n#x[4]=7+11\n\nx=(1 2 3 4 [4]=7+11 )\necho ${x[@]}\n\nx=( 1 2 [2]+=7 4 5 )\necho ${x[@]}\n\nx+=( [3]+=9 [5]=9 )\necho ${x[@]}\n\nunset a\na=1\nexport a+=4\nprintenv a\nprintenv a+\n\nunset x\ntypeset -i x=4+5\necho $x\n\nunset x\ntypeset x+=4\necho $x\n\ntypeset -i x+=5\necho $x\n\nreadonly x+=7\necho $x\n\nx+=5\n\n( #   This program is free software: you can redistribute it and/or modify\n#   it under the terms of the GNU General Public License as published by\n#   the Free Software Foundation, either version 3 of the License, or\n#   (at your option) any later version.\n#\n#   This program is distributed in the hope that it will be useful,\n#   but WITHOUT ANY WARRANTY; without even the implied warranty of\n#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n#   GNU General Public License for more details.\n#\n#   You should have received a copy of the GNU General Public License\n#   along with this program.  If not, see <http://www.gnu.org/licenses/>.\n#\ntypeset -A foo=([one]=bar [two]=baz [three]=quux)\ntypeset -p foo\n\nfoo+=zero\ntypeset -p foo\n\nfoo+=([four]=four)\ntypeset -p foo\n\ntypeset -ia iarr=(2 2 3)\niarr+=1\ntypeset -p iarr\n\niarr+=(4 5 6)\ntypeset -p iarr\n)\n( #   This program is free software: you can redistribute it and/or modify\n#   it under the terms of the GNU General Public License as published by\n#   the Free Software Foundation, either version 3 of the License, or\n#   (at your option) any later version.\n#\n#   This program is distributed in the hope that it will be useful,\n#   but WITHOUT ANY WARRANTY; without even the implied warranty of\n#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n#   GNU General Public License for more details.\n#\n#   You should have received a copy of the GNU General Public License\n#   along with this program.  If not, see <http://www.gnu.org/licenses/>.\n#\nPOSIXLY_CORRECT=1\nx=2\nx+=5 eval printf '\"$x \"'\necho \"$x\"\n\nunset x\ntypeset -i x=2\nx+=5 eval printf '\"$x \"'\necho \"$x\"\n\na=1\na+=4\necho $a\n\n# idiotically, ksh93 makes these two cases differ (?)\na+=5 printenv a\na+=5 eval printf '\"$a \"'\necho $a\n)",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "14\n1 2 3 4 5 6\n1 2 3 4 51 6\n145\n14\n7\n42\n1 2 3 4 12\n18\n1 2 3 4 18\n1 2 7 4 5\n1 2 7 13 5 9\n14\n9\n4\n9\n16\ndeclare -A foo=([two]=\"baz\" [three]=\"quux\" [one]=\"bar\" )\ndeclare -A foo=([0]=\"zero\" [two]=\"baz\" [three]=\"quux\" [one]=\"bar\" )\ndeclare -A foo=([four]=\"four\" [0]=\"zero\" [two]=\"baz\" [three]=\"quux\" [one]=\"bar\" )\ndeclare -ai iarr=([0]=\"3\" [1]=\"2\" [2]=\"3\")\ndeclare -ai iarr=([0]=\"3\" [1]=\"2\" [2]=\"3\" [3]=\"4\" [4]=\"5\" [5]=\"6\")\n",
+    "stderr": "SHELL: line 97: x: readonly variable\nSHELL: line 142: x: readonly variable\n",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "14\n1 2 3 4 5 6\n1 2 3 4 51 6\n145\n14\n7\n42\n1 2 3 4 12\n18\n1 2 3 4 18\n1 2 7 4 5\n1 2 7 13 5 9\n14\n9\n4\n9\n16\ndeclare -A foo=([two]=\"baz\" [three]=\"quux\" [one]=\"bar\" )\ndeclare -A foo=([0]=\"zero\" [two]=\"baz\" [three]=\"quux\" [one]=\"bar\" )\ndeclare -A foo=([four]=\"four\" [0]=\"zero\" [two]=\"baz\" [three]=\"quux\" [one]=\"bar\" )\ndeclare -ai iarr=([0]=\"3\" [1]=\"2\" [2]=\"3\")\ndeclare -ai iarr=([0]=\"3\" [1]=\"2\" [2]=\"3\" [3]=\"4\" [4]=\"5\" [5]=\"6\")\n",
+    "stderr": "SHELL: line 97: x: readonly variable\nSHELL: line 142: x: readonly variable\n",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gnu-casemod",
+   "category": "gnu",
+   "script": "#   This program is free software: you can redistribute it and/or modify\n#   it under the terms of the GNU General Public License as published by\n#   the Free Software Foundation, either version 3 of the License, or\n#   (at your option) any later version.\n#\n#   This program is distributed in the hope that it will be useful,\n#   but WITHOUT ANY WARRANTY; without even the implied warranty of\n#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n#   GNU General Public License for more details.\n#\n#   You should have received a copy of the GNU General Public License\n#   along with this program.  If not, see <http://www.gnu.org/licenses/>.\n#\nS1=acknowledgement\nS2=oenophile\n\necho ${S1^}\necho ${S1^^}\n\necho ${S2^[aeiou]}\necho ${S2^^[aeiou]}\n\nU1=${S1^^}\nU2=${S2^^}\n\necho ${U1,}\necho ${U1,,}\n\necho ${U2,}\necho ${U2,[AEIOU]}\necho ${U2,,[AEIOU]}\n\nA1=( $S1 $S2 )\n\necho ${A1[@]^[aeiou]}\necho ${A1[@]^^[aeiou]}\n\nA2=( $U1 $U2 )\n\necho ${A2[@],[AEIOU]}\necho ${A2[@],,[AEIOU]}\n\necho ${A2[@],?}\necho ${A2[@],,?}\n\ndeclare -A AA1 AA2\n\nAA1[ack]=$S1\nAA1[oen]=$S2\n\necho ${AA1[@]^}\necho ${AA1[@]^^}\n\necho ${AA1[@]^[aeiou]}\necho ${AA1[@]^^[aeiou]}\n\nAA2[ACK]=$U1\nAA2[OEN]=$U2\n\necho ${AA2[@],}\necho ${AA2[@],,}\n\necho ${AA2[@],[AEIOU]}\necho ${AA2[@],,[AEIOU]}\n\nset -- $S1 $S2\n\necho ${@^}\necho ${@^^}\n\n\necho ${S1^[rstlne]} ${S2^[rstlne]}\necho ${S1^^[rstlne]} ${S2^^[rstlne]}\n\necho ${@^[rstlne]}\necho ${@^^[rstlne]}\n\necho ${S1,[rstlne]} ${S2,[rstlne]}\necho ${S1,,[rstlne]} ${S2,,[rstlne]}\n\necho ${@,[rstlne]}\necho ${@,,[rstlne]}\n\necho ${@^?}\necho ${@^^?}\n\n# make sure that multiple words in the string are handled as other expansions\nTEXT=\"Be Conservative in what you send and Liberal in what you accept\"\nTEXT2=\"be conservative in what you send and liberal in what you accept\"\n\ndeclare -u foo\nfoo=$TEXT\necho $foo\n\ndeclare -l bar\nbar=$TEXT\necho $bar\n\ndeclare -c qux\nqux=$TEXT\necho $qux\nqux=$TEXT2\necho $qux\n\necho ${TEXT,}\necho ${TEXT,,}\n\necho ${TEXT^}\necho ${TEXT^^}\n\necho ${TEXT2^}\necho ${TEXT2^^}\n\nM1=${S1^^[aeiou]}\nM2=${U2,,[AEIOU]}\n\n# case-toggling modifiers are still in there for now\nZ1=AcKnowledGEmEnt\nZ2=OenOphIlE\necho ${Z1~}\necho ${Z2~~}\n\ndeclare -l lower=aBcDe\nlower+=XyZ\necho $lower\n\ndeclare -u upper=aBcDe\nupper+=xYZ\necho $upper",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "Acknowledgement\nACKNOWLEDGEMENT\nOenophile\nOEnOphIlE\naCKNOWLEDGEMENT\nacknowledgement\noENOPHILE\noENOPHILE\noeNoPHiLe\nAcknowledgement Oenophile\nAcknOwlEdgEmEnt OEnOphIlE\naCKNOWLEDGEMENT oENOPHILE\naCKNoWLeDGeMeNT oeNoPHiLe\naCKNOWLEDGEMENT oENOPHILE\nacknowledgement oenophile\nOenophile Acknowledgement\nOENOPHILE ACKNOWLEDGEMENT\nOenophile Acknowledgement\nOEnOphIlE AcknOwlEdgEmEnt\noENOPHILE aCKNOWLEDGEMENT\noenophile acknowledgement\noENOPHILE aCKNOWLEDGEMENT\noeNoPHiLe aCKNoWLeDGeMeNT\nAcknowledgement Oenophile\nACKNOWLEDGEMENT OENOPHILE\nacknowledgement oenophile\nackNowLEdgEmENT oENophiLE\nacknowledgement oenophile\nackNowLEdgEmENT oENophiLE\nacknowledgement oenophile\nacknowledgement oenophile\nacknowledgement oenophile\nacknowledgement oenophile\nAcknowledgement Oenophile\nACKNOWLEDGEMENT OENOPHILE\nBE CONSERVATIVE IN WHAT YOU SEND AND LIBERAL IN WHAT YOU ACCEPT\nbe conservative in what you send and liberal in what you accept\nBe conservative in what you send and liberal in what you accept\nBe conservative in what you send and liberal in what you accept\nbe Conservative in what you send and Liberal in what you accept\nbe conservative in what you send and liberal in what you accept\nBe Conservative in what you send and Liberal in what you accept\nBE CONSERVATIVE IN WHAT YOU SEND AND LIBERAL IN WHAT YOU ACCEPT\nBe conservative in what you send and liberal in what you accept\nBE CONSERVATIVE IN WHAT YOU SEND AND LIBERAL IN WHAT YOU ACCEPT\nacKnowledGEmEnt\noENoPHiLe\nabcdexyz\nABCDEXYZ\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "Acknowledgement\nACKNOWLEDGEMENT\nOenophile\nOEnOphIlE\naCKNOWLEDGEMENT\nacknowledgement\noENOPHILE\noENOPHILE\noeNoPHiLe\nAcknowledgement Oenophile\nAcknOwlEdgEmEnt OEnOphIlE\naCKNOWLEDGEMENT oENOPHILE\naCKNoWLeDGeMeNT oeNoPHiLe\naCKNOWLEDGEMENT oENOPHILE\nacknowledgement oenophile\nOenophile Acknowledgement\nOENOPHILE ACKNOWLEDGEMENT\nOenophile Acknowledgement\nOEnOphIlE AcknOwlEdgEmEnt\noENOPHILE aCKNOWLEDGEMENT\noenophile acknowledgement\noENOPHILE aCKNOWLEDGEMENT\noeNoPHiLe aCKNoWLeDGeMeNT\nAcknowledgement Oenophile\nACKNOWLEDGEMENT OENOPHILE\nacknowledgement oenophile\nackNowLEdgEmENT oENophiLE\nacknowledgement oenophile\nackNowLEdgEmENT oENophiLE\nacknowledgement oenophile\nacknowledgement oenophile\nacknowledgement oenophile\nacknowledgement oenophile\nAcknowledgement Oenophile\nACKNOWLEDGEMENT OENOPHILE\nBE CONSERVATIVE IN WHAT YOU SEND AND LIBERAL IN WHAT YOU ACCEPT\nbe conservative in what you send and liberal in what you accept\nBe conservative in what you send and liberal in what you accept\nBe conservative in what you send and liberal in what you accept\nbe Conservative in what you send and Liberal in what you accept\nbe conservative in what you send and liberal in what you accept\nBe Conservative in what you send and Liberal in what you accept\nBE CONSERVATIVE IN WHAT YOU SEND AND LIBERAL IN WHAT YOU ACCEPT\nBe conservative in what you send and liberal in what you accept\nBE CONSERVATIVE IN WHAT YOU SEND AND LIBERAL IN WHAT YOU ACCEPT\nacKnowledGEmEnt\noENoPHiLe\nabcdexyz\nABCDEXYZ\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gnu-herestr",
+   "category": "gnu",
+   "script": "#   This program is free software: you can redistribute it and/or modify\n#   it under the terms of the GNU General Public License as published by\n#   the Free Software Foundation, either version 3 of the License, or\n#   (at your option) any later version.\n#\n#   This program is distributed in the hope that it will be useful,\n#   but WITHOUT ANY WARRANTY; without even the implied warranty of\n#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n#   GNU General Public License for more details.\n#\n#   You should have received a copy of the GNU General Public License\n#   along with this program.  If not, see <http://www.gnu.org/licenses/>.\n#\n# since we look at functions below, remove all functions now\nfuncs=$(compgen -A function)\nif [ -n \"$funcs\" ]; then\n\tunset -f $funcs\nfi\n\n# basics\nread x <<<\"alpha\"\necho \"$x\"\nread x <<<beta\necho \"$x\"\nX=4\nread x <<<$X\necho \"$x\"\nread x <<<\"$X\"\necho \"$x\"\nunset X\n\n# empty here-strings\nread x <<<\"\"\necho \"$x\"\nread x <<<\"$empty\"\necho \"$x\"\nread x <<<$empty\necho \"$x\"\n\na=hot\nb=damn\nf1()\n{\ncat <<< \"abcde\"\n\ncat <<< \"yo\"\n\ncat <<< \"$a $b\"\n\ncat <<< 'what a fabulous window treatment'\n\ncat <<< 'double\"quote'\n}\n\nf2()\n{\ncat <<< onetwothree\n}\n\nf3()\n{\ncat <<< \"$@\"\n}\n\nf1\nf2\nf3 first second third\n\ntypeset -f\n\ncat <<< 'echo $(echo hi)'\n\ncat <<< \"echo ho\"\n\ncat <<< \"echo $(echo off to work we go)\"\n\nIFS=\"/\" read -r -d $'\\000' -a uu <<< /kghfjk/jkfzuk/i\ndeclare -p uu\n\n( # problems with word splitting unquoted here-strings present since bash-3.2\n\nx=\"foo        bar\"\ncat <<< $x     # Word-splitting appears to collapse the run of whitespace\ncat <<< \"$x\"  # Whitespace preserved, as with here doc\n\nx=\"qux:::::bax\"\nIFS=':'\ncat <<< $x     # Word-splitting appears to collapse the run of whitespace\ncat <<< \"$x\"  # Whitespace preserved, as with here doc\n)",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "alpha\nbeta\n4\n4\n\n\n\nabcde\nyo\nhot damn\nwhat a fabulous window treatment\ndouble\"quote\nonetwothree\nfirst second third\nf1 () \n{ \n    cat <<< \"abcde\";\n    cat <<< \"yo\";\n    cat <<< \"$a $b\";\n    cat <<< 'what a fabulous window treatment';\n    cat <<< 'double\"quote'\n}\nf2 () \n{ \n    cat <<< onetwothree\n}\nf3 () \n{ \n    cat <<< \"$@\"\n}\necho $(echo hi)\necho ho\necho off to work we go\ndeclare -a uu=([0]=\"\" [1]=\"kghfjk\" [2]=\"jkfzuk\" [3]=$'i\\n')\nfoo        bar\nfoo        bar\nqux:::::bax\nqux:::::bax\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "alpha\nbeta\n4\n4\n\n\n\nabcde\nyo\nhot damn\nwhat a fabulous window treatment\ndouble\"quote\nonetwothree\nfirst second third\nf1 () \n{ \n    cat <<< \"abcde\";\n    cat <<< \"yo\";\n    cat <<< \"$a $b\";\n    cat <<< 'what a fabulous window treatment';\n    cat <<< 'double\"quote'\n}\nf2 () \n{ \n    cat <<< onetwothree\n}\nf3 () \n{ \n    cat <<< \"$@\"\n}\necho $(echo hi)\necho ho\necho off to work we go\ndeclare -a uu=([0]=\"\" [1]=\"kghfjk\" [2]=\"jkfzuk\" [3]=$'i\\n')\nfoo        bar\nfoo        bar\nqux:::::bax\nqux:::::bax\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gnu-invert",
+   "category": "gnu",
+   "script": "#   This program is free software: you can redistribute it and/or modify\n#   it under the terms of the GNU General Public License as published by\n#   the Free Software Foundation, either version 3 of the License, or\n#   (at your option) any later version.\n#\n#   This program is distributed in the hope that it will be useful,\n#   but WITHOUT ANY WARRANTY; without even the implied warranty of\n#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n#   GNU General Public License for more details.\n#\n#   You should have received a copy of the GNU General Public License\n#   along with this program.  If not, see <http://www.gnu.org/licenses/>.\n#\n# tests of return value inversion\n# placeholder for future expansion\n\n# user subshells (...) did this wrong in bash versions before 2.04\n\n! ( echo hello | grep h >/dev/null 2>&1 ); echo $?\n! echo hello | grep h >/dev/null 2>&1 ; echo $?\n\n! true ; echo $?\n! false; echo $?\n\n! (false) ; echo $?\n! (true); echo $?\n\n! true | false ; echo $?\n! false | true ; echo $?\n\n! (true | false) ; echo $?\n! (false | true) ; echo $?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "1\n1\n1\n0\n0\n1\n0\n1\n0\n1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "1\n1\n1\n0\n0\n1\n0\n1\n0\n1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gnu-set-x",
+   "category": "gnu",
+   "script": "#   This program is free software: you can redistribute it and/or modify\n#   it under the terms of the GNU General Public License as published by\n#   the Free Software Foundation, either version 3 of the License, or\n#   (at your option) any later version.\n#\n#   This program is distributed in the hope that it will be useful,\n#   but WITHOUT ANY WARRANTY; without even the implied warranty of\n#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n#   GNU General Public License for more details.\n#\n#   You should have received a copy of the GNU General Public License\n#   along with this program.  If not, see <http://www.gnu.org/licenses/>.\n#\n\n# $Id: set-x.tests,v 1.1 2002/12/09 13:12:37 rockyb Exp $\n#\n# Test that \"set -x\" shows what we think it should.\n#\nset -x\nfor ((i=0; i<=5; i++ )) ; do\n  x=0\ndone\nfor i in 0 1 2 ; do\n  x=i\ndone\ncase x in \n 0) x=i ;;\n *) x=i ;;\nesac\n\nfoo=one\nfoo+=two\necho $foo\n\nfoo=one echo $foo\n\nset +x\n\n# test BASH_XTRACEFD\n( #   This program is free software: you can redistribute it and/or modify\n#   it under the terms of the GNU General Public License as published by\n#   the Free Software Foundation, either version 3 of the License, or\n#   (at your option) any later version.\n#\n#   This program is distributed in the hope that it will be useful,\n#   but WITHOUT ANY WARRANTY; without even the implied warranty of\n#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n#   GNU General Public License for more details.\n#\n#   You should have received a copy of the GNU General Public License\n#   along with this program.  If not, see <http://www.gnu.org/licenses/>.\n#\n: ${TMPDIR:=/var/tmp}\nTRACEFILE=$TMPDIR/bash-trace-$$\ntrap 'rm -f $TRACEFILE' 0 1 2 3 6 15\n\nBASH_XTRACEFD=4\t\t# error, invalid FD\n\nexec 4>$TRACEFILE\nBASH_XTRACEFD=4\n\nset -x\n\necho 1\necho 2\necho 3\necho 4\n\nunset BASH_XTRACEFD\nexec 4<&-\t\t# no unset hooks yet\n\nfor f in a b c d e; do echo $f ; done\n\nset +x\n\necho TRACEFILE:\ncat $TRACEFILE\necho =====\n\nexit 0\n)\n\n# compound assignment printing\n( declare -a metas\nset a b c\n\nset -x\n# some time we will have better compound assignment printing (after expansion)\nmetas=( \\|  \\& \\; \\( \\) \\< \\> $' ' $'\\t' $'\\n' )\nn=( $@ )\n\n# like regular expansions\n: \"${metas[@]}\"\n\nDEFAULT_IFS=$' \\t\\n'\n\nset +x\ndeclare -p metas\n)",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "onetwo\nonetwo\n1\n2\n3\n4\na\nb\nc\nd\ne\nTRACEFILE:\n+ echo 1\n+ echo 2\n+ echo 3\n+ echo 4\n+ unset BASH_XTRACEFD\n=====\ndeclare -a metas=([0]=\"|\" [1]=\"&\" [2]=\";\" [3]=\"(\" [4]=\")\" [5]=\"<\" [6]=\">\" [7]=\" \" [8]=$'\\t' [9]=$'\\n')\n",
+    "stderr": "+ (( i=0 ))\n+ (( i<=5 ))\n+ x=0\n+ (( i++  ))\n+ (( i<=5 ))\n+ x=0\n+ (( i++  ))\n+ (( i<=5 ))\n+ x=0\n+ (( i++  ))\n+ (( i<=5 ))\n+ x=0\n+ (( i++  ))\n+ (( i<=5 ))\n+ x=0\n+ (( i++  ))\n+ (( i<=5 ))\n+ x=0\n+ (( i++  ))\n+ (( i<=5 ))\n+ for i in 0 1 2\n+ x=i\n+ for i in 0 1 2\n+ x=i\n+ for i in 0 1 2\n+ x=i\n+ case x in\n+ x=i\n+ foo=one\n+ foo+=two\n+ echo onetwo\n+ foo=one\n+ echo onetwo\n+ set +x\nSHELL: line 57: BASH_XTRACEFD: 4: invalid value for trace file descriptor\n+ exec\n+ for f in a b c d e\n+ echo a\n+ for f in a b c d e\n+ echo b\n+ for f in a b c d e\n+ echo c\n+ for f in a b c d e\n+ echo d\n+ for f in a b c d e\n+ echo e\n+ set +x\n+ metas=(\\| \\& \\; \\( \\) \\< \\> ' ' '\t' '\n')\n+ n=($@)\n+ : '|' '&' ';' '(' ')' '<' '>' ' ' $'\\t' $'\\n'\n+ DEFAULT_IFS=$' \\t\\n'\n+ set +x\n",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "onetwo\nonetwo\n1\n2\n3\n4\na\nb\nc\nd\ne\nTRACEFILE:\n+ echo 1\n+ echo 2\n+ echo 3\n+ echo 4\n+ unset BASH_XTRACEFD\n=====\ndeclare -a metas=([0]=\"|\" [1]=\"&\" [2]=\";\" [3]=\"(\" [4]=\")\" [5]=\"<\" [6]=\">\" [7]=\" \" [8]=$'\\t' [9]=$'\\n')\n",
+    "stderr": "+ (( i=0 ))\n+ (( i<=5 ))\n+ x=0\n+ (( i++  ))\n+ (( i<=5 ))\n+ x=0\n+ (( i++  ))\n+ (( i<=5 ))\n+ x=0\n+ (( i++  ))\n+ (( i<=5 ))\n+ x=0\n+ (( i++  ))\n+ (( i<=5 ))\n+ x=0\n+ (( i++  ))\n+ (( i<=5 ))\n+ x=0\n+ (( i++  ))\n+ (( i<=5 ))\n+ for i in 0 1 2\n+ x=i\n+ for i in 0 1 2\n+ x=i\n+ for i in 0 1 2\n+ x=i\n+ case x in\n+ x=i\n+ foo=one\n+ foo+=two\n+ echo onetwo\n+ foo=one\n+ echo onetwo\n+ set +x\nSHELL: line 57: BASH_XTRACEFD: 4: invalid value for trace file descriptor\n+ exec\n+ for f in a b c d e\n+ echo a\n+ for f in a b c d e\n+ echo b\n+ for f in a b c d e\n+ echo c\n+ for f in a b c d e\n+ echo d\n+ for f in a b c d e\n+ echo e\n+ set +x\n+ metas=(\\| \\& \\; \\( \\) \\< \\> ' ' '\t' '\n')\n+ n=($@)\n+ : '|' '&' ';' '(' ')' '<' '>' ' ' $'\\t' $'\\n'\n+ DEFAULT_IFS=$' \\t\\n'\n+ set +x\n",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gnu-strip",
+   "category": "gnu",
+   "script": "#   This program is free software: you can redistribute it and/or modify\n#   it under the terms of the GNU General Public License as published by\n#   the Free Software Foundation, either version 3 of the License, or\n#   (at your option) any later version.\n#\n#   This program is distributed in the hope that it will be useful,\n#   but WITHOUT ANY WARRANTY; without even the implied warranty of\n#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n#   GNU General Public License for more details.\n#\n#   You should have received a copy of the GNU General Public License\n#   along with this program.  If not, see <http://www.gnu.org/licenses/>.\n#\nv=`echo \"\" ; echo \"\" ; echo \"\"`\necho \"'$v'\"\nv=`echo -n \" ab \"`\necho \"'$v'\"\nv=`echo -n \" \"`\necho \"'$v'\"\nv=`echo -n \"\"`\necho \"'$v'\"\nv=`echo \"\"`\necho \"'$v'\"\nv=`echo`\necho \"'$v'\"\nv=`echo ababababababab`\necho \"'$v'\"\nv=`echo \"ababababababab  \"`\necho \"'$v'\"\nv=`echo -n \"ababababababab  \"`\necho \"'$v'\"\nv=`echo -ne \"abababa\\nbababab  \"`\necho \"'$v'\"\nv=\"`echo -e '\\n\\n\\n\\n'`\"\necho \"'$v'\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "''\n' ab '\n' '\n''\n''\n''\n'ababababababab'\n'ababababababab  '\n'ababababababab  '\n'abababa\nbababab  '\n''\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "''\n' ab '\n' '\n''\n''\n''\n'ababababababab'\n'ababababababab  '\n'ababababababab  '\n'abababa\nbababab  '\n''\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  }
+ ]
+}

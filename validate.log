@@ -1,0 +1,25 @@
+== main rubash ==
+PASS un02 (unset)
+PASS un03 (unset)
+TOTAL 306 PASS 304 FAIL 2 (known-stable: gl08,ms10; new: -)
+== selfcheck gnu ==
+PASS un02 (unset)
+PASS un03 (unset)
+TOTAL 306 PASS 306 FAIL 0 (known-stable: -; new: -)
+== pilot rubash ==
+PASS gnu-appendop (gnu)
+PASS gnu-casemod (gnu)
+PASS gnu-herestr (gnu)
+PASS gnu-invert (gnu)
+PASS gnu-set-x (gnu)
+PASS gnu-strip (gnu)
+TOTAL 6 PASS 6 FAIL 0 (known-stable: -; new: -)
+== pilot selfcheck ==
+PASS gnu-appendop (gnu)
+PASS gnu-casemod (gnu)
+PASS gnu-herestr (gnu)
+PASS gnu-invert (gnu)
+PASS gnu-set-x (gnu)
+PASS gnu-strip (gnu)
+TOTAL 6 PASS 6 FAIL 0 (known-stable: -; new: -)
+ALLDONE

@@ -1,0 +1,28 @@
+# diffcorpus domain: builtin (24 cases)
+# Imported by tools/import_sources.py; scripts are byte-identical to their sources.
+CASES = [
+('bi01', 'builtin', 'printf \'%q\\n\' "a b" "it\'s" $\'t\\tn\' "" "a=b"; printf \'%s|%05d|%-8s|\\n\' x 42 hi'),
+('bi02', 'builtin', "printf '%( %Y-%m-%d %H:%M:%S)T\\n' 0; TZ=UTC printf '%(%Y-%m-%d)T\\n' 86400; printf '%d %i %u %o %x %X\\n' 255 255 -1 8 255 255"),
+('bi03', 'builtin', "printf 'a%db%dc' 1 2 3; echo; printf '%s-%s\\n' only; printf '%.2f %.0f %e %g\\n' 3.14159 2.5 12345.678 0.00001234"),
+('bi04', 'builtin', 'printf -v out \'[%03d]\' 7; echo "$out"; printf -v out \'%s\' a b c; echo "$out"; echo -n "noeol"; echo; echo -e \'x\\ty\\\\z\'; echo -E \'x\\ty\' '),
+('bi05', 'builtin', '[ 1 -eq 1 -a 2 -eq 2 ]; echo a=$?; [ 1 -eq 2 -o 2 -eq 2 ]; echo o=$?; [ ! -f /etc/passwd ]; echo n=$?; [ \\( 1 -eq 1 \\) -a ! \\( 2 -eq 2 \\) ]; echo p=$?; [ abc \\< abd ]; echo s=$?; [ -v PATH ]; echo v=$?'),
+('bi06', 'builtin', 'test -z "" -o -n x; echo r1=$?; test a = a -a b = b -o c = d; echo r2=$?; test ! ! true; echo r3=$? 2>&1; [[ a == a* && b != c ]]; echo r4=$?'),
+('bi07', 'builtin', 'printf \'a b c\\n\' | { read -a arr; echo "n=${#arr[@]} ${arr[@]}"; }; printf \'x:y:z\' | { IFS=: read -ra arr; echo "${arr[@]}"; }; printf \'no-newline\' | { read v; echo "rc=$? v=[$v]"; }'),
+('bi08', 'builtin', 'printf \'abcdef\' | { read -n 3 v; echo "n3=[$v]"; }; printf \'line\\n\' | { read -t 0 v; echo "t0rc=$? v=[$v]"; }; printf \'\' | { read -d \'\' v; echo "drc=$?"; }'),
+('bi09', 'builtin', 'mapfile -t lines < <(printf \'a\\nb\\nc\'); echo "n=${#lines[@]} ${lines[@]}"; mapfile -d : -t parts < <(printf \'x:y:z\'); echo "p=${parts[@]} pn=${#parts[@]}"; mapfile -n 2 -t two < <(printf \'1\\n2\\n3\\n\'); echo "two=${two[@]}"'),
+('bi10', 'builtin', 'cb() { echo "cb:$2"; }; mapfile -c 2 -C cb arr < <(printf \'a\\nb\\nc\\nd\\n\'); echo "arr=${arr[@]}"'),
+('bi11', 'builtin', 'let \'x=2+3\' \'y=x*2\'; echo "$x $y"; let z=0; echo "let0rc=$? z=$z"; let \'a++\'; echo "arc=$? a=$a"'),
+('bi12', 'builtin', 'command -v printf; echo rc=$?; command -V printf; type printf; type -t cd; type -a echo | head -3; hash -l 2>&1 | head -2; echo done'),
+('bi13', 'builtin', 'echo $RANDOM >/dev/null; v1=$SECONDS; echo "sec-type:${v1}"; printf \'%b\\n\' \'a\\tb\\nc\'; printf \'%c%c%c\\n\' abc 65 xyz'),
+('bi14', 'builtin', 'read -r a b c <<< "one two three four"; echo "a=$a b=$b c=$c"; IFS=, read -r a b <<< "x,y,z"; echo "a=$a b=$b"; read -r a <<< "  spaced  "; echo "a=[$a]"'),
+('bi15', 'builtin', '[[ "abc def" =~ ^([a-z]+)[[:space:]]([a-z]+)$ ]]; echo "m=${BASH_REMATCH[@]} n=${#BASH_REMATCH[@]}"; [[ "abc" =~ (z) ]]; echo "nomatch rc=$? rem=[${BASH_REMATCH[@]}]"'),
+('mf01', 'builtin', 'mapfile -O 2 -t a < <(printf \'x\\ny\\nz\\n\'); a=(p); mapfile -O 1 -t a < <(printf \'x\\ny\\n\'); echo "a=${a[@]} n=${#a[@]}"'),
+('mf02', 'builtin', 'mapfile -s 1 -n 1 -t a < <(printf \'l1\\nl2\\nl3\\n\'); echo "a=${a[@]}"; mapfile -d \'\' -t z < <(printf \'a\\0b\\0c\'); echo "z=${z[@]} n=${#z[@]}"'),
+('mf03', 'builtin', 'cb() { printf \'cb idx=%s line=<%s>\\n\' "$1" "$2"; }; mapfile -C cb -c 1 arr < <(printf \'one\\ntwo\\n\'); echo "arr=${arr[@]}"'),
+('mf04', 'builtin', 'exec 3< <(printf \'f1\\nf2\\n\'); mapfile -u 3 -t a; echo "a=${a[@]}"; exec 3<&-; printf \'data\' | { read -N 2 v; echo "N2=[$v]"; read -N 2 w; echo "N2b=[$w]"; }'),
+('mf05', 'builtin', 'printf \'a b \\n\' | { read -a arr; echo "n=${#arr[@]} <${arr[@]}>"; }; printf \'  lead trail  \\n\' | { read -a arr; echo "n2=${#arr[@]}"; }; IFS=: read -a arr <<< "x::y:"; echo "colon n=${#arr[@]} [${arr[1]}]"'),
+('mf06', 'builtin', 'printf \'x\' | { read -t 0.2 v; echo "rc=$? v=[$v]"; }; exec 3<&0; read -u 3 -t 0 v < /dev/null; echo "fdrc=$?"'),
+('pf201', 'builtin', 'printf \'%d\\n\' abc 2>&1; echo "rc=$?"; printf \'%d %d\\n\' 12abc 0x10 2>&1; printf \'%s\\n\' \'a\\b\' ; printf \'%b\\n\' \'a\\cb\' ; echo after-b'),
+('pf202', 'builtin', 'printf -v \'arr[1]\' \'val-%d\' 9; echo "arr1=${arr[1]} n=${#arr[@]}"; printf \'%*d|\\n\' -6 42; printf \'%.*f\\n\' 2 3.14159; printf \'%%|%q|\\n\' "a\'b"'),
+('pf203', 'builtin', "printf '%( %s )T\\n' 2>&1; echo rc=$?; printf '%(-1)T\\n' 2>&1 | head -1; printf '%(now)T' -2 2>&1 ; echo; printf '%c\\n' '' "),
+]

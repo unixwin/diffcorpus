@@ -1,0 +1,2067 @@
+{
+ "source": "GNU bash 5.3 official tests (build-gnu/bash-5.3/tests)",
+ "oracle": "GNU bash 5.3.20",
+ "files": 83,
+ "entries": [
+  {
+   "name": "alias",
+   "lines": 76,
+   "has_right": true,
+   "right_lines": 64,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 7,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "alias1.sub",
+     "alias2.sub",
+     "alias3.sub",
+     "alias4.sub",
+     "alias5.sub",
+     "alias6.sub",
+     "alias7.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "builtin",
+   "pilot": false
+  },
+  {
+   "name": "appendop",
+   "lines": 101,
+   "has_right": true,
+   "right_lines": 28,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 2,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "appendop1.sub",
+     "appendop2.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "array",
+   "pilot": true,
+   "pilot_case_id": "gnu-appendop",
+   "pilot_transforms": [
+    "keep file whole (GPL header comments are inert)",
+    "inline appendop1.sub as subshell",
+    "inline appendop2.sub as subshell"
+   ],
+   "right_md5": "ddad4c892bc5776745afd8c253583536"
+  },
+  {
+   "name": "arith-for",
+   "lines": 147,
+   "has_right": true,
+   "right_lines": 96,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 2,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "arith",
+   "pilot": false
+  },
+  {
+   "name": "arith",
+   "lines": 359,
+   "has_right": true,
+   "right_lines": 369,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 10,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "arith1.sub",
+     "arith10.sub",
+     "arith2.sub",
+     "arith3.sub",
+     "arith4.sub",
+     "arith5.sub",
+     "arith6.sub",
+     "arith7.sub",
+     "arith8.sub",
+     "arith9.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "arith",
+   "pilot": false
+  },
+  {
+   "name": "array",
+   "lines": 461,
+   "has_right": true,
+   "right_lines": 852,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 33,
+    "recho": 11,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "array1.sub",
+     "array10.sub",
+     "array11.sub",
+     "array12.sub",
+     "array13.sub",
+     "array14.sub",
+     "array15.sub",
+     "array16.sub",
+     "array17.sub",
+     "array18.sub",
+     "array19.sub",
+     "array2.sub",
+     "array20.sub",
+     "array21.sub",
+     "array22.sub",
+     "array23.sub",
+     "array24.sub",
+     "array25.sub",
+     "array26.sub",
+     "array27.sub",
+     "array28.sub",
+     "array29.sub",
+     "array3.sub",
+     "array30.sub",
+     "array31.sub",
+     "array32.sub",
+     "array33.sub",
+     "array4.sub",
+     "array5.sub",
+     "array6.sub",
+     "array7.sub",
+     "array8.sub",
+     "array9.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "array",
+   "pilot": false
+  },
+  {
+   "name": "assoc",
+   "lines": 276,
+   "has_right": true,
+   "right_lines": 409,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 19,
+    "recho": 22,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "assoc1.sub",
+     "assoc10.sub",
+     "assoc11.sub",
+     "assoc12.sub",
+     "assoc13.sub",
+     "assoc14.sub",
+     "assoc15.sub",
+     "assoc16.sub",
+     "assoc17.sub",
+     "assoc18.sub",
+     "assoc19.sub",
+     "assoc2.sub",
+     "assoc3.sub",
+     "assoc4.sub",
+     "assoc5.sub",
+     "assoc6.sub",
+     "assoc7.sub",
+     "assoc8.sub",
+     "assoc9.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "array",
+   "pilot": false
+  },
+  {
+   "name": "attr",
+   "lines": 55,
+   "has_right": true,
+   "right_lines": 37,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 2,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "attr1.sub",
+     "attr2.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "declare",
+   "pilot": false
+  },
+  {
+   "name": "braces",
+   "lines": 177,
+   "has_right": true,
+   "right_lines": 102,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 0,
+    "recho": 2,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "param",
+   "pilot": false
+  },
+  {
+   "name": "builtins",
+   "lines": 327,
+   "has_right": true,
+   "right_lines": 506,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 18,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "builtins1.sub",
+     "builtins10.sub",
+     "builtins11.sub",
+     "builtins12.sub",
+     "builtins2.sub",
+     "builtins3.sub",
+     "builtins4.sub",
+     "builtins5.sub",
+     "builtins6.sub",
+     "builtins7.sub",
+     "builtins8.sub",
+     "builtins9.sub",
+     "source1.sub",
+     "source2.sub",
+     "source3.sub",
+     "source4.sub",
+     "source5.sub",
+     "source6.sub",
+     "source7.sub",
+     "source8.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "builtin",
+   "pilot": false
+  },
+  {
+   "name": "case",
+   "lines": 83,
+   "has_right": true,
+   "right_lines": 66,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 4,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "case1.sub",
+     "case2.sub",
+     "case3.sub",
+     "case4.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "case",
+   "pilot": false
+  },
+  {
+   "name": "casemod",
+   "lines": 130,
+   "has_right": true,
+   "right_lines": 49,
+   "class": "A",
+   "class_reason": "self-contained",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "param",
+   "pilot": true,
+   "pilot_case_id": "gnu-casemod",
+   "pilot_transforms": [
+    "keep file whole (GPL header comments are inert)"
+   ],
+   "right_md5": "7e839d2484de413389ac9420aed51d2e"
+  },
+  {
+   "name": "complete",
+   "lines": 160,
+   "has_right": true,
+   "right_lines": 387,
+   "class": "C",
+   "class_reason": "interactive completion/readline premise",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "comsub-eof",
+   "lines": 14,
+   "has_right": true,
+   "right_lines": 19,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 7,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "comsub-eof0.sub",
+     "comsub-eof1.sub",
+     "comsub-eof2.sub",
+     "comsub-eof3.sub",
+     "comsub-eof4.sub",
+     "comsub-eof5.sub",
+     "comsub-eof6.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "quote",
+   "pilot": false
+  },
+  {
+   "name": "comsub-posix",
+   "lines": 287,
+   "has_right": true,
+   "right_lines": 100,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 6,
+    "recho": 4,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "comsub-posix1.sub",
+     "comsub-posix2.sub",
+     "comsub-posix3.sub",
+     "comsub-posix4.sub",
+     "comsub-posix5.sub",
+     "comsub-posix6.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "comsub",
+   "lines": 110,
+   "has_right": true,
+   "right_lines": 97,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 7,
+    "recho": 14,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "comsub1.sub",
+     "comsub2.sub",
+     "comsub3.sub",
+     "comsub4.sub",
+     "comsub5.sub",
+     "comsub6.sub",
+     "comsub7.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "quote",
+   "pilot": false
+  },
+  {
+   "name": "comsub2",
+   "lines": 154,
+   "has_right": true,
+   "right_lines": 192,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 6,
+    "recho": 2,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "comsub21.sub",
+     "comsub22.sub",
+     "comsub23.sub",
+     "comsub24.sub",
+     "comsub25.sub",
+     "comsub26.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "quote",
+   "pilot": false
+  },
+  {
+   "name": "cond",
+   "lines": 249,
+   "has_right": true,
+   "right_lines": 191,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 5,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "cond-error1.sub",
+     "cond-regexp1.sub",
+     "cond-regexp2.sub",
+     "cond-regexp3.sub",
+     "cond-xtrace1.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "builtin",
+   "pilot": false
+  },
+  {
+   "name": "coproc",
+   "lines": 79,
+   "has_right": true,
+   "right_lines": 10,
+   "class": "A",
+   "class_reason": "self-contained",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "procsub",
+   "pilot": false
+  },
+  {
+   "name": "cprint",
+   "lines": 81,
+   "has_right": true,
+   "right_lines": 72,
+   "class": "A",
+   "class_reason": "self-contained",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "dbg-support",
+   "lines": 153,
+   "has_right": true,
+   "right_lines": 374,
+   "class": "C",
+   "class_reason": "needs a debugger-enabled bash build (oracle build lacks it)",
+   "markers": {
+    "this_sh": 1,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "dbg-support.sub",
+     "dbg-support3.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "dbg-support2",
+   "lines": 34,
+   "has_right": true,
+   "right_lines": 7,
+   "class": "C",
+   "class_reason": "needs a debugger-enabled bash build (oracle build lacks it)",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "dstack",
+   "lines": 101,
+   "has_right": true,
+   "right_lines": 55,
+   "class": "A",
+   "class_reason": "self-contained; touches locale vars (class kept, locale sensitivity annotated)",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": true,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "cd",
+   "pilot": false
+  },
+  {
+   "name": "dstack2",
+   "lines": 50,
+   "has_right": true,
+   "right_lines": 24,
+   "class": "A",
+   "class_reason": "self-contained",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "cd",
+   "pilot": false
+  },
+  {
+   "name": "dynvar",
+   "lines": 127,
+   "has_right": true,
+   "right_lines": 15,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers); touches locale vars (class kept, locale sensitivity annotated)",
+   "markers": {
+    "this_sh": 1,
+    "recho": 0,
+    "locale": true,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "param",
+   "pilot": false
+  },
+  {
+   "name": "errors",
+   "lines": 398,
+   "has_right": true,
+   "right_lines": 346,
+   "class": "C",
+   "class_reason": "references /dev/tty or pty",
+   "markers": {
+    "this_sh": 29,
+    "recho": 0,
+    "locale": true,
+    "tty": true,
+    "subs": [
+     "errors1.sub",
+     "errors10.sub",
+     "errors11.sub",
+     "errors12.sub",
+     "errors2.sub",
+     "errors3.sub",
+     "errors4.sub",
+     "errors5.sub",
+     "errors6.sub",
+     "errors7.sub",
+     "errors8.sub",
+     "errors9.sub"
+    ],
+    "fixtures": [
+     "h.in"
+    ],
+    "bash_tstout": false
+   },
+   "overlap_domain": "syntax",
+   "pilot": false
+  },
+  {
+   "name": "exp",
+   "lines": 436,
+   "has_right": true,
+   "right_lines": 435,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 14,
+    "recho": 115,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "exp1.sub",
+     "exp10.sub",
+     "exp11.sub",
+     "exp12.sub",
+     "exp13.sub",
+     "exp2.sub",
+     "exp3.sub",
+     "exp4.sub",
+     "exp5.sub",
+     "exp6.sub",
+     "exp7.sub",
+     "exp8.sub",
+     "exp9.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "param",
+   "pilot": false
+  },
+  {
+   "name": "exportfunc",
+   "lines": 94,
+   "has_right": true,
+   "right_lines": 14,
+   "class": "C",
+   "class_reason": "references /dev/tty or pty",
+   "markers": {
+    "this_sh": 19,
+    "recho": 0,
+    "locale": false,
+    "tty": true,
+    "subs": [
+     "exportfunc1.sub",
+     "exportfunc2.sub",
+     "exportfunc3.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "func",
+   "pilot": false
+  },
+  {
+   "name": "extglob",
+   "lines": 397,
+   "has_right": true,
+   "right_lines": 191,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers); touches locale vars (class kept, locale sensitivity annotated)",
+   "markers": {
+    "this_sh": 8,
+    "recho": 1,
+    "locale": true,
+    "tty": false,
+    "subs": [
+     "extglob1.sub",
+     "extglob1a.sub",
+     "extglob3.sub",
+     "extglob4.sub",
+     "extglob5.sub",
+     "extglob6.sub",
+     "extglob7.sub",
+     "extglob8.sub"
+    ],
+    "fixtures": [
+     "Makefile.in"
+    ],
+    "bash_tstout": false
+   },
+   "overlap_domain": "glob",
+   "pilot": false
+  },
+  {
+   "name": "extglob2",
+   "lines": 104,
+   "has_right": true,
+   "right_lines": 70,
+   "class": "A",
+   "class_reason": "self-contained",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "glob",
+   "pilot": false
+  },
+  {
+   "name": "extglob3",
+   "lines": 70,
+   "has_right": true,
+   "right_lines": 27,
+   "class": "A",
+   "class_reason": "self-contained",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "glob",
+   "pilot": false
+  },
+  {
+   "name": "func",
+   "lines": 214,
+   "has_right": true,
+   "right_lines": 262,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 7,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "func1.sub",
+     "func2.sub",
+     "func3.sub",
+     "func4.sub",
+     "func5.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "func",
+   "pilot": false
+  },
+  {
+   "name": "getopts",
+   "lines": 57,
+   "has_right": true,
+   "right_lines": 70,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 18,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "getopts1.sub",
+     "getopts10.sub",
+     "getopts2.sub",
+     "getopts3.sub",
+     "getopts4.sub",
+     "getopts5.sub",
+     "getopts6.sub",
+     "getopts7.sub",
+     "getopts8.sub",
+     "getopts9.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "getopts",
+   "pilot": false
+  },
+  {
+   "name": "glob-bracket",
+   "lines": 310,
+   "has_right": true,
+   "right_lines": 103,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers); touches locale vars (class kept, locale sensitivity annotated)",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": true,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": true
+   },
+   "overlap_domain": "glob",
+   "pilot": false
+  },
+  {
+   "name": "glob",
+   "lines": 412,
+   "has_right": true,
+   "right_lines": 279,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers); touches locale vars (class kept, locale sensitivity annotated)",
+   "markers": {
+    "this_sh": 11,
+    "recho": 36,
+    "locale": true,
+    "tty": false,
+    "subs": [
+     "glob1.sub",
+     "glob10.sub",
+     "glob11.sub",
+     "glob2.sub",
+     "glob3.sub",
+     "glob4.sub",
+     "glob5.sub",
+     "glob6.sub",
+     "glob7.sub",
+     "glob8.sub",
+     "glob9.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "glob",
+   "pilot": false
+  },
+  {
+   "name": "globstar",
+   "lines": 57,
+   "has_right": true,
+   "right_lines": 587,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers); touches locale vars (class kept, locale sensitivity annotated)",
+   "markers": {
+    "this_sh": 3,
+    "recho": 0,
+    "locale": true,
+    "tty": false,
+    "subs": [
+     "globstar1.sub",
+     "globstar2.sub",
+     "globstar3.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "glob",
+   "pilot": false
+  },
+  {
+   "name": "heredoc",
+   "lines": 185,
+   "has_right": true,
+   "right_lines": 168,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 11,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "heredoc1.sub",
+     "heredoc10.sub",
+     "heredoc2.sub",
+     "heredoc3.sub",
+     "heredoc4.sub",
+     "heredoc5.sub",
+     "heredoc6.sub",
+     "heredoc7.sub",
+     "heredoc8.sub",
+     "heredoc9.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "redir",
+   "pilot": false
+  },
+  {
+   "name": "herestr",
+   "lines": 81,
+   "has_right": true,
+   "right_lines": 38,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 1,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "herestr1.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "redir",
+   "pilot": true,
+   "pilot_case_id": "gnu-herestr",
+   "pilot_transforms": [
+    "keep file whole (GPL header comments are inert)",
+    "inline herestr1.sub as subshell"
+   ],
+   "right_md5": "0b27f4a43c9ec59d8e229781b85b57f8"
+  },
+  {
+   "name": "histexp",
+   "lines": 163,
+   "has_right": true,
+   "right_lines": 253,
+   "class": "C",
+   "class_reason": "interactive history expansion premise",
+   "markers": {
+    "this_sh": 7,
+    "recho": 0,
+    "locale": true,
+    "tty": false,
+    "subs": [
+     "histexp1.sub",
+     "histexp2.sub",
+     "histexp3.sub",
+     "histexp4.sub",
+     "histexp5.sub",
+     "histexp6.sub",
+     "histexp7.sub"
+    ],
+    "fixtures": [
+     "history.list"
+    ],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "history",
+   "lines": 138,
+   "has_right": true,
+   "right_lines": 396,
+   "class": "C",
+   "class_reason": "interactive history/readline premise",
+   "markers": {
+    "this_sh": 9,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "history1.sub",
+     "history2.sub",
+     "history3.sub",
+     "history4.sub",
+     "history5.sub",
+     "history6.sub",
+     "history7.sub",
+     "history8.sub",
+     "history9.sub"
+    ],
+    "fixtures": [
+     "history.list"
+    ],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "ifs-posix",
+   "lines": 271,
+   "has_right": true,
+   "right_lines": 1,
+   "class": "A",
+   "class_reason": "self-contained",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "ifs",
+   "lines": 77,
+   "has_right": true,
+   "right_lines": 12,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 1,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "ifs1.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "ifs",
+   "pilot": false
+  },
+  {
+   "name": "intl",
+   "lines": 71,
+   "has_right": true,
+   "right_lines": 67,
+   "class": "C",
+   "class_reason": "dedicated locale suite; needs specific locales installed",
+   "markers": {
+    "this_sh": 7,
+    "recho": 0,
+    "locale": true,
+    "tty": false,
+    "subs": [
+     "intl1.sub",
+     "intl2.sub",
+     "intl3.sub",
+     "intl4.sub",
+     "unicode1.sub",
+     "unicode2.sub",
+     "unicode3.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "invert",
+   "lines": 33,
+   "has_right": true,
+   "right_lines": 10,
+   "class": "A",
+   "class_reason": "self-contained",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "status",
+   "pilot": true,
+   "pilot_case_id": "gnu-invert",
+   "pilot_transforms": [
+    "keep file whole (GPL header comments are inert)"
+   ],
+   "right_md5": "08956d7fbd85b43a1b2b4c92df49fb8b"
+  },
+  {
+   "name": "invocation",
+   "lines": 79,
+   "has_right": true,
+   "right_lines": 104,
+   "class": "C",
+   "class_reason": "startup-file/login-shell harness premise",
+   "markers": {
+    "this_sh": 18,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "invocation1.sub",
+     "invocation2.sub",
+     "invocation3.sub"
+    ],
+    "fixtures": [
+     "x23.in"
+    ],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "iquote",
+   "lines": 159,
+   "has_right": true,
+   "right_lines": 92,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 1,
+    "recho": 46,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "iquote1.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "quote",
+   "pilot": false
+  },
+  {
+   "name": "jobs",
+   "lines": 234,
+   "has_right": true,
+   "right_lines": 131,
+   "class": "C",
+   "class_reason": "interactive job control (fg/bg/suspend, tty)",
+   "markers": {
+    "this_sh": 10,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "jobs1.sub",
+     "jobs2.sub",
+     "jobs3.sub",
+     "jobs4.sub",
+     "jobs5.sub",
+     "jobs6.sub",
+     "jobs7.sub",
+     "jobs8.sub",
+     "jobs9.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "lastpipe",
+   "lines": 78,
+   "has_right": true,
+   "right_lines": 23,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 3,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "lastpipe1.sub",
+     "lastpipe2.sub",
+     "lastpipe3.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "status",
+   "pilot": false
+  },
+  {
+   "name": "mapfile",
+   "lines": 63,
+   "has_right": true,
+   "right_lines": 170,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 2,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "mapfile1.sub",
+     "mapfile2.sub"
+    ],
+    "fixtures": [
+     "mapfile.data"
+    ],
+    "bash_tstout": false
+   },
+   "overlap_domain": "builtin",
+   "pilot": false
+  },
+  {
+   "name": "more-exp",
+   "lines": 518,
+   "has_right": true,
+   "right_lines": 214,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 0,
+    "recho": 186,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "param",
+   "pilot": false
+  },
+  {
+   "name": "nameref",
+   "lines": 134,
+   "has_right": true,
+   "right_lines": 588,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 1,
+    "recho": 6,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "func",
+   "pilot": false
+  },
+  {
+   "name": "new-exp",
+   "lines": 672,
+   "has_right": true,
+   "right_lines": 810,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 17,
+    "recho": 197,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "new-exp1.sub",
+     "new-exp10.sub",
+     "new-exp11.sub",
+     "new-exp12.sub",
+     "new-exp13.sub",
+     "new-exp14.sub",
+     "new-exp15.sub",
+     "new-exp16.sub",
+     "new-exp2.sub",
+     "new-exp3.sub",
+     "new-exp4.sub",
+     "new-exp5.sub",
+     "new-exp6.sub",
+     "new-exp7.sub",
+     "new-exp8.sub",
+     "new-exp9.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "param",
+   "pilot": false
+  },
+  {
+   "name": "nquote",
+   "lines": 143,
+   "has_right": true,
+   "right_lines": 80,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 5,
+    "recho": 27,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "nquote1.sub",
+     "nquote2.sub",
+     "nquote3.sub",
+     "nquote4.sub",
+     "nquote5.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "quote",
+   "pilot": false
+  },
+  {
+   "name": "nquote1",
+   "lines": 120,
+   "has_right": true,
+   "right_lines": 131,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 0,
+    "recho": 51,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "quote",
+   "pilot": false
+  },
+  {
+   "name": "nquote2",
+   "lines": 96,
+   "has_right": true,
+   "right_lines": 76,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 0,
+    "recho": 56,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "quote",
+   "pilot": false
+  },
+  {
+   "name": "nquote3",
+   "lines": 99,
+   "has_right": true,
+   "right_lines": 60,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 0,
+    "recho": 48,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "quote",
+   "pilot": false
+  },
+  {
+   "name": "nquote4",
+   "lines": 38,
+   "has_right": true,
+   "right_lines": 18,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 0,
+    "recho": 18,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "quote",
+   "pilot": false
+  },
+  {
+   "name": "nquote5",
+   "lines": 77,
+   "has_right": true,
+   "right_lines": 86,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 0,
+    "recho": 31,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "quote",
+   "pilot": false
+  },
+  {
+   "name": "parser",
+   "lines": 17,
+   "has_right": true,
+   "right_lines": 20,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 3,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "parser1.sub",
+     "posix2syntax.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "syntax",
+   "pilot": false
+  },
+  {
+   "name": "posix2",
+   "lines": 207,
+   "has_right": true,
+   "right_lines": 4,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 1,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "posixexp",
+   "lines": 98,
+   "has_right": true,
+   "right_lines": 308,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 12,
+    "recho": 19,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "posixexp1.sub",
+     "posixexp2.sub",
+     "posixexp3.sub",
+     "posixexp4.sub",
+     "posixexp5.sub",
+     "posixexp6.sub",
+     "posixexp7.sub",
+     "posixexp8.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "posixexp2",
+   "lines": 61,
+   "has_right": true,
+   "right_lines": 40,
+   "class": "A",
+   "class_reason": "self-contained",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "posixpat",
+   "lines": 248,
+   "has_right": true,
+   "right_lines": 42,
+   "class": "A",
+   "class_reason": "self-contained; touches locale vars (class kept, locale sensitivity annotated)",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": true,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "glob",
+   "pilot": false
+  },
+  {
+   "name": "posixpipe",
+   "lines": 64,
+   "has_right": true,
+   "right_lines": 45,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 1,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "precedence",
+   "lines": 91,
+   "has_right": false,
+   "right_lines": 0,
+   "class": "A",
+   "class_reason": "self-contained",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "misc",
+   "pilot": false
+  },
+  {
+   "name": "printf",
+   "lines": 399,
+   "has_right": true,
+   "right_lines": 392,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers); touches locale vars (class kept, locale sensitivity annotated)",
+   "markers": {
+    "this_sh": 7,
+    "recho": 0,
+    "locale": true,
+    "tty": false,
+    "subs": [
+     "printf1.sub",
+     "printf2.sub",
+     "printf3.sub",
+     "printf4.sub",
+     "printf5.sub",
+     "printf6.sub",
+     "printf7.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "builtin",
+   "pilot": false
+  },
+  {
+   "name": "procsub",
+   "lines": 122,
+   "has_right": true,
+   "right_lines": 33,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 3,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "procsub1.sub",
+     "procsub2.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "procsub",
+   "pilot": false
+  },
+  {
+   "name": "quote",
+   "lines": 147,
+   "has_right": true,
+   "right_lines": 184,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 6,
+    "recho": 15,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "quote1.sub",
+     "quote2.sub",
+     "quote3.sub",
+     "quote4.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "quote",
+   "pilot": false
+  },
+  {
+   "name": "quotearray",
+   "lines": 165,
+   "has_right": true,
+   "right_lines": 152,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers); touches locale vars (class kept, locale sensitivity annotated)",
+   "markers": {
+    "this_sh": 5,
+    "recho": 0,
+    "locale": true,
+    "tty": false,
+    "subs": [
+     "quotearray1.sub",
+     "quotearray2.sub",
+     "quotearray3.sub",
+     "quotearray4.sub",
+     "quotearray5.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "array",
+   "pilot": false
+  },
+  {
+   "name": "read",
+   "lines": 137,
+   "has_right": true,
+   "right_lines": 108,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 10,
+    "recho": 14,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "read1.sub",
+     "read10.sub",
+     "read2.sub",
+     "read3.sub",
+     "read4.sub",
+     "read5.sub",
+     "read6.sub",
+     "read7.sub",
+     "read8.sub",
+     "read9.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "builtin",
+   "pilot": false
+  },
+  {
+   "name": "redir",
+   "lines": 225,
+   "has_right": true,
+   "right_lines": 184,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers); touches locale vars (class kept, locale sensitivity annotated)",
+   "markers": {
+    "this_sh": 12,
+    "recho": 0,
+    "locale": true,
+    "tty": false,
+    "subs": [
+     "redir1.sub",
+     "redir10.sub",
+     "redir11.sub",
+     "redir12.sub",
+     "redir3.sub",
+     "redir4.sub",
+     "redir5.sub",
+     "redir6.sub",
+     "redir7.sub",
+     "redir8.sub",
+     "redir9.sub"
+    ],
+    "fixtures": [
+     "redir13.in",
+     "redir3.in1",
+     "redir4.in1"
+    ],
+    "bash_tstout": false
+   },
+   "overlap_domain": "redir",
+   "pilot": false
+  },
+  {
+   "name": "rhs-exp",
+   "lines": 65,
+   "has_right": true,
+   "right_lines": 105,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 1,
+    "recho": 34,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "rhs-exp1.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "param",
+   "pilot": false
+  },
+  {
+   "name": "rsh",
+   "lines": 51,
+   "has_right": true,
+   "right_lines": 20,
+   "class": "C",
+   "class_reason": "restricted-shell invocation harness premise",
+   "markers": {
+    "this_sh": 2,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "rsh1.sub",
+     "rsh2.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "",
+   "pilot": false
+  },
+  {
+   "name": "set-e",
+   "lines": 138,
+   "has_right": true,
+   "right_lines": 74,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 3,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "set-e1.sub",
+     "set-e2.sub",
+     "set-e3.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "trap",
+   "pilot": false
+  },
+  {
+   "name": "set-x",
+   "lines": 44,
+   "has_right": true,
+   "right_lines": 72,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 2,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "set-x1.sub",
+     "set-x2.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "misc",
+   "pilot": true,
+   "pilot_case_id": "gnu-set-x",
+   "pilot_transforms": [
+    "keep file whole (GPL header comments are inert)",
+    "inline set-x1.sub as subshell",
+    "inline set-x2.sub as subshell"
+   ],
+   "right_md5": "ac9976f2805a24cece6e07e189d8df49"
+  },
+  {
+   "name": "shopt",
+   "lines": 114,
+   "has_right": true,
+   "right_lines": 314,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 2,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "shopt1.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "builtin",
+   "pilot": false
+  },
+  {
+   "name": "strip",
+   "lines": 36,
+   "has_right": true,
+   "right_lines": 12,
+   "class": "A",
+   "class_reason": "self-contained",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "param",
+   "pilot": true,
+   "pilot_case_id": "gnu-strip",
+   "pilot_transforms": [
+    "keep file whole (GPL header comments are inert)"
+   ],
+   "right_md5": "abebfc302020c95d38636742cb1561db"
+  },
+  {
+   "name": "test",
+   "lines": 509,
+   "has_right": true,
+   "right_lines": 338,
+   "class": "C",
+   "class_reason": "references /dev/tty or pty",
+   "markers": {
+    "this_sh": 4,
+    "recho": 0,
+    "locale": false,
+    "tty": true,
+    "subs": [
+     "test1.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "builtin",
+   "pilot": false
+  },
+  {
+   "name": "tilde",
+   "lines": 96,
+   "has_right": true,
+   "right_lines": 29,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 0,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "tilde3.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "param",
+   "pilot": false
+  },
+  {
+   "name": "tilde2",
+   "lines": 86,
+   "has_right": true,
+   "right_lines": 28,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 1,
+    "recho": 2,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "tilde3.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "param",
+   "pilot": false
+  },
+  {
+   "name": "trap",
+   "lines": 140,
+   "has_right": true,
+   "right_lines": 138,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 7,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "trap1.sub",
+     "trap2.sub",
+     "trap3.sub",
+     "trap4.sub",
+     "trap5.sub",
+     "trap6.sub",
+     "trap7.sub",
+     "trap8.sub",
+     "trap9.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "trap",
+   "pilot": false
+  },
+  {
+   "name": "type",
+   "lines": 112,
+   "has_right": true,
+   "right_lines": 147,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 8,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "type1.sub",
+     "type2.sub",
+     "type3.sub",
+     "type4.sub",
+     "type5.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "builtin",
+   "pilot": false
+  },
+  {
+   "name": "varenv",
+   "lines": 269,
+   "has_right": true,
+   "right_lines": 363,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 25,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "varenv1.sub",
+     "varenv10.sub",
+     "varenv11.sub",
+     "varenv12.sub",
+     "varenv13.sub",
+     "varenv14.sub",
+     "varenv15.sub",
+     "varenv16.sub",
+     "varenv17.sub",
+     "varenv18.sub",
+     "varenv19.sub",
+     "varenv2.sub",
+     "varenv20.sub",
+     "varenv21.sub",
+     "varenv22.sub",
+     "varenv23.sub",
+     "varenv24.sub",
+     "varenv25.sub",
+     "varenv3.sub",
+     "varenv4.sub",
+     "varenv5.sub",
+     "varenv6.sub",
+     "varenv7.sub",
+     "varenv8.sub",
+     "varenv9.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "env",
+   "pilot": false
+  },
+  {
+   "name": "vredir",
+   "lines": 65,
+   "has_right": true,
+   "right_lines": 123,
+   "class": "B",
+   "class_reason": "needs converter transforms (THIS_SH/.sub/fixtures/recho/PATH helpers)",
+   "markers": {
+    "this_sh": 8,
+    "recho": 0,
+    "locale": false,
+    "tty": false,
+    "subs": [
+     "vredir1.sub",
+     "vredir2.sub",
+     "vredir3.sub",
+     "vredir4.sub",
+     "vredir5.sub",
+     "vredir6.sub",
+     "vredir7.sub",
+     "vredir8.sub"
+    ],
+    "fixtures": [],
+    "bash_tstout": false
+   },
+   "overlap_domain": "param",
+   "pilot": false
+  }
+ ]
+}
