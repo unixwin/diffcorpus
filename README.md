@@ -14,7 +14,10 @@
 | `cases-gnu/`（默认不加载） | GNU bash 5.3 官方 tests/ 试点转换 | 6 / 全量 83 文件待定 |
 
 主语料按领域分文件（29 个领域），逐例出处、原始类别与分节见 `MANIFEST.md` /
-`manifest.json`；GNU 分区的逐文件盘点见 `gnu-tests-manifest.json`。
+`manifest.json`；逐例另含**平台适用性**标注（`platform`：linux-only / posix /
+windows-ok / android-constrained / all / unknown，及命中规则 `platform_rule`)，
+为将来在 Windows/macOS/Android 上跑全量预留分流依据。GNU 分区的逐文件盘点
+（含同一套平台标注）见 `gnu-tests-manifest.json`。
 整合与校验结论见 `REPORT.md`。
 
 ## 跑法

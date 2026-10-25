@@ -30,6 +30,42 @@ oracle：GNU bash 5.3.20（`~/workspace/rubash-audit/gnu-bash-5.3.20/bin/bash`�
 - **MANIFEST**：`MANIFEST.md`（306 行逐例：编号/领域/原类别/测什么分节/oracle 期望来源/出处）+ `manifest.json`（含脚本 MD5 与源文件路径）。
 - **runner**：统一入口 `runner.py`——沿用既有 `--target rubash|niubash` 口径与 `GNU_BASH/RUBASH/NIUBASH` 环境变量名、结果文件命名（results-<target>.json）；隔离临时目录、固定环境、stderr 归一化（取两代 runner 的强归一化集）；超时 8s（取 hunt 代，较 audit 代 5s 宽松，语义影响仅为慢用例容忍度）；失败集标注 `KNOWN_STABLE = {gl08, ms10}`，输出分 known-stable / new 两栏，有 new 失败退出码 1；`@@SELF@@` 替换保留；`--include-gnu` 时加载 GNU 试点分区。
 
+## 3.1 平台适用性标注（MANIFEST 逐例字段）
+
+背景：用户定调这批语料将来要在 Windows / Linux / macOS / Android 都跑，平台前提现在不标、将来全是返工。
+故 MANIFEST 逐例增加 `platform` + `platform_rule`（命中规则）两字段，取值枚举：
+
+| 取值 | 含义 |
+|---|---|
+| `all` | 纯内建语言语义，无平台前提 |
+| `windows-ok` | 无 POSIX 独有机制；至多用到可移植前提（cwd 内文件、/dev/null、随包 coreutils 类工具），rubash + winuxcmd 在 Windows 上可满足 |
+| `posix` | 隐含 POSIX 机制前提（信号、作业/进程控制、符号链接、进程身份、procsub fd、/dev/fd、/dev/tty） |
+| `android-constrained` | 需要控制终端的作业控制（fg/bg/suspend）——Android 应用语境无控制终端 |
+| `linux-only` | 依赖 Linux 特有面（/proc、/sys） |
+| `unknown` | 仅凭内容无法判定前提 |
+
+方法：内容规则分类器（`tools/platform_classify.py`，强信号才触发、按序首命中、逐例记录规则名），
+辅以个案手判。规则序：/proc|/sys → linux-only；fg/bg/suspend → android-constrained；/dev/tty、ln -s、
+kill/trap 真信号、set -m/wait/$!/jobs、$$/$PPID/BASHPID 身份语义、procsub 喂 fd → posix；
+`exec n<&0`（stdin fd 复制语义，Windows 控制台映射存疑）→ unknown；
+其余用到外部工具或 /dev/null 者 → windows-ok；纯内建 → all。
+
+**主语料分布（306）**：all **200**、windows-ok **65**、posix **38**、android-constrained **2**（jb20、jb21）、
+linux-only **0**、unknown **1**（mf06，占 **0.33%**）。
+
+- posix 38 的构成：作业/进程控制 30、信号语义 2（jb05、tr202）、符号链接 2（cd01、rx03）、
+  进程身份 2（pid01、pid02）、procsub-fd 2（mf04、pr02）。抽查手判与规则命中一致。
+- linux-only 为 0 是实测结果而非漏标：全 306 条无一引用 /proc、/sys、/dev/tty、
+  mkfifo、chmod——这批语料的 POSIX 前提止步于机制层（信号/作业控制），未下沉到 Linux 特有面。
+  将来在 Windows/Android 上跑，真正的移植面就是这 38 条 posix + 2 条 android-constrained，
+  其余 265 条（all + windows-ok）无机制性障碍。
+- unknown 仅 mf06 一条：`exec 3<&0; read -u 3 … < /dev/null` 同时押 stdin fd 复制与
+  /dev/null 经 fd 读取两项语义，其 Windows 控制台映射是否等价无法从内容判定，留待真机实测裁定。
+
+GNU 分区同法标注（逐文件 `platform` 字段，与收编分级并列）：posix 28、all 27、windows-ok 24、
+android-constrained 4（history、histexp、complete、jobs——交互前提）、linux-only 0、unknown 0；
+intl 单独标 posix（locale 前提）、dbg-support 两件标 posix（调试器构建前提）。
+
 ## 4. 校验（两跑 + 试点两跑）
 
 校验对象与口径：
@@ -148,6 +184,7 @@ GNU 自家协议（run-* 原文）：`${THIS_SH} ./X.tests > out 2>&1; diff out 
 
 - `cases/` 29 个领域模块（306 条）、`cases-gnu/` 试点 6 模块
 - `runner.py` 统一入口；`MANIFEST.md` / `manifest.json` / `gnu-tests-manifest.json`
-- `tools/` 四个再生脚本（import_sources / gnu_inventory / convert_gnu / build_manifest_md）
+  （逐例含平台适用性 `platform` / `platform_rule` 字段，见 §3.1）
+- `tools/` 五个再生脚本（import_sources / gnu_inventory / convert_gnu / build_manifest_md / platform_classify）
 - `results-validate-*.json` 四份校验原始结果、`validate.log`
 - 本报告

@@ -16,6 +16,9 @@ with the original category preserved in manifest.json as orig_category.
 import ast, hashlib, json, os, re, sys
 from collections import OrderedDict
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from platform_classify import classify_platform
+
 HOME = os.path.expanduser("~")
 PKG = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -74,6 +77,7 @@ def main():
             seen_ids[cid] = tag
             domain = FOLD.get(cat, cat)
             by_domain.setdefault(domain, []).append((cid, domain, script))
+            platform, platform_rule = classify_platform(script)
             manifest.append({
                 "id": cid,
                 "domain": domain,
@@ -83,6 +87,8 @@ def main():
                 "source_file": os.path.relpath(path, HOME),
                 "script_md5": hashlib.md5(re.sub(r"\s+", " ", script).strip().encode()).hexdigest(),
                 "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+                "platform": platform,
+                "platform_rule": platform_rule,
                 "merged_from": [],
             })
     for domain, cases in by_domain.items():

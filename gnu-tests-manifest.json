@@ -28,6 +28,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "builtin",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -50,6 +52,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "array",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": true,
    "pilot_case_id": "gnu-appendop",
    "pilot_transforms": [
@@ -76,6 +80,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "arith",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -106,6 +112,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "arith",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "pilot": false
   },
   {
@@ -159,6 +167,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "array",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "pilot": false
   },
   {
@@ -198,6 +208,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "array",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "pilot": false
   },
   {
@@ -220,6 +232,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "declare",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -239,6 +253,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "param",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -279,6 +295,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "builtin",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "pilot": false
   },
   {
@@ -303,6 +321,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "case",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -322,6 +342,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "param",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": true,
    "pilot_case_id": "gnu-casemod",
    "pilot_transforms": [
@@ -346,6 +368,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "android-constrained",
+   "platform_rule": "interactive premise: needs a controlling terminal/readline session",
    "pilot": false
   },
   {
@@ -373,6 +397,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "quote",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -399,6 +425,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -426,6 +454,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "quote",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -452,6 +482,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "quote",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "pilot": false
   },
   {
@@ -477,6 +509,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "builtin",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -496,6 +530,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "procsub",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "pilot": false
   },
   {
@@ -515,6 +551,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "posix",
+   "platform_rule": "/dev/fd fd filesystem",
    "pilot": false
   },
   {
@@ -537,6 +575,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "posix",
+   "platform_rule": "premise is a debugger-enabled POSIX build",
    "pilot": false
   },
   {
@@ -556,6 +596,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "posix",
+   "platform_rule": "premise is a debugger-enabled POSIX build",
    "pilot": false
   },
   {
@@ -575,6 +617,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "cd",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -594,6 +638,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "cd",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -613,6 +659,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "param",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "pilot": false
   },
   {
@@ -647,6 +695,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "syntax",
+   "platform": "posix",
+   "platform_rule": "/dev/tty premise",
    "pilot": false
   },
   {
@@ -680,6 +730,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "param",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "pilot": false
   },
   {
@@ -703,6 +755,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "func",
+   "platform": "posix",
+   "platform_rule": "/dev/tty premise",
    "pilot": false
   },
   {
@@ -733,6 +787,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "glob",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "pilot": false
   },
   {
@@ -752,6 +808,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "glob",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -771,6 +829,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "glob",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -796,6 +856,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "func",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "pilot": false
   },
   {
@@ -826,6 +888,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "getopts",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -845,6 +909,8 @@
     "bash_tstout": true
    },
    "overlap_domain": "glob",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "pilot": false
   },
   {
@@ -876,6 +942,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "glob",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "pilot": false
   },
   {
@@ -899,6 +967,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "glob",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "pilot": false
   },
   {
@@ -929,6 +999,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "redir",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "pilot": false
   },
   {
@@ -950,6 +1022,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "redir",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": true,
    "pilot_case_id": "gnu-herestr",
    "pilot_transforms": [
@@ -985,6 +1059,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "android-constrained",
+   "platform_rule": "interactive premise: needs a controlling terminal/readline session",
    "pilot": false
   },
   {
@@ -1016,6 +1092,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "android-constrained",
+   "platform_rule": "interactive premise: needs a controlling terminal/readline session",
    "pilot": false
   },
   {
@@ -1035,6 +1113,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -1056,6 +1136,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "ifs",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1083,6 +1165,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "posix",
+   "platform_rule": "locale premise: needs specific locales installed",
    "pilot": false
   },
   {
@@ -1102,6 +1186,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "status",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": true,
    "pilot_case_id": "gnu-invert",
    "pilot_transforms": [
@@ -1132,6 +1218,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "pilot": false
   },
   {
@@ -1153,6 +1241,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "quote",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -1182,6 +1272,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "android-constrained",
+   "platform_rule": "interactive premise: needs a controlling terminal/readline session",
    "pilot": false
   },
   {
@@ -1205,6 +1297,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "status",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1229,6 +1323,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "builtin",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1248,6 +1344,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "param",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "pilot": false
   },
   {
@@ -1267,6 +1365,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "func",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1303,6 +1403,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "param",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -1328,6 +1430,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "quote",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1347,6 +1451,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "quote",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -1366,6 +1472,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "quote",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1385,6 +1493,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "quote",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1404,6 +1514,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "quote",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1423,6 +1535,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "quote",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1445,6 +1559,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "syntax",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1464,6 +1580,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -1492,6 +1610,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -1511,6 +1631,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1530,6 +1652,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "glob",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1549,6 +1673,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -1568,6 +1694,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "misc",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1595,6 +1723,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "builtin",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -1617,6 +1747,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "procsub",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "pilot": false
   },
   {
@@ -1641,6 +1773,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "quote",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "pilot": false
   },
   {
@@ -1666,6 +1800,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "array",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -1696,6 +1832,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "builtin",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -1731,6 +1869,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "redir",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "pilot": false
   },
   {
@@ -1752,6 +1892,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "param",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1774,6 +1916,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -1797,6 +1941,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "trap",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "pilot": false
   },
   {
@@ -1819,6 +1965,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "misc",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": true,
    "pilot_case_id": "gnu-set-x",
    "pilot_transforms": [
@@ -1847,6 +1995,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "builtin",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1866,6 +2016,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "param",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": true,
    "pilot_case_id": "gnu-strip",
    "pilot_transforms": [
@@ -1892,6 +2044,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "builtin",
+   "platform": "posix",
+   "platform_rule": "/dev/tty premise",
    "pilot": false
   },
   {
@@ -1913,6 +2067,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "param",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "pilot": false
   },
   {
@@ -1934,6 +2090,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "param",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -1963,6 +2121,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "trap",
+   "platform": "posix",
+   "platform_rule": "signal semantics (kill/trap on real signals)",
    "pilot": false
   },
   {
@@ -1988,6 +2148,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "builtin",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -2033,6 +2195,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "env",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   },
   {
@@ -2061,6 +2225,8 @@
     "bash_tstout": false
    },
    "overlap_domain": "param",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "pilot": false
   }
  ]

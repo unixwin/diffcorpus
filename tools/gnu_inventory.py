@@ -15,7 +15,10 @@ Classes (name + content markers; heuristics documented in REPORT.md):
   B = convertible with converter work (THIS_SH/.sub/fixtures/recho helpers)
   A = directly convertible (self-contained, deterministic)
 """
-import json, os, re
+import json, os, re, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from platform_classify import classify_platform
 
 HOME = os.path.expanduser("~")
 TESTS = f"{HOME}/workspace/rubash-audit/build-gnu/bash-5.3/tests"
@@ -95,10 +98,21 @@ def main():
             cls, why = "A", "self-contained"
         if m["locale"] and cls != "C":
             why += "; touches locale vars (class kept, locale sensitivity annotated)"
+        # platform applicability: same classifier as the main corpus, with
+        # the interactive/harness class-C premises mapped to the enum first
+        if base in ("history", "histexp", "complete", "jobs"):
+            platform, platform_rule = "android-constrained", "interactive premise: needs a controlling terminal/readline session"
+        elif base == "intl":
+            platform, platform_rule = "posix", "locale premise: needs specific locales installed"
+        elif base in ("dbg-support", "dbg-support2"):
+            platform, platform_rule = "posix", "premise is a debugger-enabled POSIX build"
+        else:
+            platform, platform_rule = classify_platform(text)
         entries.append({
             "name": base, "lines": text.count("\n") + 1, "has_right": has_right,
             "right_lines": right_lines, "class": cls, "class_reason": why,
             "markers": m, "overlap_domain": OVERLAP.get(base, ""),
+            "platform": platform, "platform_rule": platform_rule,
             "pilot": False,
         })
     out = {"source": "GNU bash 5.3 official tests (build-gnu/bash-5.3/tests)",

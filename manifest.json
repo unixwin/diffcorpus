@@ -10,6 +10,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "ef57d63ff6b2a065449c57d79bbd25ca",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -21,6 +23,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "e301247cdd4c9316d2142cc9384119af",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -32,6 +36,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "487932ad7d923f13a22ad997b24b32cb",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -43,6 +49,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "c0de36958073c439b914f4e4e9973ea3",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -54,6 +62,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "021f8742ad2089bd4b667a7ce6e84ecd",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -65,6 +75,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "7e6a37ae6c52c392d6f44bb91fabc267",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -76,6 +88,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "6d42df64006ddcbcc51dcdf1026d847d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -87,6 +101,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "f724fb712abc22610794a2fa915aefe1",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -98,6 +114,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "d1ca4a2ae7e683c6ab01426a703307cf",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -109,6 +127,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "cca284cd27f514196aa4f6c254909dde",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -120,6 +140,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "c17e8143d2d899db4c51ce1ec2217e6e",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -131,6 +153,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "c260773452dd068adc07892cb9cff93d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -142,6 +166,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "d4d6ca02d7f40d04530b22e0b9075b85",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -153,6 +179,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "9d2fc2f782f29784e66c9deea1ce31bf",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -164,6 +192,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "def98a40090c523dec483d2626955686",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -175,6 +205,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "15766bc52726158c1fd1b9778a7367c0",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -186,6 +218,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "e5abaebfb32c3dc15ff8e70524e2340e",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -197,6 +231,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "549317698308fadd4e46a7773a413286",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -208,6 +244,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "368e6da76bd01a41c47741584517721c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -219,6 +257,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "989987e0e0d7bbe471599df7742fda22",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -230,6 +270,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "3e706bf60a3d68f0f8fbc0f3bddf3a4b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -241,6 +283,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "14852d592cb5d3d5505a23cf55469e4d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -252,6 +296,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "ad73893bc1e4614367d9943ab0681082",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -263,6 +309,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "cac36581d1b1084653ff19f1c48d98d2",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -274,6 +322,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "78d7219c8e5bb0f5fb602f79d5c86ba0",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -285,6 +335,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "ce6fa61ca0b1603b4c2deea103be3422",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -296,6 +348,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "ccd4a5ff2777bf433f1b40d026e0dd2d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -307,6 +361,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "df89628f7f8451c34610c2dde7045dc0",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -318,6 +374,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "03c98d58a0742713ab510a99d22ffd0c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -329,6 +387,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "dd5bee2b0109f2de7a731c400ac9d7e7",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -340,6 +400,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "aaa85b49a4270dbcf0a2fbc266df7854",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -351,6 +413,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "de97f567ac0db9e52fb2ade6b948217d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -362,6 +426,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "da8b9116ac0dff874c038d01a68a25aa",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -373,6 +439,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "7acb3f65178d4db7da2556c015dbf4ee",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -384,6 +452,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "9b262739bdec40b3c369c61f398e7aaa",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -395,6 +465,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "b28efe52abda3325042719fb31065f0c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -406,6 +478,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "e498c65070feb63783e69548460891bb",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -417,6 +491,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "d54e1919eee979f4465ada063b61c302",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -428,6 +504,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "2b9d843b90d1df05a70be1448322b4ba",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -439,6 +517,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "1162aa454875728e7f8a0d34bd367d51",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -450,6 +530,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "cfc18adb9ca6aad3d24ac759f216d139",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -461,6 +543,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "e35e67e66c674a70bc2191d25836ee6f",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -472,6 +556,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "85b81f630fbe487ba0ecbf27e02c509b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -483,6 +569,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "9b73e1023416beeba5958ae95d546124",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -494,6 +582,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "f808536fd954ab4c34840df6ada2c664",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -505,6 +595,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "72e5523538d3a18ac15adb66af2992c1",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -516,6 +608,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "ea4660a528a2e6478cb0e46687997018",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -527,6 +621,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "b12e53b05e658f6f67ce53264a010337",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -538,6 +634,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "4fe05e50bc6619496a876a707d763286",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -549,6 +647,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "7efedff1a0c6877d3c69cd8819090a13",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -560,6 +660,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "e29953a4ca508d591a39e76ab3583e5f",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -571,6 +673,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "164e04a800ccd2a85737cf0f1b4441dc",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -582,6 +686,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "ab2ad3a290202b35756df2b1dc8b5617",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -593,6 +699,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "7d49e4952f629f619a3f7ec60b0e7dcd",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -604,6 +712,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "a9834da5aca00713467b4f1ae5ddd6af",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -615,6 +725,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "1b5834e9bf5a36abef616481ed3467dd",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -626,6 +738,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "c5a5c3bbcd4b9f66764a1f112d1b12b8",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -637,6 +751,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "437da081b0cc4b90e13e2df6fb1e0935",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -648,6 +764,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "01eacddd8cdfb3830113569250b03d37",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -659,6 +777,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "b91e31ceea03705520677caa50642292",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -670,6 +790,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "62aee0312df127ba8961fc4fa3c35cf9",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -681,6 +803,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "935ba05d30226431efe5d483856f4e02",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -692,6 +816,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "2b9e79a02fba57652b1fb89b67a909e4",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -703,6 +829,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "32c7059c0108d3fa5de5490131a8411d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -714,6 +842,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "f0e5bcb5999026af1262a7f9858cba17",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -725,6 +855,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "c9d1e3c64f1c05933ce24fa82c0e6782",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -736,6 +868,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "792f9f71618244e095b333a6758b4f64",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -747,6 +881,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "19831d7db3f31c704dfff6b811022f20",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -758,6 +894,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "446286b79f3921b9a29046e7e7ec35ee",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -769,6 +907,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "22a39f8bf807c99ca66164425fe09a78",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -780,6 +920,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "a6e1ba67b56186f3a3cb56c1728fef82",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -791,6 +933,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "25f656f30cf271b9d4318deb88f56794",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -802,6 +946,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "bb3e76738be1f0a3c1362d2ca6e60459",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -813,6 +959,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "c968a77559cade9fb8d76c15bc3ad160",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -824,6 +972,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "e0b6bd557bd630ce5c2172843e0ea8e2",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -835,6 +985,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "cc37a190fe2f1f57a95c9f459b8c196d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -846,6 +998,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "dd5bf520920e85d79215c3ffb30c24fe",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -857,6 +1011,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "9a06472a0212078696e863f8d8a2eaf2",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -868,6 +1024,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "2974e207dcca1103c78c137e20396787",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -879,6 +1037,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "90248603bd65139d97b9300f2cafcae2",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -890,6 +1050,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "eea5699000c269d1c1c68459d13657d1",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -901,6 +1063,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "15fe26c2ab079113e58b5fcbe1a090af",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -912,6 +1076,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "2b1fc8bd046caf9a8739fbe644f041ee",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -923,6 +1089,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "41b6b22d1f46e2caba884a28ba5c9035",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -934,6 +1102,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "8565c13a63e0fed6839d9608d189d21b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -945,6 +1115,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "ae8c8ff5177a8517e80439acf6dc02df",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -956,6 +1128,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "5a985df48aeafda512ca2dca8985525c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -967,6 +1141,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "b12f843d2964bf8b4af3dc7c6288c482",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -978,6 +1154,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "987a525bab7ec754c2eac72e35f77ba1",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -989,6 +1167,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "9a34f796ee5eae262b056f2205dad72a",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1000,6 +1180,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "84167b3f021cf08a2b25769f0a0f5fae",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1011,6 +1193,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "2a2bb0cd1da08d9ee1a3dff255d7e322",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1022,6 +1206,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "a0742b84a671d1d411f4ccdeba053a56",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1033,6 +1219,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "8a5280cdad316798071ceaed5f88e245",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -1044,6 +1232,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "7bce68ffeab2ca83032747c09664d405",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1055,6 +1245,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "697a6eb773192c4eb4b8037213d4e03f",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -1066,6 +1258,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "73bf65f0fca49074d2b0b7b47fc4bc98",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1077,6 +1271,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "9341b89ac61398c03c54d304602f2f5b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1088,6 +1284,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "6ab3735837757ee965c0c5db9bd20c20",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1099,6 +1297,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "bf9d294b29e69a9b6a0e3249180d0eff",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1110,6 +1310,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "389c248349defd85283d32e74c54106d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1121,6 +1323,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "3cd570b48f345d8f9cfb0c8a1b04a5dc",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1132,6 +1336,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "5c5b0e303f6cc17fb91c34561d348f90",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1143,6 +1349,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "789cf2ecfb4afdf6c49c8195575b1754",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1154,6 +1362,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "5057ff26f674ee029026420c37262186",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1165,6 +1375,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "16f0af5f0b3ef2e90e60b613d25ca2bb",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1176,6 +1388,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "5b007f5fb8b8ef8f3ee9c9dd8f250614",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1187,6 +1401,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "e9f270fd81fa91f318c6a51229a1fcac",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1198,6 +1414,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "60351047ea880e35e9a4b22df2ff5b30",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1209,6 +1427,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "02f776bf21c167f159268a43bb58c02c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1220,6 +1440,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "59d37592dbda1c1548743fdeb7280305",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1231,6 +1453,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "db4d20f0fef25f127459397b8f50802c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1242,6 +1466,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "5cf9d786017f72aded662ccb89f4e47c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1253,6 +1479,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "f109d722dcac4d959631df0f94d2cd00",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1264,6 +1492,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "d5ead645fba560852493e2cd2a1edc95",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1275,6 +1505,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "b3543c461a524e286253cdefdcc1d408",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1286,6 +1518,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "c2f54865dad86145dd89931c6cfadcb5",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1297,6 +1531,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "e8c05d9f3c6fe9308a3a2b3ce8bbbc2c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1308,6 +1544,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "36facca16dc98d0408935b79bfe7cf6b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1319,6 +1557,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "a742cd35f776756dd4b41c1c594b9303",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1330,6 +1570,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "a13c8518538bccc04cbcc112aab6e59e",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1341,6 +1583,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "40b1f553d3c3ba7138bccb6e91b2bf2b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1352,6 +1596,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "a62dd7f7e935247978b2d7804d9367bc",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1363,6 +1609,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "92d2637b3e6d65f796731bf298260cc8",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1374,6 +1622,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "c66f87b095f031b1245f3aa6259de648",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1385,6 +1635,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "8af5a6f730403b27123da00b6be9fa26",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1396,6 +1648,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "d178f4e58eb35e90d293d872992f5fd5",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1407,6 +1661,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "f8acf81b5e58aa229a6cd94308acf936",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1418,6 +1674,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "36608c859f33d5fd82855d33c802f8fe",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1429,6 +1687,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "10c83aac5009f7158170e32b961ce97e",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1440,6 +1700,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "480aebce539a841b13f85b957cfc4ac1",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1451,6 +1713,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "f32e93cea38c6f764068b369cae40db1",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1462,6 +1726,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "982df02ac8a45df2b141f02433a99fc0",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1473,6 +1739,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "7f58045c39215528f400c9fc1f1f81a6",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1484,6 +1752,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "7931013e23fbd88bbdb496e37e9745b7",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1495,6 +1765,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "3edb906eb870db6af0683c5b579a06df",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1506,6 +1778,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "087d56361e1107450eea65938f2d8949",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1517,6 +1791,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "0d4f09d4d2fc46e4ef1f64d67f51af2d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1528,6 +1804,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "0fc29c10233cce72a095ff9c8d9d3e62",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1539,6 +1817,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "6284971a59dbc8d5f94c2fc37afe9485",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1550,6 +1830,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "375affd656abbc4e87148d7ccc7f1719",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1561,6 +1843,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "94ac6080ba8ed6eecf5d43dbc73cfc5d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1572,6 +1856,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "74a70bdd6ace0c72c3c3c2b28dea8803",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1583,6 +1869,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "2f056de7d009b4bb430fe47b240da605",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1594,6 +1882,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "b65dffd3ad2a0ec3815cdbace92b3fce",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1605,6 +1895,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "978c7a4882dab603c2fc0d64f41ef813",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1616,6 +1908,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "3d45f9bc7983fc73c41b7e00f98532ea",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1627,6 +1921,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "d99f913daababe3f9b67398f62c4a365",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1638,6 +1934,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "1a4c5cceda5f0591c2df37b51a0e3e7c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1649,6 +1947,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "96fc182ef33eeab9179648fe78d20527",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1660,6 +1960,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "dcb1a953821f751ad2f71f21dfdfacaf",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1671,6 +1973,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "b8fd2578f5d4d3a7ad048ecc7fcfc866",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1682,6 +1986,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "fe03eb5ba824f58c977971c289a5d410",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1693,6 +1999,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "dbfed6a529f88999d161e294661d13ab",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1704,6 +2012,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "f9c462ee440805a18723abf406a8f40d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1715,6 +2025,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "eb16e3198ebf6c074917be93a36ab6bc",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1726,6 +2038,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "42a3aa06c6e7f655c2164104b8030f7f",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1737,6 +2051,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "cfc009d4a5e4cdfb2dd6ae0521aca82b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1748,6 +2064,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "bd3a4d3799326736f6f2ddb832234251",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1759,6 +2077,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "12ca082ed9671169df169db138f382cc",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1770,6 +2090,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "0d6076ef433d193ec23f124520c56add",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -1781,6 +2103,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "dc4be6fdfbb1646e2c25405af47ccdd9",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1792,6 +2116,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "50e49a5a570d5f107c43389f8211c48b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1803,6 +2129,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "97b9d9a4ac310aef738041ee7897ad22",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1814,6 +2142,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "8de1e85d0c423f89a61c8c50adfecc89",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1825,6 +2155,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "417bff443002db493812ec5c76ec598e",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1836,6 +2168,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "86545be2a61034ff899d67b1fcfb0191",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1847,6 +2181,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases.py",
    "script_md5": "56e05a4f07d1712104bf12a0334cc25f",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "procsub-fed file descriptor",
    "merged_from": []
   },
   {
@@ -1858,6 +2194,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "a05b090261b4195233d31f86d5c3ca45",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "merged_from": []
   },
   {
@@ -1869,6 +2207,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "6a5783e069d4d91e9baacf31d0845f01",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "process identity semantics ($$, $PPID, BASHPID)",
    "merged_from": []
   },
   {
@@ -1880,6 +2220,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "999b89d90a6f908fea09eec643e1b0dc",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1891,6 +2233,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "e2a57bd206fcd9e01f5894a3edcddd85",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -1902,6 +2246,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "15f11a13aca5b596c346ea9f7f487d38",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1913,6 +2259,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "4f14b184202cd1ec216c0a316db0396b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1924,6 +2272,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "16d032333c51d203ab097567520c839c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1935,6 +2285,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "d8b72ce905f3720988846e5a52e11624",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1946,6 +2298,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "06e6525b1c4a6fb311c03bb1a64649f3",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1957,6 +2311,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "1ec2b3883529f41b939605f1d15ce4fe",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1968,6 +2324,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "eea666724dcd25a14827aa7b0ee53b8d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1979,6 +2337,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "103a1cc2945da51c80313977717bdd9b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -1990,6 +2350,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "647309752464210fc78eda06fee8ded2",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2001,6 +2363,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "29ea4021282dd4f24629dc10de89e113",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2012,6 +2376,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "0577c4b512a89a9c19ab5ed9fe67c3b0",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2023,6 +2389,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "18d75eeecbf9d432a763a8b9b5a27d79",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2034,6 +2402,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "ea2fbe508eb0ad3488509bad871a5998",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2045,6 +2415,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "053a54c0de0e3f669bbdba93641505a0",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2056,6 +2428,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "41f1e86ef1d58231141e6e7be16421ef",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2067,6 +2441,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "6905c32b2007c91cb827e21fff4e5a72",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2078,6 +2454,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "3185163a1f0e8cae3f7a226824152bfb",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2089,6 +2467,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "83c7b697ef319f81d2ed02e9cc170234",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2100,6 +2480,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "63eb59bb048e44c2c8ed94ad9eedbc62",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2111,6 +2493,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "1503d536e2e9904ff27426269724132f",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2122,6 +2506,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "931994eaeee63b86981fe927c9ce5b29",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "signal semantics (kill/trap on real signals)",
    "merged_from": []
   },
   {
@@ -2133,6 +2519,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "110a12b3a965e92c79c804557ea708d9",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2144,6 +2532,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "a2481c010d7eb0acaa9650532f69df95",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2155,6 +2545,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "b680477c088a5997e7444cd19b427a8c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2166,6 +2558,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "21a1fb23dcc69b36bc9f28d5b58f66e0",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2177,6 +2571,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "5b3ec0b105a1603833ce84338fae6cde",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2188,6 +2584,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "dd1f048725dc17256df108e2ce585a62",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2199,6 +2597,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "dcae6e0dc7fca8d4839da9a48731cf0b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "procsub-fed file descriptor",
    "merged_from": []
   },
   {
@@ -2210,6 +2610,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "a349a331b0ed43e61214c56928fed2e6",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2221,6 +2623,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "fe97e27368bc1fb7957f4020b524b59b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "unknown",
+   "platform_rule": "stdin fd duplication semantics (exec n<&0)",
    "merged_from": []
   },
   {
@@ -2232,6 +2636,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "985367cface202d7aaf8b6860bba2740",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2243,6 +2649,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "9267ff56bb84438e6a7a04239b77a8ae",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2254,6 +2662,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "6d8540966015bd66223e7035f1b6167b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2265,6 +2675,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "d52744e991e80be424c23f029715f34d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2276,6 +2688,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "48c42e480103474f2bbfa4c2204341d2",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2287,6 +2701,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "40684d49f0a5176770a6dee7b5fb0177",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "symlink creation (ln -s)",
    "merged_from": []
   },
   {
@@ -2298,6 +2714,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "5b5dc60e7fab53e3ca42c49eabdcdd2c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2309,6 +2727,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "d9498cca8d4d17404e5c831946799fcf",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2320,6 +2740,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "0e1b1cb7d4797b9d0b0470a6f300386c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2331,6 +2753,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "619d813f58b108d91d2fd307ed294133",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2342,6 +2766,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "aea7e8e0be72038f42512021eb88e5db",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2353,6 +2779,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "ed111019029191c27c1ea6a19845887a",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2364,6 +2792,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "29624faa449d7399db6c513106edbce8",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2375,6 +2805,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "6d33eca4e3f4e7963fbccdd99b358daa",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2386,6 +2818,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "afad6d693c3d6a055a26393ccae2daab",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2397,6 +2831,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "8bedcef2f7b883a4f8714510428cfb4d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2408,6 +2844,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "ff98c50aa09663242b3dabf870710c64",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2419,6 +2857,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "a2c03af2879884c9f0c910636dfae6f0",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2430,6 +2870,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "8a692b38f378e84294ebe255ee2f7226",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2441,6 +2883,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "78535db73abbdd2724bdadb1dc86efa3",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2452,6 +2896,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "188ddc3fd0b7db5631ff98f91c5f5c8c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2463,6 +2909,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "41d76866656c9e664c0b74cbd3038173",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2474,6 +2922,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "2016e600c4c35498bfa88256f551bde4",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2485,6 +2935,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "574142179b70788cf84e585734fff4be",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2496,6 +2948,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "1e2a9954081597e38459654a62eab16b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2507,6 +2961,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "d67215d86c9a1ea51e76b9548fb3ea92",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "symlink creation (ln -s)",
    "merged_from": []
   },
   {
@@ -2518,6 +2974,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "113feeb39a3b88100def24f57cd0c77b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2529,6 +2987,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "d93a3ef2a1c44fd4c9433a53fb83da7f",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2540,6 +3000,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "520f6a3a1de514d527bbf85381a7cc39",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2551,6 +3013,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "fd1680838669a317e85ecf4e9774c0be",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2562,6 +3026,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "9770996516fa8593ce321aca27901f07",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -2573,6 +3039,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "3ad15a65fc49771e5355d4a979748a95",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2584,6 +3052,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "e3cf0754a3e8d75176e68120bada6db8",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2595,6 +3065,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "b7ec11f552eb243b2cb629a9e8433629",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2606,6 +3078,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "82fe593e6c6ba4c716799533cd14b947",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2617,6 +3091,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "2e9b86079abd3913c6a6f67ae85c81ca",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2628,6 +3104,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "522e25c9b2cd39f19654d6a474d65b72",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2639,6 +3117,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "3c98b5615a69579643b5c7c9290fd49a",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2650,6 +3130,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "d7cfc0a7582452315d72db094ffdacb0",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2661,6 +3143,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "623a572dae7baf216e0f3534e61638be",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2672,6 +3156,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "56c902469379059a08a4b00fd4e868b2",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2683,6 +3169,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "05188dce3e0bb0dcd7ae35c4d32231cd",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2694,6 +3182,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "1a66f84c930c655caaf9c9b1f8e77d82",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "windows-ok",
+   "platform_rule": "portable premises only (cwd files, /dev/null, bundled utilities)",
    "merged_from": []
   },
   {
@@ -2705,6 +3195,8 @@
    "source_file": "workspace/rubash-audit/mytests/cases2.py",
    "script_md5": "985612b94b9b555bc39e9e258c387e6c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2716,6 +3208,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "dd0d3a5acac432aef8e1f94630e3490c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2727,6 +3221,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "63f2a5855ae94cd62d01da09d6531494",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2738,6 +3234,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "ff2ef4a3d43fe56e7f4a60e0e4361950",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2749,6 +3247,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "48a19cc4aa249c0cbc61cd454bf0283a",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2760,6 +3260,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "f47b67cbb1a97ad81cd6512a7b1a2a88",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2771,6 +3273,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "25a7da100e5821dde2d23f6160504cc1",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2782,6 +3286,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "5c8198c75904724eb67c11c1180d27ea",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2793,6 +3299,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "fbfab923344a0d41316cf7469c45afd8",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2804,6 +3312,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "b13e1a0b73bc1ebdf616600f587aa4e6",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2815,6 +3325,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "59b8cf443b7752237e990669f8ccb0be",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2826,6 +3338,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "954f6b55bb4a7d932da2449a5a8b36a6",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2837,6 +3351,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "fa64af03cfdab0020d5f0e075dfe9222",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2848,6 +3364,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "862bcc08a829099ead3adcafc1d805cd",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2859,6 +3377,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "2972c3b036c7b38db2236e9a029524e8",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2870,6 +3390,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "23a2f7f494002c54ca5e78e41196a385",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2881,6 +3403,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "258180bee57cda10e9f1b110f9c9e38d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2892,6 +3416,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "08cce92b179e4e031e0542f5b23d82a7",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2903,6 +3429,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "82e5f65fd9d5fe00ebb5b5433beba676",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2914,6 +3442,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "46fd0c0d72b33ac54c2cae2122bbb71c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2925,6 +3455,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "69e8acaca55a58b3f6e89d612e3605da",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2936,6 +3468,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "61557655bbc848ec9c528051e392490c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2947,6 +3481,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "020d159cb4db222033a7ddb2393bb221",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2958,6 +3494,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "8b051c50b4e48ccb18b8add44d79fcce",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2969,6 +3507,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "cef48471809068e7cbddb953020aeffb",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2980,6 +3520,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "84c1563574530c7b1e93a03843f6963a",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -2991,6 +3533,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "7877d8926f45b0cb245093bf6c6a71c0",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -3002,6 +3546,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "0f475e4e97969829120113c76381f3c0",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -3013,6 +3559,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "591b95d85319e07cca001f2b81a09b68",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -3024,6 +3572,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "da5ae5c216d534741451cd64cfb14219",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -3035,6 +3585,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "a411824923e2bdcf3809ef9334113ec4",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -3046,6 +3598,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "782e9234f57016a15933f17e5f42230d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "all",
+   "platform_rule": "builtins-only language semantics",
    "merged_from": []
   },
   {
@@ -3057,6 +3611,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "b7c65864c9de754d269c6eddea7e37dc",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3068,6 +3624,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "a397d393732678cbdb3f7521a1442188",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3079,6 +3637,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "cb8931bc466b03e954822f7f1cae112d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3090,6 +3650,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "704341f3c92b6a4d4364b96a2a5d061d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3101,6 +3663,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "44ca31718de0ee7e659fcf0027fbf3e7",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "signal semantics (kill/trap on real signals)",
    "merged_from": []
   },
   {
@@ -3112,6 +3676,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "496ac58d678cdc915e103e3f2751fd62",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3123,6 +3689,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "a72bdb64a2ca7df494c9334173b64fe1",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3134,6 +3702,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "c034b778f8c32dea9c0100f703c35d32",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3145,6 +3715,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "0936b663bb57a8f5f8a6ae8ce07e3fd3",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3156,6 +3728,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "8336b1467dcd543457ca0bd84df4d9e1",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3167,6 +3741,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "14d5c35697c061d41e7b729aee9cae22",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3178,6 +3754,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "c0afbec615929b7d5ae5ff5c864cd7c8",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3189,6 +3767,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "f59ba003790201c9dd76c1d272140f39",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3200,6 +3780,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "dc0c3cc40c18c26ebf429580a0c33c05",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3211,6 +3793,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "13f6831c621cd7d05421a84ad498be08",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3222,6 +3806,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "80a68a2c529a60b6647ab2c6203265a4",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3233,6 +3819,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "e99baca601f4cc9f3c8dbfc6ec324d1b",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3244,6 +3832,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "ab341e6e2920d88387b4ef9b7ceb2373",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3255,6 +3845,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "57915310cf9fb484579248242969397a",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3266,6 +3858,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "62c98413a0a71abbab0c8b81ce984014",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "android-constrained",
+   "platform_rule": "controlling-terminal job control (fg/bg/suspend)",
    "merged_from": []
   },
   {
@@ -3277,6 +3871,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "beae9e5dc8e8738cdf015ef7b0cb3819",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "android-constrained",
+   "platform_rule": "controlling-terminal job control (fg/bg/suspend)",
    "merged_from": []
   },
   {
@@ -3288,6 +3884,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "94d9a7fdd83982e3816b8c22e3d86c6f",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3299,6 +3897,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "b871b7de8dc14ba11eef0fc7bb411c1c",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3310,6 +3910,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "747b83a4c9f2e7a72664fd20fa650916",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3321,6 +3923,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "272a1782528e21cd620751bded195a6e",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3332,6 +3936,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "5891a25713b6e6fb423afbfb979d7071",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3343,6 +3949,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "7c8da29a12318ffa2b654179a7d59831",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3354,6 +3962,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "3892f86b0468f4f11a12f7e7a6c6461d",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   },
   {
@@ -3365,6 +3975,8 @@
    "source_file": "workspace/rubash-hunt-runs/2026-10-25-r1/cases_r1.py",
    "script_md5": "ced0c304bae183991478a365980089b1",
    "oracle": "GNU bash 5.3.20 live differential (runner derives expectation from oracle at run time)",
+   "platform": "posix",
+   "platform_rule": "job/process control (set -m, wait, $!, jobs)",
    "merged_from": []
   }
  ]
