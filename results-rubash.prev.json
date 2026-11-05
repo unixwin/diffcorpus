@@ -1,0 +1,5825 @@
+{
+ "gnu": "/home/hatch/workspace/rubash-audit/gnu-bash-5.3.20/bin/bash",
+ "rubash": "/home/hatch/workspace/rubash-fix8/clusters/nvm-alias/repo/target/debug/rubash",
+ "total": 306,
+ "pass": 306,
+ "fail": 0,
+ "known_stable_failures": [],
+ "new_failures": [],
+ "results": [
+  {
+   "id": "ar01",
+   "category": "arith",
+   "script": "echo $((2**3**2)) $(( (2**3)**2 )) $((-2**2)) $((-(2**2)))",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "512 64 4 -4\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "512 64 4 -4\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ar02",
+   "category": "arith",
+   "script": "echo $((2#1010)) $((8#17)) $((16#ff)) $((36#z)) $((64#@)) $((64#_)) $((64#__)) 2>&1",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "10 15 255 35 62 63 4095\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "10 15 255 35 62 63 4095\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ar03",
+   "category": "arith",
+   "script": "echo $((9223372036854775807+1)) $((9223372036854775807*2)) $((-9223372036854775808/-1)) 2>&1; echo rc=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "-9223372036854775808 -2 -9223372036854775808\nrc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "-9223372036854775808 -2 -9223372036854775808\nrc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ar04",
+   "category": "arith",
+   "script": "x=5; echo $((x++)) $x $((++x)) $x $((x--)) $x $((--x)) $x",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "5 6 7 7 7 6 5 5\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "5 6 7 7 7 6 5 5\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ar05",
+   "category": "arith",
+   "script": "x=0; y=$((x+=3, x*=2, x-1)); echo \"$y $x\"; z=$((1?10:20, 0?30:40)); echo $z",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "5 6\n40\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "5 6\n40\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ar06",
+   "category": "arith",
+   "script": "a=(10 20 30); i=1; echo $((a[i++])) $i $((a[i]+a[0])); echo $((a[1+1]))",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "20 2 40\n30\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "20 2 40\n30\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ar07",
+   "category": "arith",
+   "script": "echo $((5/2)) $((5%2)) $((-5/2)) $((-5%2)) $((5/-2)) $((5%-2))",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "2 1 -2 -1 -2 1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "2 1 -2 -1 -2 1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ar08",
+   "category": "arith",
+   "script": "echo $((1<<62)) $((1<<63)) $((-1>>1)) $((255>>4)) $((5&3)) $((5|3)) $((5^3)) $((~5))",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "4611686018427387904 -9223372036854775808 -1 15 1 7 6 -6\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "4611686018427387904 -9223372036854775808 -1 15 1 7 6 -6\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ar09",
+   "category": "arith",
+   "script": "x=\"  42  \"; echo $((x)) $((x+1)); y=010; echo $((y)) $((10#$y)); z=08; echo $((z)) 2>&1; echo rc=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "42 43\n8 10\n",
+    "stderr": "SHELL: line 1: 08: value too great for base (error token is \"08\")\n",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "42 43\n8 10\n",
+    "stderr": "SHELL: line 1: 08: value too great for base (error token is \"08\")\n",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ar10",
+   "category": "arith",
+   "script": "echo $((a=5)) $a; ((b+=2)) 2>&1; echo \"b=$b rc=$?\"; ((c++)) ; echo \"c=$c\"; ((c)) ; echo rc=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "5 5\nb=2 rc=0\nc=1\nrc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "5 5\nb=2 rc=0\nc=1\nrc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ar11",
+   "category": "arith",
+   "script": "v=3; echo $((v>2?100:200)); echo $((!v)) $((!0)); s=$((3>2 && 2>1 || 0)); echo $s",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "100\n0 1\n1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "100\n0 1\n1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ar12",
+   "category": "arith",
+   "script": "echo $((16#FF + 2#10)); x=0x10; echo $((x)); y=\"2+3*4\"; echo $((y)) $((y*2))",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "257\n16\n14 28\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "257\n16\n14 28\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ar13",
+   "category": "arith",
+   "script": "i=0; a=$((i++ + i++ + i++)); echo \"$a $i\"; j=5; echo $((j+=j-=2)) $j 2>&1",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "3 3\n8 8\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "3 3\n8 8\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ar14",
+   "category": "arith",
+   "script": "echo $((5/0)) 2>&1; echo rc=$?; echo $((5%0)) 2>&1; echo rc=$?; echo after",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "SHELL: line 1: 5/0: division by 0 (error token is \"0\")\n",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "SHELL: line 1: 5/0: division by 0 (error token is \"0\")\n",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ar15",
+   "category": "arith",
+   "script": "declare -i n; n=\"3+4\"; echo $n; n=\" 5 * 2 \"; echo $n; n=abc; echo \"n=$n rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "7\n10\nn=0 rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "7\n10\nn=0 rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ax01",
+   "category": "arith",
+   "script": "echo $((36#Z)) $((36#z)) $((37#A)) $((62#Z)) $((64#z)) $((64#+)) $((64#/)) 2>&1",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "SHELL: line 1: 64#: invalid integer constant (error token is \"64#\")\n",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "SHELL: line 1: 64#: invalid integer constant (error token is \"64#\")\n",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ax02",
+   "category": "arith",
+   "script": "echo $((1<<64)) $((1<<65)) $((8>>-1)) 2>&1; echo rc=$?; echo $((2**-1)) 2>&1; echo rc2=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "1 2 0\nrc=0\n",
+    "stderr": "SHELL: line 1: 2**-1: exponent less than 0 (error token is \"1\")\n",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "1 2 0\nrc=0\n",
+    "stderr": "SHELL: line 1: 2**-1: exponent less than 0 (error token is \"1\")\n",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ax03",
+   "category": "arith",
+   "script": "x=1; echo $((x?y=10:y=20)) \"x=$x y=$y\"; a=(5); echo $((a[0]++)) ${a[0]} $((++a[0])); unset e; echo $((e)) $((e+1)); s=\"\"; echo $((s)) 2>&1",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "SHELL: line 1: x?y=10:y=20: attempted assignment to non-variable (error token is \"=20\")\n",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "SHELL: line 1: x?y=10:y=20: attempted assignment to non-variable (error token is \"=20\")\n",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ax04",
+   "category": "arith",
+   "script": "v=\"abc\"; echo $((v)) 2>&1; echo rc=$?; v=\"a1\"; echo $((v)) 2>&1; arr=(3 4); echo $((arr)) $((arr[0]+arr[1])); echo $((arr[@])) 2>&1 | head -c 120; echo",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "0\nrc=0\n0\n3 7\n0\n\n",
+    "stderr": "SHELL: line 1: arr[@]: bad array subscript\n",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "0\nrc=0\n0\n3 7\n0\n\n",
+    "stderr": "SHELL: line 1: arr[@]: bad array subscript\n",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ax05",
+   "category": "arith",
+   "script": "echo $(( 010 + 0x10 + 10 )); w=\"0\"; echo $((w?w:9)); (( q = 4 > 3 ? 11 : 22 )); echo q=$q; echo $(( - -5 )) $((!!5))",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "34\n9\nq=11\n5 1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "34\n9\nq=11\n5 1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr01",
+   "category": "array",
+   "script": "a=(1 2 3); a+=(4 5); echo \"${a[@]} ${#a[@]}\"; a[10]=x; echo \"${#a[@]} ${!a[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "1 2 3 4 5 5\n6 0 1 2 3 4 10\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "1 2 3 4 5 5\n6 0 1 2 3 4 10\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr02",
+   "category": "array",
+   "script": "a=(1 2 3 4); unset 'a[1]'; echo \"n=${#a[@]} idx=${!a[@]} vals=${a[@]}\"; echo \"[${a[1]}] [${a[-1]}] [${a[-4]}]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "n=3 idx=0 2 3 vals=1 3 4\n[] [4] [1]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "n=3 idx=0 2 3 vals=1 3 4\n[] [4] [1]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr03",
+   "category": "array",
+   "script": "a=(\"a b\" c \"d  e\"); printf '<%s>\\n' \"${a[@]}\"; printf '<%s>\\n' \"${a[*]}\"; IFS=,; printf '<%s>\\n' \"${a[*]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "<a b>\n<c>\n<d  e>\n<a b c d  e>\n<a b,c,d  e>\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "<a b>\n<c>\n<d  e>\n<a b c d  e>\n<a b,c,d  e>\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr04",
+   "category": "array",
+   "script": "a=(0 1 2 3 4); echo \"${a[@]:1:2}\"; b=(\"${a[@]:2}\"); echo \"b=${b[@]} n=${#b[@]}\"; echo \"${a[@]: -2:1}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "1 2\nb=2 3 4 n=3\n3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "1 2\nb=2 3 4 n=3\n3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr05",
+   "category": "array",
+   "script": "declare -A m; m[x]=1; m[y]=2; m[x]+=5; echo \"${m[x]} ${m[y]} ${#m[@]}\"; unset 'm[y]'; echo \"${#m[@]} [${m[y]:-gone}]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "15 2 2\n1 [gone]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "15 2 2\n1 [gone]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr06",
+   "category": "array",
+   "script": "a=(1 2); a[-1]=last; echo \"${a[@]}\"; a[-5]=bad 2>&1; echo rc=$?; echo \"${a[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "1 last\n",
+    "stderr": "SHELL: line 1: a[-5]: bad array subscript\n",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "1 last\n",
+    "stderr": "SHELL: line 1: a[-5]: bad array subscript\n",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr07",
+   "category": "array",
+   "script": "a=([3]=d [1]=b [0]=a); echo \"${a[@]}\"; echo \"${a[*]}\"; printf '%s\\n' \"${!a[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a b d\na b d\n0\n1\n3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a b d\na b d\n0\n1\n3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr08",
+   "category": "array",
+   "script": "s=\"x y z\"; a=($s); echo \"n=${#a[@]} ${a[@]}\"; IFS=:; b=(p:q:r); c=(${b[0]}); echo \"c=${c[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "n=3 x y z\nc=p q r\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "n=3 x y z\nc=p q r\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr09",
+   "category": "array",
+   "script": "a=(1 2 3); a=(\"${a[@]}\" 4); echo \"${a[@]}\"; a=(); echo \"n=${#a[@]} [${a[@]}]\"; a[0]=only; echo \"${a[@]} ${#a[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "1 2 3 4\nn=0 []\nonly 1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "1 2 3 4\nn=0 []\nonly 1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr10",
+   "category": "array",
+   "script": "declare -A m=([a]=1); echo \"${m[a]:-d} ${m[missing]:-d}\"; m[\"key with space\"]=v; echo \"${m[key with space]} ${#m[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "1 d\nv 2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "1 d\nv 2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr11",
+   "category": "array",
+   "script": "a=(one two); i=0; a[i++]=X; echo \"${a[@]} i=$i\"; a[++i]=Y; echo \"${a[@]} i=$i\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "X two i=1\nX two Y i=2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "X two i=1\nX two Y i=2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr12",
+   "category": "array",
+   "script": "x=scalar; x+=(appended); echo \"${x[@]} n=${#x[@]}\"; y=scalar; y[1]=second; echo \"${y[@]} idx=${!y[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "scalar appended n=2\nscalar second idx=0 1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "scalar appended n=2\nscalar second idx=0 1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr13",
+   "category": "array",
+   "script": "a=(1 2 3); unset a; echo \"n=${#a[@]} [${a:-unset}]\"; a[2]=only; echo \"idx=${!a[@]} vals=${a[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "n=0 [unset]\nidx=2 vals=only\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "n=0 [unset]\nidx=2 vals=only\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr14",
+   "category": "array",
+   "script": "a=(\"a@b\" \"c*d\"); printf '[%s]' \"${a[@]@Q}\"; echo; printf '[%s]' \"${a[@]^^}\"; echo",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "['a@b']['c*d']\n[A@B][C*D]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "['a@b']['c*d']\n[A@B][C*D]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "arr15",
+   "category": "array",
+   "script": "IFS=/; a=(usr local bin); echo \"${a[*]}\"; echo \"${a[@]}\"; unset IFS; set -- \"${a[@]}\"; echo \"argc=$# $1 $3\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "usr/local/bin\nusr local bin\nargc=3 usr bin\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "usr/local/bin\nusr local bin\nargc=3 usr bin\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "at01",
+   "category": "atrans",
+   "script": "declare -A m=([a]=1 [b]=2); o=${m@k}; echo \"k=[$o]\"; a=(x y); echo \"arrk=[${a@k}]\"; v=hi; echo \"a-flag=[${v@a}]\"; declare -i n=3; echo \"n-flag=[${n@a}]\"; declare -r r=1; echo \"r-flag=[${r@a}]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "k=[]\narrk=['x']\na-flag=[]\nn-flag=[i]\nr-flag=[r]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "k=[]\narrk=['x']\na-flag=[]\nn-flag=[i]\nr-flag=[r]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "at02",
+   "category": "atrans",
+   "script": "pre_a=1; pre_b=2; other=3; echo \"names:${!pre_@}\"; echo \"names2:${!pre_*}\"; v=pre_a; echo \"${!v@a}\" 2>&1",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "names:pre_a pre_b\nnames2:pre_a pre_b\n\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "names:pre_a pre_b\nnames2:pre_a pre_b\n\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "at03",
+   "category": "atrans",
+   "script": "s=\"hello world\"; echo \"${s@u}\"; echo \"${s@L}\"; t=\"ABC\"; echo \"${t@u}|${t@L}\"; echo \"${s@E}\"; p='a\\nb'; echo \"${p@P}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "Hello world\nhello world\nABC|abc\nhello world\na\nb\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "Hello world\nhello world\nABC|abc\nhello world\na\nb\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "at04",
+   "category": "atrans",
+   "script": "name=\"arr[1]\"; arr=(zero one two); echo \"${!name}\"; name2=\"arr\"; echo \"${!name2[@]}\"; idx=\"arr[2]\"; echo \"${!idx}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "one\n0\ntwo\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "one\n0\ntwo\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi01",
+   "category": "builtin",
+   "script": "printf '%q\\n' \"a b\" \"it's\" $'t\\tn' \"\" \"a=b\"; printf '%s|%05d|%-8s|\\n' x 42 hi",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a\\ b\nit\\'s\n$'t\\tn'\n''\na=b\nx|00042|hi      |\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a\\ b\nit\\'s\n$'t\\tn'\n''\na=b\nx|00042|hi      |\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi02",
+   "category": "builtin",
+   "script": "printf '%( %Y-%m-%d %H:%M:%S)T\\n' 0; TZ=UTC printf '%(%Y-%m-%d)T\\n' 86400; printf '%d %i %u %o %x %X\\n' 255 255 -1 8 255 255",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": " 1970-01-01 00:00:00\n1970-01-02\n255 255 18446744073709551615 10 ff FF\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": " 1970-01-01 00:00:00\n1970-01-02\n255 255 18446744073709551615 10 ff FF\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi03",
+   "category": "builtin",
+   "script": "printf 'a%db%dc' 1 2 3; echo; printf '%s-%s\\n' only; printf '%.2f %.0f %e %g\\n' 3.14159 2.5 12345.678 0.00001234",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a1b2ca3b0c\nonly-\nNUM 2 1.234568e+04 1.234e-05\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a1b2ca3b0c\nonly-\nNUM 2 1.234568e+04 1.234e-05\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi04",
+   "category": "builtin",
+   "script": "printf -v out '[%03d]' 7; echo \"$out\"; printf -v out '%s' a b c; echo \"$out\"; echo -n \"noeol\"; echo; echo -e 'x\\ty\\\\z'; echo -E 'x\\ty' ",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "[007]\nabc\nnoeol\nx\ty\\z\nx\\ty\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "[007]\nabc\nnoeol\nx\ty\\z\nx\\ty\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi05",
+   "category": "builtin",
+   "script": "[ 1 -eq 1 -a 2 -eq 2 ]; echo a=$?; [ 1 -eq 2 -o 2 -eq 2 ]; echo o=$?; [ ! -f /etc/passwd ]; echo n=$?; [ \\( 1 -eq 1 \\) -a ! \\( 2 -eq 2 \\) ]; echo p=$?; [ abc \\< abd ]; echo s=$?; [ -v PATH ]; echo v=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a=0\no=0\nn=1\np=1\ns=0\nv=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a=0\no=0\nn=1\np=1\ns=0\nv=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi06",
+   "category": "builtin",
+   "script": "test -z \"\" -o -n x; echo r1=$?; test a = a -a b = b -o c = d; echo r2=$?; test ! ! true; echo r3=$? 2>&1; [[ a == a* && b != c ]]; echo r4=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "r1=0\nr2=0\nr3=0\nr4=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "r1=0\nr2=0\nr3=0\nr4=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi07",
+   "category": "builtin",
+   "script": "printf 'a b c\\n' | { read -a arr; echo \"n=${#arr[@]} ${arr[@]}\"; }; printf 'x:y:z' | { IFS=: read -ra arr; echo \"${arr[@]}\"; }; printf 'no-newline' | { read v; echo \"rc=$? v=[$v]\"; }",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "n=3 a b c\nx y z\nrc=1 v=[no-newline]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "n=3 a b c\nx y z\nrc=1 v=[no-newline]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi08",
+   "category": "builtin",
+   "script": "printf 'abcdef' | { read -n 3 v; echo \"n3=[$v]\"; }; printf 'line\\n' | { read -t 0 v; echo \"t0rc=$? v=[$v]\"; }; printf '' | { read -d '' v; echo \"drc=$?\"; }",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "n3=[abc]\nt0rc=0 v=[]\ndrc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "n3=[abc]\nt0rc=0 v=[]\ndrc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi09",
+   "category": "builtin",
+   "script": "mapfile -t lines < <(printf 'a\\nb\\nc'); echo \"n=${#lines[@]} ${lines[@]}\"; mapfile -d : -t parts < <(printf 'x:y:z'); echo \"p=${parts[@]} pn=${#parts[@]}\"; mapfile -n 2 -t two < <(printf '1\\n2\\n3\\n'); echo \"two=${two[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "n=3 a b c\np=x y z pn=3\ntwo=1 2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "n=3 a b c\np=x y z pn=3\ntwo=1 2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi10",
+   "category": "builtin",
+   "script": "cb() { echo \"cb:$2\"; }; mapfile -c 2 -C cb arr < <(printf 'a\\nb\\nc\\nd\\n'); echo \"arr=${arr[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "cb:b\n\ncb:d\n\narr=a\n b\n c\n d\n\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "cb:b\n\ncb:d\n\narr=a\n b\n c\n d\n\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi11",
+   "category": "builtin",
+   "script": "let 'x=2+3' 'y=x*2'; echo \"$x $y\"; let z=0; echo \"let0rc=$? z=$z\"; let 'a++'; echo \"arc=$? a=$a\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "5 10\nlet0rc=1 z=0\narc=1 a=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "5 10\nlet0rc=1 z=0\narc=1 a=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi12",
+   "category": "builtin",
+   "script": "command -v printf; echo rc=$?; command -V printf; type printf; type -t cd; type -a echo | head -3; hash -l 2>&1 | head -2; echo done",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "printf\nrc=0\nprintf is a shell builtin\nprintf is a shell builtin\nbuiltin\necho is a shell builtin\necho is /usr/bin/echo\necho is /bin/echo\ndone\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "printf\nrc=0\nprintf is a shell builtin\nprintf is a shell builtin\nbuiltin\necho is a shell builtin\necho is /usr/bin/echo\necho is /bin/echo\ndone\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi13",
+   "category": "builtin",
+   "script": "echo $RANDOM >/dev/null; v1=$SECONDS; echo \"sec-type:${v1}\"; printf '%b\\n' 'a\\tb\\nc'; printf '%c%c%c\\n' abc 65 xyz",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "sec-type:0\na\tb\nc\na6x\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "sec-type:0\na\tb\nc\na6x\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi14",
+   "category": "builtin",
+   "script": "read -r a b c <<< \"one two three four\"; echo \"a=$a b=$b c=$c\"; IFS=, read -r a b <<< \"x,y,z\"; echo \"a=$a b=$b\"; read -r a <<< \"  spaced  \"; echo \"a=[$a]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a=one b=two c=three four\na=x b=y,z\na=[spaced]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a=one b=two c=three four\na=x b=y,z\na=[spaced]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "bi15",
+   "category": "builtin",
+   "script": "[[ \"abc def\" =~ ^([a-z]+)[[:space:]]([a-z]+)$ ]]; echo \"m=${BASH_REMATCH[@]} n=${#BASH_REMATCH[@]}\"; [[ \"abc\" =~ (z) ]]; echo \"nomatch rc=$? rem=[${BASH_REMATCH[@]}]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "m=abc def abc def n=3\nnomatch rc=1 rem=[]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "m=abc def abc def n=3\nnomatch rc=1 rem=[]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "mf01",
+   "category": "builtin",
+   "script": "mapfile -O 2 -t a < <(printf 'x\\ny\\nz\\n'); a=(p); mapfile -O 1 -t a < <(printf 'x\\ny\\n'); echo \"a=${a[@]} n=${#a[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a=p x y n=3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a=p x y n=3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "mf02",
+   "category": "builtin",
+   "script": "mapfile -s 1 -n 1 -t a < <(printf 'l1\\nl2\\nl3\\n'); echo \"a=${a[@]}\"; mapfile -d '' -t z < <(printf 'a\\0b\\0c'); echo \"z=${z[@]} n=${#z[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a=l2\nz=a b c n=3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a=l2\nz=a b c n=3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "mf03",
+   "category": "builtin",
+   "script": "cb() { printf 'cb idx=%s line=<%s>\\n' \"$1\" \"$2\"; }; mapfile -C cb -c 1 arr < <(printf 'one\\ntwo\\n'); echo \"arr=${arr[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "cb idx=0 line=<one\n>\ncb idx=1 line=<two\n>\narr=one\n two\n\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "cb idx=0 line=<one\n>\ncb idx=1 line=<two\n>\narr=one\n two\n\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "mf04",
+   "category": "builtin",
+   "script": "exec 3< <(printf 'f1\\nf2\\n'); mapfile -u 3 -t a; echo \"a=${a[@]}\"; exec 3<&-; printf 'data' | { read -N 2 v; echo \"N2=[$v]\"; read -N 2 w; echo \"N2b=[$w]\"; }",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a=f1 f2\nN2=[da]\nN2b=[ta]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a=f1 f2\nN2=[da]\nN2b=[ta]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "mf05",
+   "category": "builtin",
+   "script": "printf 'a b \\n' | { read -a arr; echo \"n=${#arr[@]} <${arr[@]}>\"; }; printf '  lead trail  \\n' | { read -a arr; echo \"n2=${#arr[@]}\"; }; IFS=: read -a arr <<< \"x::y:\"; echo \"colon n=${#arr[@]} [${arr[1]}]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "n=2 <a b>\nn2=2\ncolon n=3 []\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "n=2 <a b>\nn2=2\ncolon n=3 []\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "mf06",
+   "category": "builtin",
+   "script": "printf 'x' | { read -t 0.2 v; echo \"rc=$? v=[$v]\"; }; exec 3<&0; read -u 3 -t 0 v < /dev/null; echo \"fdrc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=1 v=[x]\nfdrc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=1 v=[x]\nfdrc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pf201",
+   "category": "builtin",
+   "script": "printf '%d\\n' abc 2>&1; echo \"rc=$?\"; printf '%d %d\\n' 12abc 0x10 2>&1; printf '%s\\n' 'a\\b' ; printf '%b\\n' 'a\\cb' ; echo after-b",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "SHELL: line 1: printf: abc: invalid number\n0\nrc=1\nSHELL: line 1: printf: 12abc: invalid number\n12 16\na\\b\naafter-b\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "SHELL: line 1: printf: abc: invalid number\n0\nrc=1\nSHELL: line 1: printf: 12abc: invalid number\n12 16\na\\b\naafter-b\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pf202",
+   "category": "builtin",
+   "script": "printf -v 'arr[1]' 'val-%d' 9; echo \"arr1=${arr[1]} n=${#arr[@]}\"; printf '%*d|\\n' -6 42; printf '%.*f\\n' 2 3.14159; printf '%%|%q|\\n' \"a'b\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "arr1=val-9 n=1\n42    |\nNUM\n%|a\\'b|\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "arr1=val-9 n=1\n42    |\nNUM\n%|a\\'b|\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pf203",
+   "category": "builtin",
+   "script": "printf '%( %s )T\\n' 2>&1; echo rc=$?; printf '%(-1)T\\n' 2>&1 | head -1; printf '%(now)T' -2 2>&1 ; echo; printf '%c\\n' '' ",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": " 1793063470 \nrc=0\n-1\nnow\n\u0000\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": " 1793063470 \nrc=0\n-1\nnow\n\u0000\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca01",
+   "category": "case",
+   "script": "v=banana; case $v in a*) echo A;; b*) echo B;; *) echo STAR;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "B\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "B\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca02",
+   "category": "case",
+   "script": "v=zzz; case $v in a*) echo A;; b*) echo B;; esac; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca03",
+   "category": "case",
+   "script": "v=; case $v in \"\") echo EMPTY;; *) echo STAR;; esac; case $v in *) echo STAR2;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "EMPTY\nSTAR2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "EMPTY\nSTAR2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca04",
+   "category": "case",
+   "script": "v=ab; case $v in a*) echo FIRST;; ab) echo SECOND;; *) echo STAR;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "FIRST\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "FIRST\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca05",
+   "category": "case",
+   "script": "v=ab; case $v in a*) echo FIRST ;& b*) echo SECOND;; *) echo STAR;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "FIRST\nSECOND\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "FIRST\nSECOND\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca06",
+   "category": "case",
+   "script": "v=ab; case $v in a*) echo FIRST ;& b*) echo SECOND ;& *) echo STAR;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "FIRST\nSECOND\nSTAR\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "FIRST\nSECOND\nSTAR\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca07",
+   "category": "case",
+   "script": "v=ab; case $v in a*) echo FIRST ;;& ab) echo SECOND ;;& *) echo STAR;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "FIRST\nSECOND\nSTAR\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "FIRST\nSECOND\nSTAR\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca08",
+   "category": "case",
+   "script": "v=ab; case $v in a*) echo FIRST ;;& zz*) echo NOPE ;;& yy) echo NOPE2;; esac; echo done",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "FIRST\ndone\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "FIRST\ndone\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca09",
+   "category": "case",
+   "script": "v=ab; case $v in a*) echo FIRST ;& *) echo LAST;; esac; echo done",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "FIRST\nLAST\ndone\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "FIRST\nLAST\ndone\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca10",
+   "category": "case",
+   "script": "v=abc; case $v in [a-c]*) echo CLS;; a?c) echo Q;; a*c) echo STAR;; *) echo NO;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "CLS\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "CLS\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca11",
+   "category": "case",
+   "script": "v='aXYZ'; case $v in \"a*\") echo LITERAL;; a*) echo GLOB;; esac; v='a*'; case $v in \"a*\") echo LIT2;; a*) echo GLOB2;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "GLOB\nLIT2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "GLOB\nLIT2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca12",
+   "category": "case",
+   "script": "p='x*'; v=xyz; case $v in $p) echo UNQ;; *) echo NO;; esac; case $v in \"$p\") echo QUOTED;; *) echo NO2;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "UNQ\nNO2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "UNQ\nNO2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca13",
+   "category": "case",
+   "script": "shopt -s extglob\nv=aab\ncase $v in +(a)b) echo EXT;; *) echo NO;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "EXT\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "EXT\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca13b",
+   "category": "case",
+   "script": "shopt -u extglob\nv=aab\ncase $v in +(a)b) echo EXT2;; *) echo NO2;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 3: syntax error near unexpected token `('\nSHELL: -c: line 3: `case $v in +(a)b) echo EXT2;; *) echo NO2;; esac'\n",
+    "exit": 2,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 3: syntax error near unexpected token `('\nSHELL: -c: line 3: `case $v in +(a)b) echo EXT2;; *) echo NO2;; esac'\n",
+    "exit": 2,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca14",
+   "category": "case",
+   "script": "v=ABC; case $v in abc) echo NO;; *) echo NO2;; esac; shopt -s nocasematch; case $v in abc) echo YES;; *) echo NO3;; esac; shopt -u nocasematch; case $v in abc) echo NO4;; *) echo NO5;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "NO2\nYES\nNO5\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "NO2\nYES\nNO5\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca15",
+   "category": "case",
+   "script": "v='a b'; case $v in 'a b') echo EXACT;; *) echo OTHER;; esac; case $v in a*) echo APREFIX;; *) echo OTHER2;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "EXACT\nAPREFIX\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "EXACT\nAPREFIX\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca16",
+   "category": "case",
+   "script": "case $(printf 'x\\n\\n') in x) echo YES;; *) echo NO;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "YES\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "YES\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca17",
+   "category": "case",
+   "script": "case $((1+2)) in 3) echo THREE;; *) echo NO;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "THREE\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "THREE\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca18",
+   "category": "case",
+   "script": "p='a/b'; case 'a/b' in $p) echo SLASH;; *) echo NO;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "SLASH\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "SLASH\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca19",
+   "category": "case",
+   "script": "v=outer; case $v in outer) case inner in inner) echo NESTED;; esac;; *) echo NO;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "NESTED\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "NESTED\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca20",
+   "category": "case",
+   "script": "f() { case $1 in a) return 3;; *) return 0;; esac; }; f a; echo \"a_rc=$?\"; f b; echo \"b_rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a_rc=3\nb_rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a_rc=3\nb_rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca21",
+   "category": "case",
+   "script": "v=x; case $v in (a) echo A;; (x) echo X;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "X\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "X\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca22",
+   "category": "case",
+   "script": "case '^' in [^a]) echo CARET;; *) echo NO;; esac; case b in [^a]) echo B;; *) echo NO2;; esac; case a in [^a]) echo A;; *) echo NO3;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "CARET\nB\nNO3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "CARET\nB\nNO3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca23",
+   "category": "case",
+   "script": "shopt -s extglob\nv=b\ncase $v in @(a|b)) echo ALT;; *) echo NO;; esac\nv=c\ncase $v in @(a|b)) echo ALT2;; *) echo NO2;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "ALT\nNO2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "ALT\nNO2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca24",
+   "category": "case",
+   "script": "v=ab; case $v in a*) x=one ;& b*) x=\"$x-two\" ;& *) echo \"x=$x\";; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "x=one-two\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "x=one-two\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca25",
+   "category": "case",
+   "script": "shopt -s extglob\nv=b\ncase $v in ?(a)b) echo OPT1;; *) echo NO;; esac\nv=ab\ncase $v in ?(a)b) echo OPT2;; *) echo NO2;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "OPT1\nOPT2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "OPT1\nOPT2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca26",
+   "category": "case",
+   "script": "case '' in '') echo EMPTYQ;; *) echo NO;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "EMPTYQ\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "EMPTYQ\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca27",
+   "category": "case",
+   "script": "i=0; while [ $i -lt 3 ]; do i=$((i+1)); case $i in 2) echo TWO; break;; *) echo \"n=$i\";; esac; done; echo \"after=$i\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "n=1\nTWO\nafter=2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "n=1\nTWO\nafter=2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca28",
+   "category": "case",
+   "script": "v=a; case $v in a) echo A ;;& a) echo A2 ;;& *) echo STAR;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "A\nA2\nSTAR\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "A\nA2\nSTAR\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca29",
+   "category": "case",
+   "script": "v=a; case $v in a) echo A ;& zz) echo SHOULD_RUN;; esac; case $v in a) echo A2 ;;& zz) echo SHOULD_NOT;; *) echo STAR2;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "A\nSHOULD_RUN\nA2\nSTAR2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "A\nSHOULD_RUN\nA2\nSTAR2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ca30",
+   "category": "case",
+   "script": "case 'a?' in a\\?) echo QMARK;; *) echo NO;; esac; case 'aX' in a\\?) echo Q2;; *) echo NO2;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "QMARK\nNO2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "QMARK\nNO2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "cd01",
+   "category": "cd",
+   "script": "mkdir -p real && ln -s real linkdir; cd linkdir; echo \"logical=$PWD\"; pwd -P; cd -P .; echo \"physical=$PWD\"; cd ..; pwd",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "logical=TMP/linkdir\nTMP/real\nphysical=TMP/real\nTMP\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "logical=TMP/linkdir\nTMP/real\nphysical=TMP/real\nTMP\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "cd02",
+   "category": "cd",
+   "script": "mkdir -p one two; pushd one >/dev/null; pushd ../two >/dev/null; echo \"stack:\"; dirs -p; popd >/dev/null; pwd; popd >/dev/null; pwd; pushd 2>&1; echo \"pushd-noargs-rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "stack:\nTMP/two\nTMP/one\nTMP\nTMP/one\nTMP\nSHELL: line 1: pushd: no other directory\npushd-noargs-rc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "stack:\nTMP/two\nTMP/one\nTMP\nTMP/one\nTMP\nSHELL: line 1: pushd: no other directory\npushd-noargs-rc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "cd03",
+   "category": "cd",
+   "script": "cd \"\" 2>&1; echo \"rc=$?\"; unset OLDPWD; cd - 2>&1; echo \"rc2=$?\"; CDPATH=/nonexistent-xyz; mkdir -p subdir; cd subdir; echo \"cdpath=$PWD\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "SHELL: line 1: cd: null directory\nrc=1\nSHELL: line 1: cd: OLDPWD not set\nrc2=1\ncdpath=TMP/subdir\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "SHELL: line 1: cd: null directory\nrc=1\nSHELL: line 1: cd: OLDPWD not set\nrc2=1\ncdpath=TMP/subdir\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "dc01",
+   "category": "declare",
+   "script": "declare -l low=\"AbC\"; echo \"$low\"; low=\"XyZ\"; echo \"$low\"; declare -u up=\"aBc\"; echo \"$up\"; declare -u up2; up2=q; echo \"$up2\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "abc\nxyz\nABC\nQ\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "abc\nxyz\nABC\nQ\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "dc02",
+   "category": "declare",
+   "script": "declare -i n=\"010\"; echo $n; n=\"0x10\"; echo $n; declare -i bad=\"a+b\"; echo \"bad=$bad\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "8\n16\nbad=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "8\n16\nbad=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "dc03",
+   "category": "declare",
+   "script": "declare -r ro=1; ro=2; echo \"rc=$? ro=$ro\"; declare -r ro2; ro2=x 2>&1; echo \"rc=$? ro2=[${ro2:-unset}]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "SHELL: line 1: ro: readonly variable\n",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "SHELL: line 1: ro: readonly variable\n",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "dc04",
+   "category": "declare",
+   "script": "declare -a idx=(a b); declare -A as=([k]=v); echo \"${idx[@]} ${as[k]}\"; declare -p idx as 2>&1 | head -4",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a b v\ndeclare -a idx=([0]=\"a\" [1]=\"b\")\ndeclare -A as=([k]=\"v\" )\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a b v\ndeclare -a idx=([0]=\"a\" [1]=\"b\")\ndeclare -A as=([k]=\"v\" )\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "dc05",
+   "category": "declare",
+   "script": "x=1; declare -i x; x=\"2+3\"; echo $x; declare +i x; x=\"2+3\"; echo \"$x\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "5\n2+3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "5\n2+3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "dc06",
+   "category": "declare",
+   "script": "declare -n nr=target; target=hi; echo $nr; nr=bye; echo $target; declare -p nr",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "hi\nbye\ndeclare -n nr=\"target\"\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "hi\nbye\ndeclare -n nr=\"target\"\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "dc07",
+   "category": "declare",
+   "script": "f() { declare -g gv=global-set; local lv=1; echo \"in:$gv $lv\"; }; f; echo \"gv=$gv lv=[${lv:-unset}]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "in:global-set 1\ngv=global-set lv=[unset]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "in:global-set 1\ngv=global-set lv=[unset]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "dc08",
+   "category": "declare",
+   "script": "declare -t traced() { echo traced-body; } 2>&1; traced 2>&1; echo rc=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 1: syntax error near unexpected token `('\nSHELL: -c: line 1: `declare -t traced() { echo traced-body; } 2>&1; traced 2>&1; echo rc=$?'\n",
+    "exit": 2,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 1: syntax error near unexpected token `('\nSHELL: -c: line 1: `declare -t traced() { echo traced-body; } 2>&1; traced 2>&1; echo rc=$?'\n",
+    "exit": 2,
+    "timeout": false
+   }
+  },
+  {
+   "id": "dp01",
+   "category": "declarep",
+   "script": "v=\"a b\"; declare -p v; arr=(1 \"x y\" ''); declare -p arr; declare -A m=([k]=\"v v\"); declare -p m; declare -i n=5; declare -p n; declare -n r=v; declare -p r",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "declare -- v=\"a b\"\ndeclare -a arr=([0]=\"1\" [1]=\"x y\" [2]=\"\")\ndeclare -A m=([k]=\"v v\" )\ndeclare -i n=\"5\"\ndeclare -n r=\"v\"\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "declare -- v=\"a b\"\ndeclare -a arr=([0]=\"1\" [1]=\"x y\" [2]=\"\")\ndeclare -A m=([k]=\"v v\" )\ndeclare -i n=\"5\"\ndeclare -n r=\"v\"\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "dp02",
+   "category": "declarep",
+   "script": "export EX=\"line1\nline2\"; declare -x | grep '^declare -x EX=' ; echo \"---\"; f() { echo body; }; declare -f f; declare -F f",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "declare -x EX=$'line1\\nline2'\n---\nf () \n{ \n    echo body\n}\nf\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "declare -x EX=$'line1\\nline2'\n---\nf () \n{ \n    echo body\n}\nf\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "dp03",
+   "category": "declarep",
+   "script": "readonly ROA=(a b); declare -p ROA; declare -r s=x; s=y 2>&1; echo \"rc=$? s=$s\"; declare -p s",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "declare -ar ROA=([0]=\"a\" [1]=\"b\")\n",
+    "stderr": "SHELL: line 1: s: readonly variable\n",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "declare -ar ROA=([0]=\"a\" [1]=\"b\")\n",
+    "stderr": "SHELL: line 1: s: readonly variable\n",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "en01",
+   "category": "env",
+   "script": "echo \"opts=$-\"; \"@@SELF@@\" -c 'echo inner-opts=$-' ",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "opts=hBc\ninner-opts=hBc\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "opts=hBc\ninner-opts=hBc\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "en02",
+   "category": "env",
+   "script": "env -i \"@@SELF@@\" -c 'echo \"PATH=[$PATH]\"; echo \"IFS-set:${IFS:+yes}\"; echo \"optind=$OPTIND\"' ",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "PATH=[/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:.]\nIFS-set:yes\noptind=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "PATH=[/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:.]\nIFS-set:yes\noptind=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "en03",
+   "category": "env",
+   "script": "export FOO=bar; \"@@SELF@@\" -c 'echo child:$FOO'; BASH_ENV=/dev/null \"@@SELF@@\" -c 'echo ok' ",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "child:bar\nok\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "child:bar\nok\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "en04",
+   "category": "env",
+   "script": "echo \"versinfo=${BASH_VERSINFO[*]}\"; echo \"mach=[$MACHTYPE] host=[$HOSTTYPE] ostype=[$OSTYPE]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "versinfo=5 3 20 1 release x86_64-pc-linux-gnu\nmach=[x86_64-pc-linux-gnu] host=[x86_64] ostype=[linux-gnu]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "versinfo=5 3 20 1 release x86_64-pc-linux-gnu\nmach=[x86_64-pc-linux-gnu] host=[x86_64] ostype=[linux-gnu]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "en05",
+   "category": "env",
+   "script": "umask 077; \"@@SELF@@\" -c 'umask'; umask",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "0077\n0077\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "0077\n0077\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "env201",
+   "category": "env",
+   "script": "umask -S; umask 027; umask -S; umask 022; u=$(ulimit -Sn); h=$(ulimit -Hn); if [ \"$u\" -le \"$h\" ]; then echo nofile-soft-le-hard; fi; ulimit -a | grep -c . ",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "u=rwx,g=rwx,o=\nu=rwx,g=rx,o=\nnofile-soft-le-hard\n17\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "u=rwx,g=rwx,o=\nu=rwx,g=rx,o=\nnofile-soft-le-hard\n17\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "env202",
+   "category": "env",
+   "script": "printf '%s' \"$IFS\" | od -An -c | tr -s ' '; unset IFS; s=\"a b\\tc\"; set -- $s; echo \"unsetIFS-split n=$#\"; IFS=' '; s2=\"x  y\"; set -- $s2; echo \"spaceIFS n=$#\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": " \\t \\n\nunsetIFS-split n=2\nspaceIFS n=2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": " \\t \\n\nunsetIFS-split n=2\nspaceIFS n=2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "env203",
+   "category": "env",
+   "script": "echo \"groups-n=${#GROUPS[@]} first-group-set:${GROUPS[0]:+yes}\"; echo \"uid-set:${UID:+yes} euid-set:${EUID:+yes}\"; echo \"hostname-len=${#HOSTNAME}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "groups-n=1 first-group-set:yes\nuid-set:yes euid-set:yes\nhostname-len=12\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "groups-n=1 first-group-set:yes\nuid-set:yes euid-set:yes\nhostname-len=12\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "fn01",
+   "category": "func",
+   "script": "x=global; f() { local x=local; echo \"in:$x\"; }; f; echo \"out:$x\"; g() { x=changed; }; g; echo \"after-g:$x\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "in:local\nout:global\nafter-g:changed\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "in:local\nout:global\nafter-g:changed\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "fn02",
+   "category": "func",
+   "script": "declare -n ref; f() { local -n r=$1; r=via-ref; }; v=orig; f v; echo \"$v\"; declare -n self=self; echo \"self=[$self]\" 2>&1; echo rc=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "via-ref\nself=[]\nrc=0\n",
+    "stderr": "SHELL: line 1: declare: self: nameref variable self references not allowed\n",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "via-ref\nself=[]\nrc=0\n",
+    "stderr": "SHELL: line 1: declare: self: nameref variable self references not allowed\n",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "fn03",
+   "category": "func",
+   "script": "declare -n a=b; declare -n b=a; echo \"$a\" 2>&1; echo rc=$?; echo alive",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "\nrc=0\nalive\n",
+    "stderr": "SHELL: line 1: warning: a: circular name reference\n",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "\nrc=0\nalive\n",
+    "stderr": "SHELL: line 1: warning: a: circular name reference\n",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "fn04",
+   "category": "func",
+   "script": "f() { local v=outer; g; }; g() { echo \"g-sees:$v\"; v=modified; }; v=global; f; echo \"final:$v\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "g-sees:outer\nfinal:global\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "g-sees:outer\nfinal:global\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "fn05",
+   "category": "func",
+   "script": "f() { return; }; f; echo \"ret-empty=$?\"; false; f2() { return; }; f2; echo \"ret2=$?\"; g() { return 257; }; g; echo \"ret257=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "ret-empty=0\nret2=0\nret257=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "ret-empty=0\nret2=0\nret257=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "fn06",
+   "category": "func",
+   "script": "f() { local -i n=5; n+=3; echo $n; local arr=(a b); echo \"${arr[@]} ${#arr[@]}\"; }; f; echo \"arr-out=[${arr:-none}]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "8\na b 2\narr-out=[none]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "8\na b 2\narr-out=[none]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "fn07",
+   "category": "func",
+   "script": "f() ( x=subshell; echo \"in:$x\" ); x=main; f; echo \"out:$x\"; h() { echo \"h\"; }; h >f.txt; cat f.txt",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "in:subshell\nout:main\nh\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "in:subshell\nout:main\nh\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "fn08",
+   "category": "func",
+   "script": "declare -n r=arr; arr=(1 2 3); echo \"${r[@]} ${r[1]}\"; r[1]=X; echo \"${arr[@]}\"; r+=(4); echo \"${arr[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "1 2 3 2\n1 X 3\n1 X 3 4\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "1 2 3 2\n1 X 3\n1 X 3 4\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "fn09",
+   "category": "func",
+   "script": "f() { shift; echo \"args:$@ n=$# first=$1\"; }; f a b c; f x; set -- p q; f \"$@\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "args:b c n=2 first=b\nargs: n=0 first=\nargs:q n=1 first=q\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "args:b c n=2 first=b\nargs: n=0 first=\nargs:q n=1 first=q\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "fn10",
+   "category": "func",
+   "script": "f() { local v; echo \"v=[${v:-unset}]\"; v=set; }; u=outer; f; echo \"u=$u\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "v=[unset]\nu=outer\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "v=[unset]\nu=outer\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "go01",
+   "category": "getopts",
+   "script": "while getopts \"ab:c\" opt; do echo \"opt=$opt arg=[$OPTARG] ind=$OPTIND\"; done; echo end' ",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 1: unexpected EOF while looking for matching `''\n",
+    "exit": 2,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 1: unexpected EOF while looking for matching `''\n",
+    "exit": 2,
+    "timeout": false
+   }
+  },
+  {
+   "id": "go02",
+   "category": "getopts",
+   "script": "set -- -a -b val -x; while getopts \"ab:\" opt; do echo \"o=$opt a=[$OPTARG]\"; done; echo \"rc=$? ind=$OPTIND rest=${@:$OPTIND}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "o=a a=[]\no=b a=[val]\no=? a=[]\nrc=0 ind=5 rest=\n",
+    "stderr": "SHELL: illegal option -- x\n",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "o=a a=[]\no=b a=[val]\no=? a=[]\nrc=0 ind=5 rest=\n",
+    "stderr": "SHELL: illegal option -- x\n",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "go03",
+   "category": "getopts",
+   "script": "set -- -a; OPTIND=1; while getopts \":a\" opt; do echo \"o=$opt\"; done; set -- -z; OPTIND=1; while getopts \":a\" opt; do echo \"silent-o=$opt arg=[$OPTARG]\"; done",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "o=a\nsilent-o=? arg=[z]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "o=a\nsilent-o=? arg=[z]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "go04",
+   "category": "getopts",
+   "script": "f() { local OPTIND=1; while getopts \"xy\" o; do echo \"f-o=$o\"; done; }; set -- -x -z; f \"$@\"; echo \"outer-ind=$OPTIND\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "f-o=x\nf-o=?\nouter-ind=1\n",
+    "stderr": "SHELL: illegal option -- z\n",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "f-o=x\nf-o=?\nouter-ind=1\n",
+    "stderr": "SHELL: illegal option -- z\n",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gl01",
+   "category": "glob",
+   "script": "mkdir -p d && cd d && touch a.txt b.txt c.md .hidden && echo *.txt && echo * && echo .* && shopt -s dotglob && echo *",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a.txt b.txt\na.txt b.txt c.md\n.hidden\n.hidden a.txt b.txt c.md\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a.txt b.txt\na.txt b.txt c.md\n.hidden\n.hidden a.txt b.txt c.md\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gl02",
+   "category": "glob",
+   "script": "mkdir -p d && cd d && touch f1 f2 f10 fa; echo f[0-9] && echo f[!0-9] && echo f[^0-9] && shopt -s globasciiranges; echo f[a-z]",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "f1 f2\nfa\nfa\nfa\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "f1 f2\nfa\nfa\nfa\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gl03",
+   "category": "glob",
+   "script": "shopt -s extglob\nmkdir -p d && cd d && touch ab aab abb acb\necho a*(b)\necho a+(b)\necho a?(b)\necho a@(b|c)b\necho a!(b)",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "ab abb\nab abb\nab\nabb acb\naab abb acb\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "ab abb\nab abb\nab\nabb acb\naab abb acb\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gl04",
+   "category": "glob",
+   "script": "mkdir -p d/sub/deep && cd d && touch top sub/mid sub/deep/low; shopt -s globstar; echo ** && echo **/*.txt 2>/dev/null; touch x.txt sub/y.txt; echo **/*.txt",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "sub sub/deep sub/deep/low sub/mid top\n**/*.txt\nsub/y.txt x.txt\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "sub sub/deep sub/deep/low sub/mid top\n**/*.txt\nsub/y.txt x.txt\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gl05",
+   "category": "glob",
+   "script": "mkdir -p d && cd d && touch A.TXT b.txt; shopt -s nocaseglob; echo *.txt; echo *.TXT; shopt -u nocaseglob; echo *.TXT",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "A.TXT b.txt\nA.TXT b.txt\nA.TXT\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "A.TXT b.txt\nA.TXT b.txt\nA.TXT\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gl06",
+   "category": "glob",
+   "script": "echo nomatch*.xyz; shopt -s nullglob; echo \"pre nomatch*.xyz post\"; echo \"n=$(echo nomatch*.xyz | wc -w)\"; shopt -s failglob; echo nomatch*.xyz 2>&1; echo rc=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "nomatch*.xyz\npre nomatch*.xyz post\nn=0\n",
+    "stderr": "SHELL: line 1: no match: nomatch*.xyz\n",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "nomatch*.xyz\npre nomatch*.xyz post\nn=0\n",
+    "stderr": "SHELL: line 1: no match: nomatch*.xyz\n",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gl07",
+   "category": "glob",
+   "script": "mkdir -p d && cd d && touch \"a b\" \"a  b\" axb; echo a*b; printf '<%s>\\n' a?b; echo [[:space:]]* 2>/dev/null | head -c 100; echo",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a  b a b axb\n<a b>\n<axb>\n[[:space:]]*\n\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a  b a b axb\n<a b>\n<axb>\n[[:space:]]*\n\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gl08",
+   "category": "glob",
+   "script": "v=\"abc123\"\neval 'case $v in +([a-z])+([0-9])) echo m1;; *) echo no;; esac' 2>&1; echo \"pre-extglob-rc=$?\"\nshopt -s extglob\ncase $v in +([a-z])+([0-9])) echo m2;; *) echo no2;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "SHELL: eval: line 2: syntax error near unexpected token `('\nSHELL: eval: line 2: `case $v in +([a-z])+([0-9])) echo m1;; *) echo no;; esac'\npre-extglob-rc=2\nm2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "SHELL: eval: line 2: syntax error near unexpected token `('\nSHELL: eval: line 2: `case $v in +([a-z])+([0-9])) echo m1;; *) echo no;; esac'\npre-extglob-rc=2\nm2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gl09",
+   "category": "glob",
+   "script": "mkdir -p d && cd d && touch ab abc abd; echo a[b-d]; echo a[!b-d]; echo a[]] 2>&1; touch ']x' ; echo []\"\"]* 2>/dev/null; echo done",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "ab\na[!b-d]\na[]]\n]x\ndone\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "ab\na[!b-d]\na[]]\n]x\ndone\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gl10",
+   "category": "glob",
+   "script": "p=\"a/b/c.txt\"; echo \"${p##*/} ${p%/*}\"; mkdir -p d/e && cd d && echo */ && echo e/../e",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "c.txt a/b\ne/\ne/../e\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "c.txt a/b\ne/\ne/../e\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gl11",
+   "category": "glob",
+   "script": "shopt -s extglob nullglob\nmkdir -p d && cd d && touch foo.txt foo.md bar.txt\necho *.@(txt|md)\necho !(bar).txt\necho *(foo|bar).*",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "bar.txt foo.md foo.txt\nfoo.txt\nbar.txt foo.md foo.txt\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "bar.txt foo.md foo.txt\nfoo.txt\nbar.txt foo.md foo.txt\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gl12",
+   "category": "glob",
+   "script": "mkdir -p d && cd d && touch {1..3}.txt; echo {a,b}{1,2}; echo {01..03} {z..x} {a..c}{1..2}; echo x{,y,}z",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a1 a2 b1 b2\n01 02 03 z y x a1 a2 b1 b2 c1 c2\nxz xyz xz\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a1 a2 b1 b2\n01 02 03 z y x a1 a2 b1 b2 c1 c2\nxz xyz xz\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gb201",
+   "category": "glob",
+   "script": "mkdir -p d && cd d && touch x.txt y.md sub_note; GLOBIGNORE=\"*.txt\"; echo *; unset GLOBIGNORE; echo *.txt; echo */ 2>&1",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "sub_note y.md\nx.txt\n*/\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "sub_note y.md\nx.txt\n*/\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gb202",
+   "category": "glob",
+   "script": "mkdir -p onlydir && touch plainfile; echo */; echo */. 2>/dev/null | head -c 60; echo; mkdir -p a/b/c; echo a/**/c; shopt -s globstar; echo a/**/c; echo a/**",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "home/ onlydir/\nhome/. onlydir/.\n\na/b/c\na/b/c\na/ a/b a/b/c\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "home/ onlydir/\nhome/. onlydir/.\n\na/b/c\na/b/c\na/ a/b a/b/c\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gb203",
+   "category": "glob",
+   "script": "touch ab ac; echo {a..e..2} {5..1..2} {01..5..2} {a,b{1,2}}; v={x,y}; echo $v; echo pre{A,B,}post",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a c e 5 3 1 01 03 05 a b1 b2\n{x,y}\npreApost preBpost prepost\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a c e 5 3 1 01 03 05 a b1 b2\n{x,y}\npreApost preBpost prepost\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gb204",
+   "category": "glob",
+   "script": "echo ~; echo ~+; echo ~- 2>&1; olddir=$OLDPWD; x=~/sub; echo \"tildeassign-prefix-ok\"; p=:/path:~; echo \"p=[$p]\"; a=a:~; echo \"a=[$a]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "TMP/home\nTMP\n~-\ntildeassign-prefix-ok\np=[:/path:TMP/home]\na=[a:TMP/home]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "TMP/home\nTMP\n~-\ntildeassign-prefix-ok\np=[:/path:TMP/home]\na=[a:TMP/home]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "gb205",
+   "category": "glob",
+   "script": "mkdir -p d && cd d && touch '[abc]' 'star*file' 'q?file'; echo \\[abc\\]; echo 'star*file'; printf '<%s>\\n' *",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "[abc]\nstar*file\n<[abc]>\n<q?file>\n<star*file>\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "[abc]\nstar*file\n<[abc]>\n<q?file>\n<star*file>\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ifs01",
+   "category": "ifs",
+   "script": "IFS=:; s=\"a::b:\"; set -- $s; echo \"n=$# [$1][$2][$3][$4]\"; s=\":a::\"; set -- $s; echo \"n=$# [$1][$2][$3]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "n=3 [a][][b][]\nn=3 [][a][]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "n=3 [a][][b][]\nn=3 [][a][]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ifs02",
+   "category": "ifs",
+   "script": "IFS=; s=\"a b  c\"; set -- $s; echo \"n=$# [$1]\"; IFS=\" \"; set -- $s; echo \"n=$# [$1][$2][$3]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "n=1 [a b  c]\nn=3 [a][b][c]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "n=1 [a b  c]\nn=3 [a][b][c]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ifs03",
+   "category": "ifs",
+   "script": "s=\"  a  b  \"; set -- $s; echo \"n=$# [$1][$2]\"; IFS=-; s=\"--a--b--\"; set -- $s; echo \"n=$# [$1][$2][$3][$4]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "n=2 [a][b]\nn=6 [][][a][]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "n=2 [a][b]\nn=6 [][][a][]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ifs04",
+   "category": "ifs",
+   "script": "a=(x y); IFS=,; echo \"star=${a[*]}\"; v=\"p,q\"; echo \"${v//,/ }\"; read -ra r <<< \"1,2,3\"; echo \"r=${r[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "star=x,y\np q\nr=1 2 3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "star=x,y\np q\nr=1 2 3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ifs05",
+   "category": "ifs",
+   "script": "printf 'a\\t b\\n' | { IFS= read -r l; printf '<%s>\\n' \"$l\"; }; printf '  x  \\n' | { IFS= read -r l; printf '<%s>\\n' \"$l\"; }",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "<a\t b>\n<  x  >\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "<a\t b>\n<  x  >\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ifs06",
+   "category": "ifs",
+   "script": "s=\"aXbXXc\"; IFS=X; set -- $s; echo \"n=$# [$1][$2][$3][$4]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "n=4 [a][b][][c]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "n=4 [a][b][][c]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ifs07",
+   "category": "ifs",
+   "script": "arr=(a b c); local_ifs=$IFS; IFS=''; echo \"${arr[*]}\"; IFS=$local_ifs; join=\"${arr[*]}\"; echo \"$join\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "abc\na b c\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "abc\na b c\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ifs08",
+   "category": "ifs",
+   "script": "s=$'a\\tb\\nc'; set -- $s; echo \"n=$# [$1][$2][$3]\"; IFS=$'\\n'; set -- $s; echo \"n=$# [$1][$2]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "n=3 [a][b][c]\nn=2 [a\tb][c]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "n=3 [a][b][c]\nn=2 [a\tb][c]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb01",
+   "category": "job",
+   "script": "set -m; sleep 0.1 & p=$!; wait $p; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb02",
+   "category": "job",
+   "script": "wait 999999 2>/dev/null; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=127\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=127\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb03",
+   "category": "job",
+   "script": "set -m; sleep 0.1 & p1=$!; sleep 0.1 & p2=$!; wait $p1 $p2; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb04",
+   "category": "job",
+   "script": "set -m; (exit 42) & p=$!; wait $p; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=42\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=42\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb05",
+   "category": "job",
+   "script": "set -m; sleep 5 & p=$!; kill -TERM $p; wait $p; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=143\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=143\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb06",
+   "category": "job",
+   "script": "set -m; (exit 7) & p=$!; wait $p; echo \"first=$?\"; wait $p 2>/dev/null; echo \"second=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "first=7\nsecond=7\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "first=7\nsecond=7\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb07",
+   "category": "job",
+   "script": "set -m; (exit 3) & sleep 0.05 & (exit 5) & wait; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb08",
+   "category": "job",
+   "script": "set -m; (sleep 0.05; exit 11) & p1=$!; (sleep 0.5; exit 22) & p2=$!; wait -n; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=11\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=11\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb09",
+   "category": "job",
+   "script": "set -m; (sleep 0.05; exit 11) & p1=$!; (sleep 0.5; exit 22) & p2=$!; wait -n -p v; echo \"rc=$?\"; [ \"$v\" = \"$p1\" ] && echo SAME || echo DIFF",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=11\nSAME\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=11\nSAME\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb10",
+   "category": "job",
+   "script": "wait -n 2>/dev/null; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=127\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=127\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb11",
+   "category": "job",
+   "script": "set -m; sleep 5 & p=$!; q=$(jobs -p); [ \"$q\" = \"$p\" ] && echo SAME || echo DIFF; kill $p; wait $p 2>/dev/null",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "SAME\n",
+    "stderr": "",
+    "exit": 143,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "SAME\n",
+    "stderr": "",
+    "exit": 143,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb12",
+   "category": "job",
+   "script": "set -m; sleep 5 & p=$!; echo \"running=$(jobs -r | wc -l)\"; kill $p; wait $p 2>/dev/null; echo \"after=$(jobs -r | wc -l)\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "running=1\nafter=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "running=1\nafter=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb13",
+   "category": "job",
+   "script": "set -m; sleep 5 & p=$!; disown; echo \"jobs=$(jobs -p | wc -l)\"; kill $p 2>/dev/null; wait $p 2>/dev/null; echo \"wrc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "jobs=0\nwrc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "jobs=0\nwrc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb14",
+   "category": "job",
+   "script": "set -m; sleep 5 & p=$!; disown -h; q=$(jobs -p); [ \"$q\" = \"$p\" ] && echo SAME || echo DIFF; kill $p; wait $p 2>/dev/null",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "SAME\n",
+    "stderr": "",
+    "exit": 143,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "SAME\n",
+    "stderr": "",
+    "exit": 143,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb15",
+   "category": "job",
+   "script": "set -m; sleep 5 & p=$!; disown %1; echo \"jobs=$(jobs -p | wc -l)\"; kill $p 2>/dev/null",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "jobs=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "jobs=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb16",
+   "category": "job",
+   "script": "set -m; (exit 33) & wait %1; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=33\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=33\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb17",
+   "category": "job",
+   "script": "set -m; (sleep 0.5; exit 31) & (sleep 0.4; exit 32) & wait %-; echo \"minus=$?\"; wait %+; echo \"plus=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "minus=31\nplus=32\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "minus=31\nplus=32\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb18",
+   "category": "job",
+   "script": "set -m; sleep 0.1 & wait %sleep; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb19",
+   "category": "job",
+   "script": "set -m; (sleep 0.05; exit 44) & wait %?sleep; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=44\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=44\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb20",
+   "category": "job",
+   "script": "set -m; sleep 5 & p=$!; sleep 0.2; kill -STOP $p; sleep 0.2; echo \"stopped=$(jobs -s | wc -l)\"; bg %1; sleep 0.2; echo \"running=$(jobs -r | wc -l)\"; kill $p; wait $p 2>/dev/null; echo \"wrc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "stopped=1\n[1]+ sleep 5 &\nrunning=1\nwrc=143\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "stopped=1\n[1]+ sleep 5 &\nrunning=1\nwrc=143\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb21",
+   "category": "job",
+   "script": "set -m; (exit 55) & fg %1; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "( exit 55 )\nrc=55\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "( exit 55 )\nrc=55\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb22",
+   "category": "job",
+   "script": "set -m; sleep 5 & kill %1; wait %1 2>/dev/null; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=143\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=143\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb23",
+   "category": "job",
+   "script": "set -m; sleep 5 & p=$!; echo \"lcount=$(jobs -l | wc -l)\"; kill $p; wait $p 2>/dev/null",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "lcount=1\n",
+    "stderr": "",
+    "exit": 143,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "lcount=1\n",
+    "stderr": "",
+    "exit": 143,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb24",
+   "category": "job",
+   "script": "set -m; (exit 61) & p1=$!; (exit 62) & p2=$!; wait $p2 $p1; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=61\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=61\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb25",
+   "category": "job",
+   "script": "set -m; (sleep 0.05; exit 21) | cat & p=$!; wait $p; echo \"rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb26",
+   "category": "job",
+   "script": "set -m; (echo hello > out.txt) & p=$!; wait $p; echo \"file=$(cat out.txt)\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "file=hello\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "file=hello\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb27",
+   "category": "job",
+   "script": "sleep 0.2 & p=$!; q=$(jobs -p); [ \"$q\" = \"$p\" ] && echo SAME || echo DIFF; wait $p",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "SAME\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "SAME\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb28",
+   "category": "job",
+   "script": "set -m; sleep 5 & p1=$!; sleep 5 & p2=$!; disown -a; echo \"jobs=$(jobs -p | wc -l)\"; kill $p1 $p2 2>/dev/null",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "jobs=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "jobs=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "jb29",
+   "category": "job",
+   "script": "set -m; (sleep 0.05; exit 11) & p1=$!; (sleep 0.4; exit 22) & p2=$!; (sleep 0.8; exit 33) & p3=$!; wait -n -p v; echo \"rc=$?\"; [ \"$v\" = \"$p1\" ] && echo SAME || echo DIFF; wait; echo \"all=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=11\nSAME\nall=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=11\nSAME\nall=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "lc01",
+   "category": "local",
+   "script": "f() { local -; set -f; echo \"in-opts:$-\"; }; set +f; f; case $- in *f*) echo noglob-leaked;; *) echo noglob-ok;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "in-opts:fhBc\nnoglob-ok\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "in-opts:fhBc\nnoglob-ok\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "lc02",
+   "category": "local",
+   "script": "f() { local x=$(false); echo \"local-subst-rc=$?\"; local y; y=$(false); echo \"assign-rc=$?\"; }; f",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "local-subst-rc=0\nassign-rc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "local-subst-rc=0\nassign-rc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "lc03",
+   "category": "local",
+   "script": "break 2 2>&1; echo \"break-outside=$?\"; continue 2>&1; echo \"cont-outside=$?\"; for i in 1 2 3; do for j in a b; do break 2; done; echo \"never-$i\"; done; echo done",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "SHELL: line 1: break: only meaningful in a `for', `while', or `until' loop\nbreak-outside=0\nSHELL: line 1: continue: only meaningful in a `for', `while', or `until' loop\ncont-outside=0\ndone\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "SHELL: line 1: break: only meaningful in a `for', `while', or `until' loop\nbreak-outside=0\nSHELL: line 1: continue: only meaningful in a `for', `while', or `until' loop\ncont-outside=0\ndone\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "meta01",
+   "category": "meta",
+   "script": "echo first-arg; echo \"underscore=[$_]\"; printf x y; echo \"u2=[$_]\"; f() { echo \"fn=${FUNCNAME[0]} src=${BASH_SOURCE[0]} line=$LINENO\"; g; }; g() { echo \"g-caller:\"; caller 0; }; f",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "first-arg\nunderscore=[first-arg]\nxu2=[y]\nfn=f src=SHELL line=1\ng-caller:\n1 f SHELL\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "first-arg\nunderscore=[first-arg]\nxu2=[y]\nfn=f src=SHELL line=1\ng-caller:\n1 f SHELL\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "meta02",
+   "category": "meta",
+   "script": "printf 'f() { echo \"src-line=$LINENO fn=${FUNCNAME[0]}\"; }\\nf\\n' > s.sh; . ./s.sh; echo \"LINENO-main=$LINENO\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "src-line=1 fn=f\nLINENO-main=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "src-line=1 fn=f\nLINENO-main=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "meta03",
+   "category": "meta",
+   "script": "set -- a b; echo \"star=$* at=$@ zero=$0 nine=${9:-none}\"; shift 5 2>&1; echo \"shift-rc=$? n=$#\"; shift 0; echo \"shift0=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "star=a b at=a b zero=SHELL nine=none\nshift-rc=1 n=2\nshift0=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "star=a b at=a b zero=SHELL nine=none\nshift-rc=1 n=2\nshift0=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ms01",
+   "category": "misc",
+   "script": "x=b; case $x in a) echo A;; b) echo B; fallthrough-placeholder;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "B\n",
+    "stderr": "SHELL: line 1: fallthrough-placeholder: command not found\n",
+    "exit": 127,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "B\n",
+    "stderr": "SHELL: line 1: fallthrough-placeholder: command not found\n",
+    "exit": 127,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ms02",
+   "category": "misc",
+   "script": "case abc in a*) echo 1 ;& b*) echo 2 ;;& *c) echo 3 ;;& *) echo 4 ;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "1\n2\n3\n4\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "1\n2\n3\n4\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ms03",
+   "category": "misc",
+   "script": "case x in esac 2>&1; echo rc=$?; :; echo colon=$?; true false; echo tf=$?; > /dev/null; echo redir-only=$?; v=1; echo assign-only=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=0\ncolon=0\ntf=0\nredir-only=0\nassign-only=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=0\ncolon=0\ntf=0\nredir-only=0\nassign-only=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ms04",
+   "category": "misc",
+   "script": "echo \"before\"; exit 3",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "before\n",
+    "stderr": "",
+    "exit": 3,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "before\n",
+    "stderr": "",
+    "exit": 3,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ms05",
+   "category": "misc",
+   "script": "unset -v PATH 2>&1; echo rc=$?; echo hi 2>&1 | head -1",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=0\n",
+    "stderr": "SHELL: line 1: head: No such file or directory\n",
+    "exit": 127,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=0\n",
+    "stderr": "SHELL: line 1: head: No such file or directory\n",
+    "exit": 127,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ms06",
+   "category": "misc",
+   "script": "a=1 b=2; echo \"$a $b\"; a+=x; echo $a; ((a+=1)) 2>&1; echo \"a=$a rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "1 2\n1x\nSHELL: line 1: ((: 1x: value too great for base (error token is \"1x\")\na=1x rc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "1 2\n1x\nSHELL: line 1: ((: 1x: value too great for base (error token is \"1x\")\na=1x rc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ms07",
+   "category": "misc",
+   "script": "echo \"${HOME} ${PWD##*/}\"; cd /; echo $PWD; cd - >/dev/null; echo back",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "TMP/home case-X\n/\nback\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "TMP/home case-X\n/\nback\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ms08",
+   "category": "misc",
+   "script": "{ time -p true; } 2>tf.txt; sort tf.txt; echo ---; { time true; } 2>tg.txt; grep -o 'real\\|user\\|sys' tg.txt | sort | uniq -c",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "real NUM\nsys NUM\nuser NUM\n---\n      1 real\n      1 sys\n      1 user\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "real NUM\nsys NUM\nuser NUM\n---\n      1 real\n      1 sys\n      1 user\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ms09",
+   "category": "misc",
+   "script": "echo $((RANDOM==RANDOM)); set -o posix 2>&1 | head -1; echo $-; echo $_ 2>&1 | head -1",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "0\nhBc\nhBc\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "0\nhBc\nhBc\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ms10",
+   "category": "misc",
+   "script": "compgen -A builtin | sort | head -5; compgen -A keyword | wc -l; compgen -v | grep -c '^BASH' ",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": ".\n:\n[\nalias\nbg\n22\n17\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": ".\n:\n[\nalias\nbg\n22\n17\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "cg01",
+   "category": "misc",
+   "script": "compgen -W 'aa ab ba' -- a; echo ---; compgen -W 'x y z' -P PRE- -S -SUF; compgen -A variable | grep -E '^(PWD|HOME)$' | sort",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "aa\nab\n---\nPRE-x-SUF\nPRE-y-SUF\nPRE-z-SUF\nHOME\nPWD\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "aa\nab\n---\nPRE-x-SUF\nPRE-y-SUF\nPRE-z-SUF\nHOME\nPWD\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "cg02",
+   "category": "misc",
+   "script": "kill -l 9; kill -l KILL 2>&1; echo rc=$?; kill -l | head -c 100; echo; kill -l 999 2>&1; echo rc2=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "KILL\n9\nrc=0\n 1) SIGHUP\t 2) SIGINT\t 3) SIGQUIT\t 4) SIGILL\t 5) SIGTRAP\n 6) SIGABRT\t 7) SIGBUS\t 8) SIGFPE\t 9) SIGKI\nSHELL: line 1: kill: 999: invalid signal specification\nrc2=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "KILL\n9\nrc=0\n 1) SIGHUP\t 2) SIGINT\t 3) SIGQUIT\t 4) SIGILL\t 5) SIGTRAP\n 6) SIGABRT\t 7) SIGBUS\t 8) SIGFPE\t 9) SIGKI\nSHELL: line 1: kill: 999: invalid signal specification\nrc2=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "cg03",
+   "category": "misc",
+   "script": "sleep 0.2 & j=$!; jobs | sed -E 's/[0-9]+/N/g'; jobs -l | sed -E 's/[0-9]+/N/g' | head -2; wait $j; jobs; echo \"after-jobs-empty\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "[N]+  Running                    sleep N.N &\n[N]+ N Running                    sleep N.N &\nafter-jobs-empty\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "[N]+  Running                    sleep N.N &\n[N]+ N Running                    sleep N.N &\nafter-jobs-empty\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "cg04",
+   "category": "misc",
+   "script": "hash -p /bin/echo myecho; myecho via-hash-path; hash | head -3; type myecho; hash -d myecho; type myecho 2>&1; echo rc=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "via-hash-path\nhits\tcommand\n   1\t/bin/echo\nmyecho is hashed (/bin/echo)\nSHELL: line 1: type: myecho: not found\nrc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "via-hash-path\nhits\tcommand\n   1\t/bin/echo\nmyecho is hashed (/bin/echo)\nSHELL: line 1: type: myecho: not found\nrc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "cg05",
+   "category": "misc",
+   "script": "alias myal='echo aliased'; alias -p | grep myal; unalias myal; alias myal 2>&1; echo rc=$?; shopt -s expand_aliases; alias e2='echo E2'; e2",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "alias myal='echo aliased'\nSHELL: line 1: alias: myal: not found\nrc=1\n",
+    "stderr": "SHELL: line 1: e2: command not found\n",
+    "exit": 127,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "alias myal='echo aliased'\nSHELL: line 1: alias: myal: not found\nrc=1\n",
+    "stderr": "SHELL: line 1: e2: command not found\n",
+    "exit": 127,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe01",
+   "category": "param",
+   "script": "v=\"a:b:c\"; echo \"${v#*:}|${v##*:}|${v%:*}|${v%%:*}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "b:c|c|a:b|a\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "b:c|c|a:b|a\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe02",
+   "category": "param",
+   "script": "v=\"file.tar.gz\"; echo \"${v/.tar/.zip}|${v/#file/FILE}|${v/%gz/bz2}|${v//./_}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "file.zip.gz|FILE.tar.gz|file.tar.bz2|file_tar_gz\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "file.zip.gz|FILE.tar.gz|file.tar.bz2|file_tar_gz\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe03",
+   "category": "param",
+   "script": "v=\"AbC dEf\"; echo \"${v^^}|${v,,}|${v^}|${v,}|${v^^[aeiou]}|${v,,[A-Z]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "ABC DEF|abc def|AbC dEf|abC dEf|AbC dEf|abc def\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "ABC DEF|abc def|AbC dEf|abC dEf|AbC dEf|abc def\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe04",
+   "category": "param",
+   "script": "unset u; echo \"[${u-default}][${u:-default}]\"; u=; echo \"[${u-default}][${u:-default}]\"; u=x; echo \"[${u-default}][${u:-default}]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "[default][default]\n[][default]\n[x][x]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "[default][default]\n[][default]\n[x][x]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe05",
+   "category": "param",
+   "script": "unset u; echo \"${u:=assigned} $u\"; u2=; echo \"${u2:=assigned}\"; echo \"${w:+yes}[${w+yes}]\"; w=; echo \"[${w:+yes}][${w+yes}]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "assigned assigned\nassigned\n[]\n[][yes]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "assigned assigned\nassigned\n[]\n[][yes]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe06",
+   "category": "param",
+   "script": "v=hello; echo \"${#v} ${v:1:3} ${v: -2} ${v: -4:2} ${v:10} [${v:2:-1}]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "5 ell lo el  [ll]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "5 ell lo el  [ll]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe07",
+   "category": "param",
+   "script": "v=\"aaa bbb\"; echo \"${v/aaa/@} ${v//a/X} ${v/a/b/c}\" 2>&1; echo rc=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "@ bbb XXX bbb b/caa bbb\nrc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "@ bbb XXX bbb b/caa bbb\nrc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe08",
+   "category": "param",
+   "script": "x=target; target=found; echo \"${!x}\"; pre_1=one; pre_2=two; echo \"${!pre_*}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "found\npre_1 pre_2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "found\npre_1 pre_2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe09",
+   "category": "param",
+   "script": "v=\"MiXeD\"; echo \"${v@U}|${v@L}|${v@u}|${v@Q}\"; s=\"a b'c\"; echo \"${s@Q}\"; arr=(x \"y z\"); echo \"${arr@Q}\"; echo \"${v@E}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "MIXED|mixed|MiXeD|'MiXeD'\n'a b'\\''c'\n'x'\nMiXeD\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "MIXED|mixed|MiXeD|'MiXeD'\n'a b'\\''c'\n'x'\nMiXeD\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe10",
+   "category": "param",
+   "script": "v=\"hello world\"; echo \"${v@P}\" 2>&1; p='\\tTAB\\nNL'; echo \"${p@E}\"; echo \"${p@A}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "hello world\n\tTAB\nNL\np='\\tTAB\\nNL'\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "hello world\n\tTAB\nNL\np='\\tTAB\\nNL'\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe11",
+   "category": "param",
+   "script": "declare -A m=([k1]=v1 [k2]=v2); echo \"${m[k1]} ${!m[@]}\" | tr ' ' '\\n' | sort | tr '\\n' ' '; echo; echo \"${#m[@]} ${#m[k1]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "k1 k2 v1 \n2 2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "k1 k2 v1 \n2 2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe12",
+   "category": "param",
+   "script": "v=abc; echo \"${v:?err}\" 2>&1; echo rc=$?; ( unset u; echo \"${u:?custom msg}\" ) 2>&1; echo rc=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "abc\nrc=0\nSHELL: line 1: u: custom msg\nrc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "abc\nrc=0\nSHELL: line 1: u: custom msg\nrc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe13",
+   "category": "param",
+   "script": "s=\"::a::b::\"; echo \"${s//:/|}\"; echo \"${s/#:/X}\"; echo \"${s/%:/Y}\"; t=\"abcabc\"; echo \"${t/!(a)bc/Z}\" 2>&1",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "||a||b||\nX:a::b::\n::a::b:Y\nabcabc\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "||a||b||\nX:a::b::\n::a::b:Y\nabcabc\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe14",
+   "category": "param",
+   "script": "shopt -s extglob; t=\"abcabc\"; echo \"${t/!(a)bc/Z}|${t##+(a)}\"; v=\"123abc\"; echo \"${v##[0-9]}|${v##[[:digit:]]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "Z|bcabc\n23abc|23abc\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "Z|bcabc\n23abc|23abc\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe15",
+   "category": "param",
+   "script": "a=xyz; b=a; echo \"${!b}\"; declare -n ref=a; echo \"$ref\"; ref=changed; echo \"$a\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "xyz\nxyz\nchanged\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "xyz\nxyz\nchanged\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe16",
+   "category": "param",
+   "script": "v=\"one two three\"; echo \"${v% *}|${v#* }|${v%% *}|${v##* }\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "one two|two three|one|three\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "one two|two three|one|three\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe17",
+   "category": "param",
+   "script": "echo \"[${@:-def}]\" empty-args; set --; echo \"n=$# [${*:-def}]\"; set -- \"\" ; echo \"n=$# first=[${1:-def}] [${1-def}]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "[def] empty-args\nn=0 [def]\nn=1 first=[def] []\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "[def] empty-args\nn=0 [def]\nn=1 first=[def] []\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe18",
+   "category": "param",
+   "script": "v=\"a/b/c\"; echo \"${v//\\//_}\"; echo \"${v/\\//X}\"; w='a$b'; echo \"${w/$/D} [${w/\\$/D}]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a_b_c\naXb/c\naDb [aDb]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a_b_c\naXb/c\naDb [aDb]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe19",
+   "category": "param",
+   "script": "s=\"hello\"; echo \"${s/l/L:0:2}\" 2>&1; echo rc=$?; echo \"${s:1: -1}|${s: -1}|${s:0: -2}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "heL:0:2lo\nrc=0\nell|o|hel\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "heL:0:2lo\nrc=0\nell|o|hel\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pe20",
+   "category": "param",
+   "script": "unset v; echo \"${v@Q}\" 2>&1; v=; echo \"[${v@Q}]\"; a=(); echo \"[${a@Q}] n=${#a[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "\n['']\n[] n=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "\n['']\n[] n=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "px01",
+   "category": "param",
+   "script": "v=abc; echo \"${v:(-2)}|${v: -2}|${v:-2}\"; u=; echo \"[${u:-2}]\"; unset u; echo \"[${u:-2}]\"; echo \"${v:(-9)}\" 2>&1; echo rc=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "bc|bc|abc\n[2]\n[2]\n\nrc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "bc|bc|abc\n[2]\n[2]\n\nrc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "px02",
+   "category": "param",
+   "script": "pat='*'; v=\"a*b\"; echo \"${v#$pat}|${v#\"$pat\"}|${v%*}\"; repl='X/Y'; echo \"${v/\\*/$repl}\"; echo \"${v//\\*/-}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a*b|a*b|a*b\naX/Yb\na-b\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a*b|a*b|a*b\naX/Yb\na-b\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "px03",
+   "category": "param",
+   "script": "echo \"${x:=${y:=inner}} x=$x y=$y\"; echo \"${#@} ${#*}\"; set -- a bb ccc; echo \"${#@} ${#*} ${#2}\"; echo \"${@:$((1+1))}\"; echo \"${@: -1}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "inner x=inner y=inner\n0 0\n3 3 2\nbb ccc\nccc\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "inner x=inner y=inner\n0 0\n3 3 2\nbb ccc\nccc\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "px04",
+   "category": "param",
+   "script": "s=\"ßab\"; echo \"len=${#s}\"; echo \"${s^^}\"; t=\"İx\"; echo \"${t,,}\" 2>&1; echo \"${s:0:1}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "len=4\nßAB\nİx\n�\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "len=4\nßAB\nİx\n�\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "px05",
+   "category": "param",
+   "script": "v=\"aXbXc\"; echo \"${v/X*/Z}\" 2>&1; shopt -s extglob; echo \"${v//+(X)/-}\"; echo \"${v/#a?(X)/Q}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "aZ\na-b-c\nQbXc\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "aZ\na-b-c\nQbXc\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pid01",
+   "category": "pid",
+   "script": "if [ $$ -eq $BASHPID ]; then echo main-eq; else echo main-ne; fi; ( if [ $$ -eq $BASHPID ]; then echo sub-eq; else echo sub-ne; fi ); x=$(if [ $$ -eq $BASHPID ]; then echo cmd-eq; else echo cmd-ne; fi); echo $x",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "main-eq\nsub-ne\ncmd-ne\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "main-eq\nsub-ne\ncmd-ne\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pid02",
+   "category": "pid",
+   "script": "echo \"ppid-of-sub:\"; ( if [ $PPID -eq $$ ]; then echo ppid-is-mainpid; else echo ppid-other; fi )",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "ppid-of-sub:\nppid-other\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "ppid-of-sub:\nppid-other\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pid03",
+   "category": "pid",
+   "script": "RANDOM=42; echo \"$RANDOM $RANDOM $RANDOM\"; RANDOM=42; echo \"$RANDOM $RANDOM\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "17772 26794 1435\n17772 26794\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "17772 26794 1435\n17772 26794\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pid04",
+   "category": "pid",
+   "script": "case $SRANDOM in ''|*[!0-9]*) echo srand-nonnumeric;; *) echo srand-numeric;; esac; SRANDOM=7; a=$SRANDOM; b=$SRANDOM; if [ \"$a\" = \"$b\" ]; then echo same; else echo diff; fi; if [ ${#EPOCHSECONDS} -eq 10 ]; then echo epoch10; fi; case $EPOCHREALTIME in *.*) echo realtime-dot;; *) echo realtime-nodot;; esac",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "srand-numeric\ndiff\nepoch10\nrealtime-dot\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "srand-numeric\ndiff\nepoch10\nrealtime-dot\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pid05",
+   "category": "pid",
+   "script": "SECONDS=100; echo $SECONDS; ( SECONDS=5; echo \"sub-sec=$SECONDS\" ); echo \"main-sec=$SECONDS\"; UID=$UID 2>&1; echo \"uidrc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "100\nsub-sec=5\nmain-sec=100\n",
+    "stderr": "SHELL: line 1: UID: readonly variable\n",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "100\nsub-sec=5\nmain-sec=100\n",
+    "stderr": "SHELL: line 1: UID: readonly variable\n",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pr01",
+   "category": "procsub",
+   "script": "diff <(printf 'a\\nb\\n') <(printf 'a\\nc\\n'); echo \"diff-rc=$?\"; cat <(echo hello); echo \"cat-rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "2c2\n< b\n---\n> c\ndiff-rc=1\nhello\ncat-rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "2c2\n< b\n---\n> c\ndiff-rc=1\nhello\ncat-rc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "pr02",
+   "category": "procsub",
+   "script": "while read l; do echo \"[$l]\"; done < <(printf '1\\n2\\n'); exec 3< <(printf 'from-proc'); read -u 3 l; echo \"fd3=$l\"; exec 3<&-",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "[1]\n[2]\nfd3=from-proc\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "[1]\n[2]\nfd3=from-proc\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "q01",
+   "category": "quote",
+   "script": "echo \"$(printf 'a\\n\\n\\n')END\"; echo \"$(printf 'a')END\"; x=$(printf '\\n\\n'); echo \"len=${#x}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "aEND\naEND\nlen=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "aEND\naEND\nlen=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "q02",
+   "category": "quote",
+   "script": "echo 'a'\"'\"'b' \"c\\\"d\" $'e\\tf' $'g\\x41h' $'\\101' ",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a'b c\"d e\tf gAh A\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a'b c\"d e\tf gAh A\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "q03",
+   "category": "quote",
+   "script": "v=\"a b\"; echo $v | wc -w; echo \"$v\" | wc -w; for x in $v; do echo \"[$x]\"; done; for x in \"$v\"; do echo \"<$x>\"; done",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "2\n2\n[a]\n[b]\n<a b>\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "2\n2\n[a]\n[b]\n<a b>\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "q04",
+   "category": "quote",
+   "script": "echo \"$(echo \"$(echo nested)\")\"; echo `echo \\`echo back\\``; x=$(cat <<EOF\nline1\nline2\nEOF\n); echo \"$x\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "nested\nback\nline1\nline2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "nested\nback\nline1\nline2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "q05",
+   "category": "quote",
+   "script": "printf '%s\\n' \"a\\\nb\" 'c\\\nd'; echo \"e\\\nf\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "ab\nc\\\nd\nef\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "ab\nc\\\nd\nef\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "q06",
+   "category": "quote",
+   "script": "s=\"*\"; echo $s; echo \"$s\"; mkdir -p d && cd d && touch star; echo $s",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "home\n*\nstar\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "home\n*\nstar\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "q07",
+   "category": "quote",
+   "script": "a=\"x\"; echo \"${a:-$(echo inner)}\"; unset b; echo \"${b:-$(echo inner2)}\"; echo \"$(false; echo st=$?)\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "x\ninner2\nst=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "x\ninner2\nst=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "q08",
+   "category": "quote",
+   "script": "echo $'a\\ub' $'\\u0041\\U0001F600' 2>&1 | head -c 200; echo; echo $'\\e[31mX' | od -c | head -2",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a\u000b A\\U0001F600\n\n0000000 033   [   3   1   m   X  \\n\n0000007\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a\u000b A\\U0001F600\n\n0000000 033   [   3   1   m   X  \\n\n0000007\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rd01",
+   "category": "redir",
+   "script": "echo out >f.txt 2>e.txt; cat f.txt; echo \"rc=$?\"; exec 3>f2.txt; echo to3 >&3; exec 3>&-; cat f2.txt",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "out\nrc=0\nto3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "out\nrc=0\nto3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rd02",
+   "category": "redir",
+   "script": "echo hi 2>&1 1>/dev/null; echo hi 1>/dev/null 2>&1; (echo err >&2; echo out) 2>f.txt 1>g.txt; echo \"f=$(cat f.txt) g=$(cat g.txt)\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "f=err g=out\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "f=err g=out\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rd03",
+   "category": "redir",
+   "script": "read x <<< \"herestring\"; echo \"$x\"; read y <<EOF\n\tnope\n\t\ttabbed\nEOF\nprintf '<%s>\\n' \"$y\"; cat <<-EOF\n\t\tstrip\n\tEOF",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "herestring\n<nope>\nstrip\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "herestring\n<nope>\nstrip\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rd04",
+   "category": "redir",
+   "script": "set -C; echo a >f; echo b >f 2>&1; echo rc=$?; echo b >>f; cat f; set +C; echo c >f; cat f",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=1\na\nb\nc\n",
+    "stderr": "SHELL: line 1: f: cannot overwrite existing file\n",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=1\na\nb\nc\n",
+    "stderr": "SHELL: line 1: f: cannot overwrite existing file\n",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rd05",
+   "category": "redir",
+   "script": "echo data <>f.txt; cat f.txt; { read l <&0; } <f.txt; echo \"$l\"; exec 3<>rw.txt; printf 'X' >&3; exec 3>&-; cat rw.txt",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "data\n\nX",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "data\n\nX",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rd06",
+   "category": "redir",
+   "script": "> only.txt; echo rc=$?; ls -l only.txt | awk '{print $5}'; x=1 >assign.txt; echo \"x=$x\"; cat assign.txt",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=0\n0\nx=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=0\n0\nx=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rd07",
+   "category": "redir",
+   "script": "f() { echo in-func; }; f >out.txt; cat out.txt; VAR=temp echo \"$VAR\"; echo \"after:[$VAR]\"; VAR=temp f; echo \"after-func:[$VAR]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "in-func\n\nafter:[]\nin-func\nafter-func:[]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "in-func\n\nafter:[]\nin-func\nafter-func:[]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rd08",
+   "category": "redir",
+   "script": "declare -r RO=1; RO=2 >redir.txt 2>err.txt; echo rc=$?; cat err.txt; cat redir.txt",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "SHELL: line 1: RO: readonly variable\n",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "SHELL: line 1: RO: readonly variable\n",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rd09",
+   "category": "redir",
+   "script": "cat < nonexist 2>&1; echo rc=$?; echo hi > /nonexistent-dir-xyz/f 2>&1; echo rc=$?; echo still-alive",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=1\nrc=1\nstill-alive\n",
+    "stderr": "SHELL: line 1: nonexist: No such file or directory\nSHELL: line 1: /nonexistent-dir-xyz/f: No such file or directory\n",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=1\nrc=1\nstill-alive\n",
+    "stderr": "SHELL: line 1: nonexist: No such file or directory\nSHELL: line 1: /nonexistent-dir-xyz/f: No such file or directory\n",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rd10",
+   "category": "redir",
+   "script": "echo first >f; echo second >&1 >>f 2>&1; cat f; (echo a; echo b >&2) >both.txt 2>&1; cat both.txt",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "first\nsecond\na\nb\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "first\nsecond\na\nb\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rd11",
+   "category": "redir",
+   "script": "while read l; do echo \"[$l]\"; done <<'QEOF'\n$notexpanded\n\\back\nQEOF\nwhile read l; do echo \"<$l>\"; done <<EOF\n$((6*7))\nEOF",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "[$notexpanded]\n[back]\n<42>\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "[$notexpanded]\n[back]\n<42>\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rd12",
+   "category": "redir",
+   "script": "exec 3>&1; echo captured >&3; r=$(echo inner 3>&-); echo \"r=$r\"; echo done 3>&-",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "captured\nr=inner\ndone\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "captured\nr=inner\ndone\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rx01",
+   "category": "regex",
+   "script": "[[ abc123 =~ ([a-z]+)([0-9]+) ]]; echo \"${BASH_REMATCH[@]}\"; [[ abc =~ (x)|(b) ]]; echo \"alt:${BASH_REMATCH[@]} [1]=[${BASH_REMATCH[1]}] [2]=[${BASH_REMATCH[2]}]\"; [[ \"a b\" =~ \"a b\" ]]; echo lit=$?; [[ \"axb\" =~ a.b ]]; echo dot=$?; [[ \"axb\" =~ \"a.b\" ]]; echo qdot=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "abc123 abc 123\nalt:b  b [1]=[] [2]=[b]\nlit=0\ndot=0\nqdot=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "abc123 abc 123\nalt:b  b [1]=[] [2]=[b]\nlit=0\ndot=0\nqdot=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rx02",
+   "category": "regex",
+   "script": "declare -A m=([k]=v); [[ -v m[k] ]]; echo \"vk=$?\"; [[ -v m[no] ]]; echo \"vno=$?\"; a=(1); [[ -v a[0] ]]; echo \"va0=$?\"; [[ -v a[5] ]]; echo \"va5=$?\"; [[ -v PATH ]]; echo \"vp=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "vk=0\nvno=1\nva0=0\nva5=1\nvp=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "vk=0\nvno=1\nva0=0\nva5=1\nvp=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rx03",
+   "category": "regex",
+   "script": "touch f1; ln -sf f1 link1; ln -sf broken-target-xyz broken1; [ -e broken1 ]; echo \"e-broken=$?\"; [ -L broken1 ]; echo \"L=$?\"; [ f1 -nt broken1 ]; echo \"nt=$?\"; [ missing -ot f1 ]; echo \"ot-miss=$?\"; [[ f1 -ef f1 ]]; echo \"ef=$?\"; [[ link1 -ef f1 ]]; echo \"ef-link=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "e-broken=1\nL=0\nnt=0\not-miss=0\nef=0\nef-link=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "e-broken=1\nL=0\nnt=0\not-miss=0\nef=0\nef-link=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "rx04",
+   "category": "regex",
+   "script": "[[ B > a ]]; echo \"B>a:$?\"; [[ a < b ]]; echo \"a<b:$?\"; [[ abc == a* ]]; echo \"pat:$?\"; [[ abc == \"a*\" ]]; echo \"qpat:$?\"; shopt -s extglob; [[ abbc == a+(b)c ]]; echo \"ext:$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "B>a:1\na<b:0\npat:0\nqpat:1\next:0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "B>a:1\na<b:0\npat:0\nqpat:1\next:0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "so01",
+   "category": "source",
+   "script": "printf 'echo \"sourced arg=[$1]\"; return 5\\n' > lib.sh; set -- orig; . ./lib.sh larg; echo \"src-rc=$? args-after=$@\"; source ./lib.sh 2>&1 | head -1",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "sourced arg=[larg]\nsrc-rc=5 args-after=orig\nsourced arg=[orig]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "sourced arg=[larg]\nsrc-rc=5 args-after=orig\nsourced arg=[orig]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "so02",
+   "category": "source",
+   "script": ". ./nonexist.sh 2>&1; echo \"rc=$?\"; PATH= . ./lib2.sh 2>&1; echo \"rc2=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "SHELL: line 1: ./nonexist.sh: No such file or directory\nrc=1\nSHELL: line 1: ./lib2.sh: No such file or directory\nrc2=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "SHELL: line 1: ./nonexist.sh: No such file or directory\nrc=1\nSHELL: line 1: ./lib2.sh: No such file or directory\nrc2=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "so03",
+   "category": "source",
+   "script": "exec -a customargv \"@@SELF@@\" -c 'echo zero=$0' ",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "zero=customargv\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "zero=customargv\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "so04",
+   "category": "source",
+   "script": "printf 'echo in-exec\\n' > run.sh; \"@@SELF@@\" -c 'exec -c /usr/bin/env' 2>&1 | grep -c . ; echo \"pipec=${PIPESTATUS[0]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "0\npipec=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "0\npipec=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ps01",
+   "category": "status",
+   "script": "false | true; echo \"a=$?\"; set -o pipefail; false | true; echo \"b=$?\"; true | false; echo \"c=$?\"; set +o pipefail; echo \"pf=${PIPESTATUS[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "a=0\nb=1\nc=1\npf=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "a=0\nb=1\nc=1\npf=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ps02",
+   "category": "status",
+   "script": "! false; echo $?; ! true; echo $?; ! false | false; echo \"st=$? pipes=${PIPESTATUS[@]}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "0\n1\nst=0 pipes=1 1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "0\n1\nst=0 pipes=1 1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ps03",
+   "category": "status",
+   "script": "false && echo yes || echo no; echo $?; true && echo yes2; echo $?; false; echo $?; true; echo $?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "no\n0\nyes2\n0\n1\n0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "no\n0\nyes2\n0\n1\n0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ps04",
+   "category": "status",
+   "script": "sleep 0.05 & p=$!; wait $p; echo \"wait=$?\"; false & wait $!; echo \"waitfalse=$?\"; wait 99999 2>&1; echo \"waitbad=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "wait=0\nwaitfalse=1\nSHELL: line 1: wait: pid 99999 is not a child of this shell\nwaitbad=127\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "wait=0\nwaitfalse=1\nSHELL: line 1: wait: pid 99999 is not a child of this shell\nwaitbad=127\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ps05",
+   "category": "status",
+   "script": "(exit 42); echo \"sub=$?\"; bash -c 'exit 7' 2>/dev/null || true; \"@@SELF@@\" -c 'exit 7'; echo \"self=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "sub=42\nself=7\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "sub=42\nself=7\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ps06",
+   "category": "status",
+   "script": "false & true & wait -n; echo \"wn=$?\"; sleep 0.01 & wait -n $! 2>&1; echo \"wnp=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "wn=0\nwnp=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "wn=0\nwnp=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ps07",
+   "category": "status",
+   "script": "echo hi | read l; echo \"l=[$l] ps=${PIPESTATUS[@]}\"; echo hi | { read l; echo \"inpipe=[$l]\"; }; { echo a; echo b; } | wc -l",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "l=[] ps=0 0\ninpipe=[hi]\n2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "l=[] ps=0 0\ninpipe=[hi]\n2\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ps08",
+   "category": "status",
+   "script": "cmd() { return 3; }; cmd; echo $?; cmd | cat; echo \"pipest=${PIPESTATUS[0]}\"; ! cmd; echo \"neg=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "3\npipest=3\nneg=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "3\npipest=3\nneg=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ps09",
+   "category": "status",
+   "script": "set -e; false; echo reached; echo \"outer rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ps10",
+   "category": "status",
+   "script": "{ false; echo \"inbrace rc=$?\"; }; echo out; ( false ); echo \"paren rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "inbrace rc=1\nout\nparen rc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "inbrace rc=1\nout\nparen rc=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "sb01",
+   "category": "subshell",
+   "script": "x=1; ( x=2; echo \"in:$x\" ); echo \"out:$x\"; y=$(x=3; echo $x); echo \"y=$y x=$x\"; cd /; pwd; cd - >/dev/null; pwd | tail -c 20",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "in:2\nout:1\ny=3 x=1\n/\nydaew/case-X\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "in:2\nout:1\ny=3 x=1\n/\nydaew/case-X\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "sb02",
+   "category": "subshell",
+   "script": "a=(1 2); ( a+=(3); echo \"in:${a[@]}\" ); echo \"out:${a[@]}\"; ( shopt -s nullglob ); shopt nullglob",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "in:1 2 3\nout:1 2\nnullglob            \toff\n",
+    "stderr": "",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "in:1 2 3\nout:1 2\nnullglob            \toff\n",
+    "stderr": "",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "sb03",
+   "category": "subshell",
+   "script": "trap 'echo MAIN-EXIT' EXIT; ( trap - EXIT; echo sub-no-trap ); echo main-continues",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "sub-no-trap\nmain-continues\nMAIN-EXIT\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "sub-no-trap\nmain-continues\nMAIN-EXIT\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "sb04",
+   "category": "subshell",
+   "script": "f() { echo fn; }; x=$(f); echo $x; ( f ); echo rc=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "fn\nfn\nrc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "fn\nfn\nrc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "sb05",
+   "category": "subshell",
+   "script": "i=0; echo a b c | while read w; do i=$((i+1)); done; echo \"pipe-i=$i\"; while read w; do i=$((i+1)); done <<< \"x y\"; echo \"redir-i=$i\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "pipe-i=0\nredir-i=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "pipe-i=0\nredir-i=1\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "sb06",
+   "category": "subshell",
+   "script": "shopt -s lastpipe; echo a b | read w1 w2; echo \"w=[$w1][$w2]\" 2>&1; jobs",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "w=[a][b]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "w=[a][b]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "sx01",
+   "category": "syntax",
+   "script": "if true; then echo x' ",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 1: unexpected EOF while looking for matching `''\n",
+    "exit": 2,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 1: unexpected EOF while looking for matching `''\n",
+    "exit": 2,
+    "timeout": false
+   }
+  },
+  {
+   "id": "sx02",
+   "category": "syntax",
+   "script": "echo \"unterminated' ",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 1: unexpected EOF while looking for matching `\"'\n",
+    "exit": 2,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 1: unexpected EOF while looking for matching `\"'\n",
+    "exit": 2,
+    "timeout": false
+   }
+  },
+  {
+   "id": "sx03",
+   "category": "syntax",
+   "script": "(( 1 + )) 2>&1; echo \"rc=$?\"; [[ a == ]] 2>&1; echo \"rc2=$?\"; echo alive",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 1: unexpected argument `]]' to conditional binary operator\nSHELL: -c: line 1: syntax error near `]]'\nSHELL: -c: line 1: `(( 1 + )) 2>&1; echo \"rc=$?\"; [[ a == ]] 2>&1; echo \"rc2=$?\"; echo alive'\n",
+    "exit": 2,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 1: unexpected argument `]]' to conditional binary operator\nSHELL: -c: line 1: syntax error near `]]'\nSHELL: -c: line 1: `(( 1 + )) 2>&1; echo \"rc=$?\"; [[ a == ]] 2>&1; echo \"rc2=$?\"; echo alive'\n",
+    "exit": 2,
+    "timeout": false
+   }
+  },
+  {
+   "id": "sx04",
+   "category": "syntax",
+   "script": "for in 1 2; do echo x; done",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 1: syntax error near unexpected token `1'\nSHELL: -c: line 1: `for in 1 2; do echo x; done'\n",
+    "exit": 2,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 1: syntax error near unexpected token `1'\nSHELL: -c: line 1: `for in 1 2; do echo x; done'\n",
+    "exit": 2,
+    "timeout": false
+   }
+  },
+  {
+   "id": "sx05",
+   "category": "syntax",
+   "script": "echo hi | | echo there",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 1: syntax error near unexpected token `|'\nSHELL: -c: line 1: `echo hi | | echo there'\n",
+    "exit": 2,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "SHELL: -c: line 1: syntax error near unexpected token `|'\nSHELL: -c: line 1: `echo hi | | echo there'\n",
+    "exit": 2,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ts01",
+   "category": "trap",
+   "script": "trap 'echo EXIT-TRAP' EXIT; echo body",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "body\nEXIT-TRAP\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "body\nEXIT-TRAP\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ts02",
+   "category": "trap",
+   "script": "( trap 'echo SUB-EXIT' EXIT; echo in-sub ); echo after-sub",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "in-sub\nSUB-EXIT\nafter-sub\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "in-sub\nSUB-EXIT\nafter-sub\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ts03",
+   "category": "trap",
+   "script": "trap 'echo ERRTRAP rc=$?' ERR; false; echo after-false; true; echo end",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "ERRTRAP rc=1\nafter-false\nend\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "ERRTRAP rc=1\nafter-false\nend\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ts04",
+   "category": "trap",
+   "script": "set -e; f() { false; echo in-f; }; f; echo \"reached rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ts05",
+   "category": "trap",
+   "script": "set -e; if false; then echo a; fi; echo if-ok; false || echo or-ok; ! false; echo bang-ok; x=$(false); echo \"assign-sub rc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "if-ok\nor-ok\nbang-ok\n",
+    "stderr": "",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "if-ok\nor-ok\nbang-ok\n",
+    "stderr": "",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ts06",
+   "category": "trap",
+   "script": "set -u; echo \"empty-arr:\"; a=(); echo \"a=[${a[@]}] n=${#a[@]}\"; set --; echo \"pos=[$@] n=$#\"; echo \"${undef:-def}\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "empty-arr:\na=[] n=0\npos=[] n=0\ndef\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "empty-arr:\na=[] n=0\npos=[] n=0\ndef\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ts07",
+   "category": "trap",
+   "script": "set -u; echo \"${a[@]}\" 2>&1; echo rc=$?; echo \"${undef}\" 2>&1; echo rc=$?",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "\nrc=0\n",
+    "stderr": "SHELL: line 1: undef: unbound variable\n",
+    "exit": 127,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "\nrc=0\n",
+    "stderr": "SHELL: line 1: undef: unbound variable\n",
+    "exit": 127,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ts08",
+   "category": "trap",
+   "script": "trap -p EXIT; trap 'echo X' EXIT; trap -p EXIT; trap -- 'echo Y' ERR; trap -p",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "trap -- 'echo X' EXIT\ntrap -- 'echo X' EXIT\ntrap -- 'echo Y' ERR\nX\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "trap -- 'echo X' EXIT\ntrap -- 'echo X' EXIT\ntrap -- 'echo Y' ERR\nX\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ts09",
+   "category": "trap",
+   "script": "f() { trap 'echo RETURN-TRAP' RETURN; echo in-f; }; f; echo after",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "in-f\nRETURN-TRAP\nafter\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "in-f\nRETURN-TRAP\nafter\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ts10",
+   "category": "trap",
+   "script": "count=0; trap 'count=$((count+1))' DEBUG; echo one; echo two; echo \"debug-count=$count\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "one\ntwo\ndebug-count=3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "one\ntwo\ndebug-count=3\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ts11",
+   "category": "trap",
+   "script": "set -o | grep -E 'errexit|nounset|pipefail'; shopt -q nullglob; echo \"nullglob-q=$?\"; shopt nullglob dotglob",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "errexit        \toff\nnounset        \toff\npipefail       \toff\nnullglob-q=1\nnullglob            \toff\ndotglob             \toff\n",
+    "stderr": "",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "errexit        \toff\nnounset        \toff\npipefail       \toff\nnullglob-q=1\nnullglob            \toff\ndotglob             \toff\n",
+    "stderr": "",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "ts12",
+   "category": "trap",
+   "script": "SHELLOPTS=; echo \"shellopts=$SHELLOPTS\"; set -f; echo \"after-f:$SHELLOPTS\" | head -c 200; echo; set +f",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "",
+    "stderr": "SHELL: line 1: SHELLOPTS: readonly variable\n",
+    "exit": 1,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "",
+    "stderr": "SHELL: line 1: SHELLOPTS: readonly variable\n",
+    "exit": 1,
+    "timeout": false
+   }
+  },
+  {
+   "id": "tr201",
+   "category": "trap",
+   "script": "set -E; trap 'echo ERR-IN' ERR; f() { false; echo f-after; }; f; echo main-after; ( trap -p ERR ); x=$(false; echo incmd); echo \"x=$x\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "ERR-IN\nf-after\nmain-after\ntrap -- 'echo ERR-IN' ERR\nx=ERR-IN\nincmd\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "ERR-IN\nf-after\nmain-after\ntrap -- 'echo ERR-IN' ERR\nx=ERR-IN\nincmd\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "tr202",
+   "category": "trap",
+   "script": "trap 'echo USR1-GOT; ' USR1; kill -USR1 $$; echo after-signal; trap - USR1; kill -USR1 $$ 2>&1; echo should-not-reach",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "USR1-GOT\nafter-signal\n",
+    "stderr": "",
+    "exit": -10,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "USR1-GOT\nafter-signal\n",
+    "stderr": "",
+    "exit": -10,
+    "timeout": false
+   }
+  },
+  {
+   "id": "tr203",
+   "category": "trap",
+   "script": "trap 'echo DEBUG-HIT' DEBUG; set -T; f() { echo fbody; }; f; trap - DEBUG; echo end",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "DEBUG-HIT\nDEBUG-HIT\nDEBUG-HIT\nDEBUG-HIT\nfbody\nDEBUG-HIT\nend\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "DEBUG-HIT\nDEBUG-HIT\nDEBUG-HIT\nDEBUG-HIT\nfbody\nDEBUG-HIT\nend\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "tr204",
+   "category": "trap",
+   "script": "f() { trap 'echo F-RETURN' RETURN; echo body; ( echo subshell ); echo tail; }; f; echo out",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "body\nsubshell\ntail\nF-RETURN\nout\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "body\nsubshell\ntail\nF-RETURN\nout\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "tr205",
+   "category": "trap",
+   "script": "echo \"errtrap-set:\"; trap -p ERR; set -E; trap 'true' ERR; ( trap -p ERR ); f() { trap -p ERR; }; f",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "errtrap-set:\ntrap -- 'true' ERR\ntrap -- 'true' ERR\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "errtrap-set:\ntrap -- 'true' ERR\ntrap -- 'true' ERR\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "un01",
+   "category": "unset",
+   "script": "declare -n r=t; t=val; unset r; echo \"t=[${t:-gone}] r-set:${r:+yes}\"; declare -n r2=t2; t2=v2; unset -n r2; echo \"t2=[${t2:-gone}]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "t=[gone] r-set:\nt2=[v2]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "t=[gone] r-set:\nt2=[v2]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "un02",
+   "category": "unset",
+   "script": "f() { echo fbody; }; unset -f f; type f 2>&1; echo rc=$?; v=1; unset -v v; echo \"v=[${v:-gone}]\"; unset -v nonexist_xyz; echo \"unrc=$?\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "SHELL: line 1: type: f: not found\nrc=1\nv=[gone]\nunrc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "SHELL: line 1: type: f: not found\nrc=1\nv=[gone]\nunrc=0\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  },
+  {
+   "id": "un03",
+   "category": "unset",
+   "script": "declare -n r=t; t=v; unset -n t 2>&1; echo rc=$?; echo \"t=[${t:-gone}] r=[$r]\"",
+   "pass": true,
+   "known_stable": false,
+   "gnu": {
+    "stdout": "rc=0\nt=[v] r=[v]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   },
+   "rubash": {
+    "stdout": "rc=0\nt=[v] r=[v]\n",
+    "stderr": "",
+    "exit": 0,
+    "timeout": false
+   }
+  }
+ ]
+}
